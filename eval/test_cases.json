@@ -1,0 +1,92 @@
+{
+  "intent_classification": [
+    {"input": "Generate a lesson on fractions for Class 6", "expected": "content"},
+    {"input": "Give me content on the water cycle for Class 7", "expected": "content"},
+    {"input": "Class 9 science chapter 2 content please", "expected": "content"},
+    {"input": "Activity for teaching photosynthesis to Class 8", "expected": "content"},
+    {"input": "Create a lesson on the French Revolution for Class 9", "expected": "content"},
+    {"input": "Mujhe Class 7 ke liye fractions ka lesson chahiye", "expected": "content"},
+    {"input": "Integers ka content do Class 6 ke liye", "expected": "content"},
+    {"input": "Lesson on Force and Motion for Class 9", "expected": "content"},
+    {"input": "English grammar activity for Class 5", "expected": "content"},
+    {"input": "Give me something on India's geography for Class 8", "expected": "content"},
+    {"input": "Social science content on democracy for Class 9", "expected": "content"},
+    {"input": "Algebra lesson for Class 7", "expected": "content"},
+
+    {"input": "What is photosynthesis?", "expected": "query"},
+    {"input": "Explain Newton's laws of motion", "expected": "query"},
+    {"input": "What is the difference between mitosis and meiosis?", "expected": "query"},
+    {"input": "How does the digestive system work?", "expected": "query"},
+    {"input": "What are the causes of the First World War?", "expected": "query"},
+    {"input": "Paryavaran pradushan kya hai?", "expected": "query"},
+    {"input": "What is Ohm's law?", "expected": "query"},
+    {"input": "Explain the water cycle briefly", "expected": "query"},
+    {"input": "What is the capital of Australia?", "expected": "query"},
+    {"input": "Define democracy", "expected": "query"},
+    {"input": "What causes earthquakes?", "expected": "query"},
+    {"input": "How do plants make food?", "expected": "query"},
+
+    {"input": "I like this response", "expected": "feedback"},
+    {"input": "This was very helpful, thank you", "expected": "feedback"},
+    {"input": "The content was too long", "expected": "feedback"},
+    {"input": "Not useful for my class", "expected": "feedback"},
+    {"input": "Great lesson, my students will love it", "expected": "feedback"},
+    {"input": "Yeh bahut achha tha", "expected": "feedback"},
+    {"input": "I don't like this format", "expected": "feedback"},
+    {"input": "Can you make it simpler?", "expected": "feedback"},
+    {"input": "Perfect, exactly what I needed", "expected": "feedback"},
+    {"input": "The example was not relevant to Indian context", "expected": "feedback"},
+
+    {"input": "Student is not engaging in class at all", "expected": "sel_observation"},
+    {"input": "One student never speaks up during discussions", "expected": "sel_observation"},
+    {"input": "A child in my class seems very distracted lately", "expected": "sel_observation"},
+    {"input": "Student cries when they make a mistake", "expected": "sel_observation"},
+    {"input": "Two students keep fighting with each other", "expected": "sel_observation"},
+    {"input": "Ek baccha bahut shy hai, bolta hi nahi", "expected": "sel_observation"},
+    {"input": "Student gives up very quickly when they find something hard", "expected": "sel_observation"},
+    {"input": "Child seems anxious before every exam", "expected": "sel_observation"},
+    {"input": "Student is very disruptive and talks constantly", "expected": "sel_observation"},
+    {"input": "One student always helps others but never asks for help themselves", "expected": "sel_observation"}
+  ],
+
+  "content_generation": [
+    {"subject": "Mathematics", "topic": "Fractions", "grade": "6", "sel_dim": "growth_mindset"},
+    {"subject": "Science",     "topic": "Photosynthesis", "grade": "7", "sel_dim": "persistence"},
+    {"subject": "Science",     "topic": "Force and Motion", "grade": "9", "sel_dim": "self_awareness"},
+    {"subject": "Social Science", "topic": "Democracy", "grade": "9", "sel_dim": "social_awareness"},
+    {"subject": "Mathematics", "topic": "Algebra", "grade": "8", "sel_dim": "emotional_regulation"},
+    {"subject": "Science",     "topic": "Water Cycle", "grade": "7", "sel_dim": "growth_mindset"},
+    {"subject": "Social Science", "topic": "French Revolution", "grade": "9", "sel_dim": "persistence"},
+    {"subject": "Mathematics", "topic": "Integers", "grade": "6", "sel_dim": "self_awareness"},
+    {"subject": "Science",     "topic": "Digestive System", "grade": "8", "sel_dim": "social_awareness"},
+    {"subject": "Social Science", "topic": "Indian Geography", "grade": "8", "sel_dim": "emotional_regulation"}
+  ],
+
+  "query_resolution": [
+    {"question": "What is photosynthesis?", "grade": "7",
+     "reference": "Photosynthesis is the process by which green plants make their own food using sunlight, water, and carbon dioxide, producing oxygen as a byproduct."},
+    {"question": "Explain Newton's first law of motion", "grade": "9",
+     "reference": "Newton's first law states that an object at rest stays at rest and an object in motion stays in motion unless acted upon by an external force. This is also called the law of inertia."},
+    {"question": "What is the water cycle?", "grade": "7",
+     "reference": "The water cycle describes the continuous movement of water through evaporation, condensation, precipitation, and collection back into water bodies."},
+    {"question": "What are the causes of the French Revolution?", "grade": "9",
+     "reference": "Main causes include social inequality between the three estates, economic crisis and food shortage, influence of Enlightenment ideas, weak leadership of Louis XVI, and heavy taxation of the poor."},
+    {"question": "What is Ohm's law?", "grade": "10",
+     "reference": "Ohm's law states that the current through a conductor is directly proportional to the voltage across it, expressed as V = IR where V is voltage, I is current, and R is resistance."},
+    {"question": "Define democracy", "grade": "9",
+     "reference": "Democracy is a system of government where citizens exercise power directly or through elected representatives. It is based on principles of equality, freedom, and majority rule with minority rights."},
+    {"question": "What causes earthquakes?", "grade": "8",
+     "reference": "Earthquakes are caused by sudden movement of tectonic plates along fault lines. The point of origin underground is the focus, and the point directly above on the surface is the epicentre."},
+    {"question": "How do plants make their own food?", "grade": "6",
+     "reference": "Plants make food through photosynthesis using sunlight energy, water absorbed through roots, and carbon dioxide from air through leaves. Chlorophyll in leaves captures sunlight for this process."}
+  ],
+
+  "sel_observation": [
+    {"observation": "Student is not engaging in class at all", "grade": "8"},
+    {"observation": "One student never speaks up during group discussions", "grade": "7"},
+    {"observation": "A student cries whenever they make a mistake", "grade": "6"},
+    {"observation": "Two students keep fighting with each other every day", "grade": "9"},
+    {"observation": "Student gives up immediately when they find something difficult", "grade": "8"},
+    {"observation": "Child seems very anxious and nervous before every exam", "grade": "10"}
+  ]
+}

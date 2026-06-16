@@ -1,0 +1,151 @@
+id,query,translated_query,intent,language
+1,Generate a lesson on fractions for Class 6,Generate a lesson on fractions for Class 6,content_generation,en
+2,Create a classroom activity on photosynthesis for Class 8 students,Create a classroom activity on photosynthesis for Class 8 students,content_generation,en
+3,I need a lesson plan on the French Revolution for my Class 9 history class,I need a lesson plan on the French Revolution for my Class 9 history class,content_generation,en
+4,Give me content to explain Newton's laws of motion to Class 9 students,Give me content to explain Newton's laws of motion to Class 9 students,content_generation,en
+5,Prepare an engaging activity for teaching the water cycle to Class 6,Prepare an engaging activity for teaching the water cycle to Class 6,content_generation,en
+6,"Class 7 algebra lesson — my students find variables confusing, help me explain it","Class 7 algebra lesson — my students find variables confusing, help me explain it",content_generation,en
+7,कक्षा 7 के लिए बीजगणित का पाठ बनाओ,Create an algebra lesson for Class 7,content_generation,hi
+8,कक्षा 8 के छात्रों के लिए प्रकाश संश्लेषण का कंटेंट दो,Give content on photosynthesis for Class 8 students,content_generation,hi
+9,"कक्षा 6 के लिए भिन्न का पाठ बनाइए, सरल उदाहरणों के साथ","Make a lesson on fractions for Class 6, with simple examples",content_generation,hi
+10,कक्षा 9 के लिए भारत का भूगोल पढ़ाने की गतिविधि चाहिए,I need an activity to teach India's geography for Class 9,content_generation,hi
+11,कक्षा 5 के लिए हिंदी व्याकरण — संज्ञा और सर्वनाम — का पाठ बनाओ,Make a Hindi grammar lesson on nouns and pronouns for Class 5,content_generation,hi
+12,कक्षा 10 के लिए रासायनिक अभिक्रियाओं का पाठ दीजिए,Give a lesson on chemical reactions for Class 10,content_generation,hi
+13,Class 6 ke liye fractions ka ek simple lesson do,Give a simple lesson on fractions for Class 6,content_generation,hinglish
+14,"Mujhe Class 8 ke liye photosynthesis ka content chahiye, students ko samajh nahi aata","I need content on photosynthesis for Class 8, students don't understand it",content_generation,hinglish
+15,Class 9 science gravitation chapter ke liye ek interesting lesson plan banao,Make an interesting lesson plan for the Class 9 science gravitation chapter,content_generation,hinglish
+16,"Class 7 maths mein integers ka lesson chahiye, real life examples ke saath","Need a lesson on integers for Class 7 maths, with real life examples",content_generation,hinglish
+17,French Revolution Class 9 ke liye content banao — causes aur effects cover karo,Make content on the French Revolution for Class 9 — cover causes and effects,content_generation,hinglish
+18,"Class 5 ke liye food chain activity chahiye, kal class hai","Need a food chain activity for Class 5, I have class tomorrow",content_generation,hinglish
+19,வகுப்பு 7 க்கான பின்னங்கள் பாடத்தை உருவாக்கு,Create a lesson on fractions for Class 7,content_generation,ta
+20,வகுப்பு 8 க்கு ஒளிச்சேர்க்கை பற்றிய வகுப்பறை செயல்பாடு கொடு,Give a classroom activity on photosynthesis for Class 8,content_generation,ta
+21,வகுப்பு 9 இயற்பியலுக்கு நியூட்டன் விதிகள் பாடம் வேண்டும்,Need a lesson on Newton's laws for Class 9 physics,content_generation,ta
+22,வகுப்பு 6 க்கு நீர் சுழற்சி பாடம் தயாரி,Prepare a water cycle lesson for Class 6,content_generation,ta
+23,வகுப்பு 5 அறிவியல் உணவு சங்கிலி செயல்பாடு கொடுங்கள்,Give a food chain activity for Class 5 science,content_generation,ta
+24,வகுப்பு 9 சமூக அறிவியலுக்கு ஜனநாயகம் பாடத்தை உருவாக்கு,Create a lesson on democracy for Class 9 social science,content_generation,ta
+25,తరగతి 7 కోసం భిన్నాల పాఠం తయారు చేయి,Prepare a lesson on fractions for Class 7,content_generation,te
+26,తరగతి 8 కోసం కిరణజన్య సంయోగక్రియపై తరగతి గది కార్యకలాపం ఇవ్వు,Give a classroom activity on photosynthesis for Class 8,content_generation,te
+27,తరగతి 9 కోసం న్యూటన్ చలన నియమాలపై పాఠం కావాలి,Need a lesson on Newton's laws of motion for Class 9,content_generation,te
+28,తరగతి 6 కోసం నీటి చక్రంపై పాఠం తయారుచేయి,Prepare a lesson on the water cycle for Class 6,content_generation,te
+29,తరగతి 10 కోసం రసాయన చర్యలపై కంటెంట్ ఇవ్వు,Give content on chemical reactions for Class 10,content_generation,te
+30,తరగతి 9 సామాజిక శాస్త్రానికి ప్రజాస్వామ్యంపై పాఠం తయారుచేయి,Prepare a lesson on democracy for Class 9 social science,content_generation,te
+31,"This lesson was very helpful, exactly what I needed. Thank you!","This lesson was very helpful, exactly what I needed. Thank you!",feedback,en
+32,"The content was too long, I can't cover all of this in one class period","The content was too long, I can't cover all of this in one class period",feedback,en
+33,"I don't like this format, it doesn't work for younger students","I don't like this format, it doesn't work for younger students",feedback,en
+34,The example you gave was not relatable for students in rural India,The example you gave was not relatable for students in rural India,feedback,en
+35,Can you make the response shorter? Just the key points please,Can you make the response shorter? Just the key points please,feedback,en
+36,"Great response, my students loved the activity. Will use it again","Great response, my students loved the activity. Will use it again",feedback,en
+37,"यह बहुत अच्छा था, बिल्कुल वैसा जैसा मुझे चाहिए था। धन्यवाद","This was very good, exactly what I needed. Thank you",feedback,hi
+38,"कंटेंट बहुत लंबा था, एक कक्षा में इतना नहीं पढ़ा सकते","The content was too long, can't teach this much in one class",feedback,hi
+39,"मुझे यह फॉर्मेट पसंद नहीं है, कुछ और तरीका बताओ","I don't like this format, suggest another way",feedback,hi
+40,उदाहरण हमारे गांव के बच्चों के लिए सही नहीं था,The example was not appropriate for children in our village,feedback,hi
+41,और छोटा जवाब दे सकते हो? बस मुख्य बातें काफी हैं,Can you give a shorter answer? Just the main points are enough,feedback,hi
+42,"बढ़िया जवाब था, बच्चों को बहुत पसंद आया","It was a great response, the children liked it a lot",feedback,hi
+43,"Yeh bahut helpful tha, exactly jo chahiye tha. Thank you!","This was very helpful, exactly what was needed. Thank you!",feedback,hinglish
+44,"Lesson bahut lamba tha yaar, ek period mein itna nahi ho sakta","The lesson was too long buddy, can't do this much in one period",feedback,hinglish
+45,"Mujhe yeh format pasand nahi, kuch aur try karo","I don't like this format, try something else",feedback,hinglish
+46,Example hamare gaon ke bachon se relate nahi karta tha,The example was not relatable for children in our village,feedback,hinglish
+47,"Thoda chhota response do, sirf key points chahiye","Give a slightly shorter response, I just need the key points",feedback,hinglish
+48,"Ekdum badhiya tha, bachon ne bahut enjoy kiya activity","It was absolutely great, the children really enjoyed the activity",feedback,hinglish
+49,"இது மிகவும் உதவியாக இருந்தது, நன்றி","This was very helpful, thank you",feedback,ta
+50,"பாடம் மிக நீளமாக இருந்தது, ஒரு வகுப்பில் இதை முடிக்க முடியாது","The lesson was too long, can't finish this in one class",feedback,ta
+51,"இந்த வடிவம் எனக்கு பிடிக்கவில்லை, வேறு முறை கொடுங்கள்","I don't like this format, please give another method",feedback,ta
+52,எடுத்துக்காட்டு கிராமத்து மாணவர்களுக்கு பொருந்தவில்லை,The example was not suitable for rural students,feedback,ta
+53,"கொஞ்சம் சுருக்கமான பதில் கொடுங்கள், முக்கிய புள்ளிகள் மட்டும்","Give a slightly shorter answer, just the main points",feedback,ta
+54,"மிகவும் நல்லது, மாணவர்களுக்கு மிகவும் பிடித்தது","Very good, the students liked it very much",feedback,ta
+55,"ఇది చాలా ఉపయోగకరంగా ఉంది, ధన్యవాదాలు","This was very useful, thank you",feedback,te
+56,"పాఠం చాలా పొడవుగా ఉంది, ఒక పీరియడ్‌లో ఇది పూర్తి చేయలేను","The lesson was too long, I can't finish this in one period",feedback,te
+57,"ఈ ఫార్మాట్ నాకు నచ్చలేదు, మరొక పద్ధతి చెప్పండి","I don't like this format, please suggest another method",feedback,te
+58,ఉదాహరణ మా గ్రామ విద్యార్థులకు సరిపడలేదు,The example was not suitable for students in our village,feedback,te
+59,"కొంచెం చిన్న సమాధానం ఇవ్వండి, ముఖ్యమైన విషయాలు మాత్రమే","Give a slightly shorter answer, only the key points",feedback,te
+60,"చాలా బాగుంది, విద్యార్థులకు కార్యకలాపం చాలా నచ్చింది","Very good, the students liked the activity a lot",feedback,te
+61,What is photosynthesis?,What is photosynthesis?,query_resolution_academic,en
+62,What is the difference between mitosis and meiosis?,What is the difference between mitosis and meiosis?,query_resolution_academic,en
+63,What causes earthquakes?,What causes earthquakes?,query_resolution_academic,en
+64,What are the main causes of the French Revolution?,What are the main causes of the French Revolution?,query_resolution_academic,en
+65,Explain Ohm's law,Explain Ohm's law,query_resolution_academic,en
+66,What is the difference between a plant cell and an animal cell?,What is the difference between a plant cell and an animal cell?,query_resolution_academic,en
+67,प्रकाश संश्लेषण क्या है?,What is photosynthesis?,query_resolution_academic,hi
+68,कोशिका विभाजन और अर्धसूत्रीविभाजन में क्या अंतर है?,What is the difference between mitosis and meiosis?,query_resolution_academic,hi
+69,भूकंप क्यों आते हैं?,Why do earthquakes occur?,query_resolution_academic,hi
+70,फ्रांसीसी क्रांति के मुख्य कारण क्या थे?,What were the main causes of the French Revolution?,query_resolution_academic,hi
+71,ओम का नियम समझाइए,Explain Ohm's law,query_resolution_academic,hi
+72,पादप कोशिका और जंतु कोशिका में क्या अंतर है?,What is the difference between a plant cell and an animal cell?,query_resolution_academic,hi
+73,Photosynthesis kya hota hai?,What is photosynthesis?,query_resolution_academic,hinglish
+74,Mitosis aur meiosis mein kya difference hai?,What is the difference between mitosis and meiosis?,query_resolution_academic,hinglish
+75,"Earthquake kyun aate hain, koi simple explanation do","Why do earthquakes occur, give a simple explanation",query_resolution_academic,hinglish
+76,French Revolution ke main causes kya the?,What were the main causes of the French Revolution?,query_resolution_academic,hinglish
+77,"Ohm's law kya hai, formula ke saath batao","What is Ohm's law, explain with formula",query_resolution_academic,hinglish
+78,Plant cell aur animal cell mein kya fark hai?,What is the difference between a plant cell and an animal cell?,query_resolution_academic,hinglish
+79,ஒளிச்சேர்க்கை என்றால் என்ன?,What is photosynthesis?,query_resolution_academic,ta
+80,மைட்டோசிஸ் மற்றும் மியோசிஸ் இடையே என்ன வித்தியாசம்?,What is the difference between mitosis and meiosis?,query_resolution_academic,ta
+81,நிலநடுக்கம் ஏன் வருகிறது?,Why do earthquakes occur?,query_resolution_academic,ta
+82,பிரெஞ்சு புரட்சியின் முக்கிய காரணங்கள் என்ன?,What are the main causes of the French Revolution?,query_resolution_academic,ta
+83,ஓம் விதி என்றால் என்ன?,What is Ohm's law?,query_resolution_academic,ta
+84,தாவர செல்லுக்கும் விலங்கு செல்லுக்கும் என்ன வித்தியாசம்?,What is the difference between a plant cell and an animal cell?,query_resolution_academic,ta
+85,కిరణజన్య సంయోగక్రియ అంటే ఏమిటి?,What is photosynthesis?,query_resolution_academic,te
+86,మైటోసిస్ మరియు మియోసిస్ మధ్య తేడా ఏమిటి?,What is the difference between mitosis and meiosis?,query_resolution_academic,te
+87,భూకంపాలు ఎందుకు వస్తాయి?,Why do earthquakes occur?,query_resolution_academic,te
+88,ఫ్రెంచ్ విప్లవం యొక్క ముఖ్య కారణాలు ఏమిటి?,What are the main causes of the French Revolution?,query_resolution_academic,te
+89,ఓమ్ నియమం అంటే ఏమిటి?,What is Ohm's law?,query_resolution_academic,te
+90,మొక్క కణం మరియు జంతు కణం మధ్య తేడా ఏమిటి?,What is the difference between a plant cell and an animal cell?,query_resolution_academic,te
+91,A student in my class is completely disengaged — sits quietly and does nothing,A student in my class is completely disengaged — sits quietly and does nothing,query_resolution_sel,en
+92,There is a bully in my class who constantly disturbs other students. How do I handle this?,There is a bully in my class who constantly disturbs other students. How do I handle this?,query_resolution_sel,en
+93,"One student cries every time they make a mistake, even a small one","One student cries every time they make a mistake, even a small one",query_resolution_sel,en
+94,Two students fight every single day and it disrupts the whole class,Two students fight every single day and it disrupts the whole class,query_resolution_sel,en
+95,A child seems very anxious before every exam. They freeze up and go blank.,A child seems very anxious before every exam. They freeze up and go blank.,query_resolution_sel,en
+96,One bright student has suddenly stopped participating after a comment another student made,One bright student has suddenly stopped participating after a comment another student made,query_resolution_sel,en
+97,"मेरी कक्षा में एक छात्र बिल्कुल भाग नहीं लेता, बस चुपचाप बैठा रहता है","A student in my class doesn't participate at all, just sits quietly",query_resolution_sel,hi
+98,कक्षा में एक बुली है जो दूसरे बच्चों को परेशान करता रहता है,There is a bully in the class who keeps troubling other children,query_resolution_sel,hi
+99,"एक छात्र गलती होने पर हर बार रो देता है, चाहे गलती कितनी भी छोटी हो","A student cries every time they make a mistake, no matter how small",query_resolution_sel,hi
+100,दो बच्चे रोज़ आपस में लड़ते हैं और पूरी क्लास disturb हो जाती है,Two children fight every day and the whole class gets disturbed,query_resolution_sel,hi
+101,"परीक्षा से पहले एक बच्चा बहुत घबरा जाता है, कुछ भी याद नहीं रहता उसे","Before exams a child gets very anxious, they can't remember anything",query_resolution_sel,hi
+102,"एक होशियार बच्चा अचानक से क्लास में कुछ नहीं बोलता, किसी की बात से hurt हो गया शायद","A bright child has suddenly stopped speaking in class, maybe hurt by something someone said",query_resolution_sel,hi
+103,"Meri class mein ek baccha bilkul participate nahi karta, chup rehta hai hamesha","A child in my class never participates, always stays quiet",query_resolution_sel,hinglish
+104,"Class mein ek bully hai jo sabko disturb karta rehta hai, kya karoon?","There is a bully in the class who keeps disturbing everyone, what should I do?",query_resolution_sel,hinglish
+105,"Ek baccha mistake karne par rota hai, bahut sensitive hai","A child cries when they make a mistake, they are very sensitive",query_resolution_sel,hinglish
+106,"Do students roz ladte hain, poori class ka mood kharab ho jaata hai","Two students fight daily, the mood of the whole class gets ruined",query_resolution_sel,hinglish
+107,Exam ke time ek baccha itna anxious ho jaata hai ki sab bhool jaata hai,During exams one child gets so anxious they forget everything,query_resolution_sel,hinglish
+108,"Mera ek acha student achanak se class mein kuch nahi bolta, shayad kisi ne kuch keh diya","One of my good students has suddenly stopped speaking in class, maybe someone said something",query_resolution_sel,hinglish
+109,"என் வகுப்பில் ஒரு மாணவன் எதிலும் பங்கேற்பதில்லை, எப்போதும் அமைதியாக இருக்கிறான்","A student in my class never participates in anything, always stays quiet",query_resolution_sel,ta
+110,"வகுப்பில் ஒரு மாணவன் மற்றவர்களை தொந்தரவு செய்கிறான், என்ன செய்வது?","A student in the class is troubling others, what should I do?",query_resolution_sel,ta
+111,"ஒரு மாணவன் தவறு செய்யும்போதெல்லாம் அழுகிறான், மிகவும் sensitive ஆக இருக்கிறான்","A student cries every time they make a mistake, they are very sensitive",query_resolution_sel,ta
+112,"இரண்டு மாணவர்கள் தினமும் சண்டை போடுகிறார்கள், வகுப்பு சீர்குலைகிறது","Two students fight every day, the class gets disrupted",query_resolution_sel,ta
+113,"தேர்விற்கு முன்பு ஒரு குழந்தை மிகவும் பயந்து போகிறது, எல்லாவற்றையும் மறந்துவிடுகிறது",Before exams a child gets very scared and forgets everything,query_resolution_sel,ta
+114,"என் சிறந்த மாணவன் திடீரென்று வகுப்பில் பேசுவதில்லை, யாரோ ஏதோ சொன்னது மனதில் பட்டிருக்கும்","My best student has suddenly stopped talking in class, something someone said must have hurt them",query_resolution_sel,ta
+115,"నా తరగతిలో ఒక విద్యార్థి అసలు పాల్గొనడు, ఎప్పుడూ నిశ్శబ్దంగా కూర్చుంటాడు","A student in my class never participates, always sits silently",query_resolution_sel,te
+116,"తరగతిలో ఒక బుల్లీ ఉన్నాడు అందరినీ ఇబ్బంది పెడుతున్నాడు, ఏం చేయాలి?","There is a bully in the class troubling everyone, what should I do?",query_resolution_sel,te
+117,"ఒక విద్యార్థి తప్పు చేసినప్పుడల్లా ఏడుస్తాడు, చాలా సెన్సిటివ్‌గా ఉంటాడు","A student cries every time they make a mistake, they are very sensitive",query_resolution_sel,te
+118,"ఇద్దరు విద్యార్థులు రోజూ గొడవపడతారు, తరగతి అంతా దెబ్బతింటుంది","Two students fight every day, the whole class gets disrupted",query_resolution_sel,te
+119,"పరీక్షకు ముందు ఒక పిల్లవాడు చాలా ఆందోళనకు గురవుతాడు, అన్నీ మర్చిపోతాడు",Before exams a child gets very anxious and forgets everything,query_resolution_sel,te
+120,"నా మంచి విద్యార్థి హఠాత్తుగా తరగతిలో మాట్లాడడు, ఎవరో ఏదో అన్నారేమో","My good student has suddenly stopped talking in class, maybe someone said something",query_resolution_sel,te
+121,How do I prepare for a job interview? What questions are usually asked?,How do I prepare for a job interview? What questions are usually asked?,out_of_service,en
+122,Which stocks should I invest in right now? Is the market good?,Which stocks should I invest in right now? Is the market good?,out_of_service,en
+123,"Give me tips for JEE Main preparation, my student wants to crack it","Give me tips for JEE Main preparation, my student wants to crack it",out_of_service,en
+124,What are the best engineering colleges in India after Class 12?,What are the best engineering colleges in India after Class 12?,out_of_service,en
+125,How can I improve my IELTS speaking score? I am applying abroad.,How can I improve my IELTS speaking score? I am applying abroad.,out_of_service,en
+126,Write me a Python program to print the Fibonacci series,Write me a Python program to print the Fibonacci series,out_of_service,en
+127,नौकरी के इंटरव्यू की तैयारी कैसे करें?,How to prepare for a job interview?,out_of_service,hi
+128,"शेयर मार्केट में पैसे लगाना चाहता हूँ, कहाँ से शुरू करूँ?","I want to invest in the stock market, where should I start?",out_of_service,hi
+129,JEE Main की तैयारी के लिए best books कौन सी हैं?,What are the best books for JEE Main preparation?,out_of_service,hi
+130,12वीं के बाद कौन से best engineering colleges हैं?,What are the best engineering colleges after Class 12?,out_of_service,hi
+131,IELTS exam की preparation कैसे करूँ?,How do I prepare for the IELTS exam?,out_of_service,hi
+132,Python में Fibonacci series का code लिखो,Write a Fibonacci series code in Python,out_of_service,hi
+133,Job interview ki preparation kaise karein? Koi tips do,How to prepare for a job interview? Give some tips,out_of_service,hinglish
+134,"Share market mein invest karna hai, kahan se start karoon?","I want to invest in the share market, where should I start?",out_of_service,hinglish
+135,"JEE Main ke liye best strategy kya hai, mera beta prepare kar raha hai","What is the best strategy for JEE Main, my son is preparing",out_of_service,hinglish
+136,India ke top engineering colleges kaun se hain Class 12 ke baad?,What are the top engineering colleges in India after Class 12?,out_of_service,hinglish
+137,IELTS ki preparation ke liye kya karoon? Abroad jaana hai,What should I do to prepare for IELTS? I want to go abroad,out_of_service,hinglish
+138,Python mein ek simple calculator program likhdo,Write a simple calculator program in Python,out_of_service,hinglish
+139,வேலை நேர்காணலுக்கு எப்படி தயார் ஆவது?,How to prepare for a job interview?,out_of_service,ta
+140,பங்கு சந்தையில் எப்படி முதலீடு செய்வது?,How to invest in the stock market?,out_of_service,ta
+141,JEE Main தேர்விற்கு எப்படி படிப்பது? என் மகன் தயார் ஆகிறான்,How to study for JEE Main? My son is preparing,out_of_service,ta
+142,12ம் வகுப்பிற்கு பிறகு இந்தியாவில் சிறந்த பொறியியல் கல்லூரிகள் எவை?,What are the best engineering colleges in India after Class 12?,out_of_service,ta
+143,IELTS தேர்விற்கு எப்படி தயார் ஆவது?,How to prepare for the IELTS exam?,out_of_service,ta
+144,Python இல் Fibonacci series program எழுதுங்கள்,Write a Fibonacci series program in Python,out_of_service,ta
+145,ఉద్యోగ ఇంటర్వ్యూకు ఎలా సిద్ధపడాలి?,How to prepare for a job interview?,out_of_service,te
+146,స్టాక్ మార్కెట్లో ఎలా పెట్టుబడి పెట్టాలి?,How to invest in the stock market?,out_of_service,te
+147,JEE Main కోసం ఎలా చదవాలి? నా కొడుకు ప్రిపేర్ అవుతున్నాడు,How to study for JEE Main? My son is preparing,out_of_service,te
+148,12వ తరగతి తర్వాత భారతదేశంలో అత్యుత్తమ ఇంజినీరింగ్ కళాశాలలు ఏవి?,What are the best engineering colleges in India after Class 12?,out_of_service,te
+149,IELTS పరీక్షకు ఎలా సిద్ధపడాలి?,How to prepare for the IELTS exam?,out_of_service,te
+150,Python లో Fibonacci series program రాయండి,Write a Fibonacci series program in Python,out_of_service,te

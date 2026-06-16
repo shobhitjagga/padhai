@@ -1,0 +1,2102 @@
+[
+  {
+    "id": 1,
+    "query": "Generate a lesson on fractions for Class 6",
+    "translated_query": "Generate a lesson on fractions for Class 6",
+    "intent": "content_generation",
+    "language": "en"
+  },
+  {
+    "id": 2,
+    "query": "Create a classroom activity on photosynthesis for Class 8 students",
+    "translated_query": "Create a classroom activity on photosynthesis for Class 8 students",
+    "intent": "content_generation",
+    "language": "en"
+  },
+  {
+    "id": 3,
+    "query": "I need a lesson plan on the French Revolution for my Class 9 history class",
+    "translated_query": "I need a lesson plan on the French Revolution for my Class 9 history class",
+    "intent": "content_generation",
+    "language": "en"
+  },
+  {
+    "id": 4,
+    "query": "Give me content to explain Newton's laws of motion to Class 9 students",
+    "translated_query": "Give me content to explain Newton's laws of motion to Class 9 students",
+    "intent": "content_generation",
+    "language": "en"
+  },
+  {
+    "id": 5,
+    "query": "Prepare an engaging activity for teaching the water cycle to Class 6",
+    "translated_query": "Prepare an engaging activity for teaching the water cycle to Class 6",
+    "intent": "content_generation",
+    "language": "en"
+  },
+  {
+    "id": 6,
+    "query": "Class 7 algebra lesson — my students find variables confusing, help me explain it",
+    "translated_query": "Class 7 algebra lesson — my students find variables confusing, help me explain it",
+    "intent": "content_generation",
+    "language": "en"
+  },
+  {
+    "id": 7,
+    "query": "कक्षा 7 के लिए बीजगणित का पाठ बनाओ",
+    "translated_query": "Create an algebra lesson for Class 7",
+    "intent": "content_generation",
+    "language": "hi"
+  },
+  {
+    "id": 8,
+    "query": "कक्षा 8 के छात्रों के लिए प्रकाश संश्लेषण का कंटेंट दो",
+    "translated_query": "Give content on photosynthesis for Class 8 students",
+    "intent": "content_generation",
+    "language": "hi"
+  },
+  {
+    "id": 9,
+    "query": "कक्षा 6 के लिए भिन्न का पाठ बनाइए, सरल उदाहरणों के साथ",
+    "translated_query": "Make a lesson on fractions for Class 6, with simple examples",
+    "intent": "content_generation",
+    "language": "hi"
+  },
+  {
+    "id": 10,
+    "query": "कक्षा 9 के लिए भारत का भूगोल पढ़ाने की गतिविधि चाहिए",
+    "translated_query": "I need an activity to teach India's geography for Class 9",
+    "intent": "content_generation",
+    "language": "hi"
+  },
+  {
+    "id": 11,
+    "query": "कक्षा 5 के लिए हिंदी व्याकरण — संज्ञा और सर्वनाम — का पाठ बनाओ",
+    "translated_query": "Make a Hindi grammar lesson on nouns and pronouns for Class 5",
+    "intent": "content_generation",
+    "language": "hi"
+  },
+  {
+    "id": 12,
+    "query": "कक्षा 10 के लिए रासायनिक अभिक्रियाओं का पाठ दीजिए",
+    "translated_query": "Give a lesson on chemical reactions for Class 10",
+    "intent": "content_generation",
+    "language": "hi"
+  },
+  {
+    "id": 13,
+    "query": "Class 6 ke liye fractions ka ek simple lesson do",
+    "translated_query": "Give a simple lesson on fractions for Class 6",
+    "intent": "content_generation",
+    "language": "hinglish"
+  },
+  {
+    "id": 14,
+    "query": "Mujhe Class 8 ke liye photosynthesis ka content chahiye, students ko samajh nahi aata",
+    "translated_query": "I need content on photosynthesis for Class 8, students don't understand it",
+    "intent": "content_generation",
+    "language": "hinglish"
+  },
+  {
+    "id": 15,
+    "query": "Class 9 science gravitation chapter ke liye ek interesting lesson plan banao",
+    "translated_query": "Make an interesting lesson plan for the Class 9 science gravitation chapter",
+    "intent": "content_generation",
+    "language": "hinglish"
+  },
+  {
+    "id": 16,
+    "query": "Class 7 maths mein integers ka lesson chahiye, real life examples ke saath",
+    "translated_query": "Need a lesson on integers for Class 7 maths, with real life examples",
+    "intent": "content_generation",
+    "language": "hinglish"
+  },
+  {
+    "id": 17,
+    "query": "French Revolution Class 9 ke liye content banao — causes aur effects cover karo",
+    "translated_query": "Make content on the French Revolution for Class 9 — cover causes and effects",
+    "intent": "content_generation",
+    "language": "hinglish"
+  },
+  {
+    "id": 18,
+    "query": "Class 5 ke liye food chain activity chahiye, kal class hai",
+    "translated_query": "Need a food chain activity for Class 5, I have class tomorrow",
+    "intent": "content_generation",
+    "language": "hinglish"
+  },
+  {
+    "id": 19,
+    "query": "வகுப்பு 7 க்கான பின்னங்கள் பாடத்தை உருவாக்கு",
+    "translated_query": "Create a lesson on fractions for Class 7",
+    "intent": "content_generation",
+    "language": "ta"
+  },
+  {
+    "id": 20,
+    "query": "வகுப்பு 8 க்கு ஒளிச்சேர்க்கை பற்றிய வகுப்பறை செயல்பாடு கொடு",
+    "translated_query": "Give a classroom activity on photosynthesis for Class 8",
+    "intent": "content_generation",
+    "language": "ta"
+  },
+  {
+    "id": 21,
+    "query": "வகுப்பு 9 இயற்பியலுக்கு நியூட்டன் விதிகள் பாடம் வேண்டும்",
+    "translated_query": "Need a lesson on Newton's laws for Class 9 physics",
+    "intent": "content_generation",
+    "language": "ta"
+  },
+  {
+    "id": 22,
+    "query": "வகுப்பு 6 க்கு நீர் சுழற்சி பாடம் தயாரி",
+    "translated_query": "Prepare a water cycle lesson for Class 6",
+    "intent": "content_generation",
+    "language": "ta"
+  },
+  {
+    "id": 23,
+    "query": "வகுப்பு 5 அறிவியல் உணவு சங்கிலி செயல்பாடு கொடுங்கள்",
+    "translated_query": "Give a food chain activity for Class 5 science",
+    "intent": "content_generation",
+    "language": "ta"
+  },
+  {
+    "id": 24,
+    "query": "வகுப்பு 9 சமூக அறிவியலுக்கு ஜனநாயகம் பாடத்தை உருவாக்கு",
+    "translated_query": "Create a lesson on democracy for Class 9 social science",
+    "intent": "content_generation",
+    "language": "ta"
+  },
+  {
+    "id": 25,
+    "query": "తరగతి 7 కోసం భిన్నాల పాఠం తయారు చేయి",
+    "translated_query": "Prepare a lesson on fractions for Class 7",
+    "intent": "content_generation",
+    "language": "te"
+  },
+  {
+    "id": 26,
+    "query": "తరగతి 8 కోసం కిరణజన్య సంయోగక్రియపై తరగతి గది కార్యకలాపం ఇవ్వు",
+    "translated_query": "Give a classroom activity on photosynthesis for Class 8",
+    "intent": "content_generation",
+    "language": "te"
+  },
+  {
+    "id": 27,
+    "query": "తరగతి 9 కోసం న్యూటన్ చలన నియమాలపై పాఠం కావాలి",
+    "translated_query": "Need a lesson on Newton's laws of motion for Class 9",
+    "intent": "content_generation",
+    "language": "te"
+  },
+  {
+    "id": 28,
+    "query": "తరగతి 6 కోసం నీటి చక్రంపై పాఠం తయారుచేయి",
+    "translated_query": "Prepare a lesson on the water cycle for Class 6",
+    "intent": "content_generation",
+    "language": "te"
+  },
+  {
+    "id": 29,
+    "query": "తరగతి 10 కోసం రసాయన చర్యలపై కంటెంట్ ఇవ్వు",
+    "translated_query": "Give content on chemical reactions for Class 10",
+    "intent": "content_generation",
+    "language": "te"
+  },
+  {
+    "id": 30,
+    "query": "తరగతి 9 సామాజిక శాస్త్రానికి ప్రజాస్వామ్యంపై పాఠం తయారుచేయి",
+    "translated_query": "Prepare a lesson on democracy for Class 9 social science",
+    "intent": "content_generation",
+    "language": "te"
+  },
+  {
+    "id": 31,
+    "query": "This lesson was very helpful, exactly what I needed. Thank you!",
+    "translated_query": "This lesson was very helpful, exactly what I needed. Thank you!",
+    "intent": "feedback",
+    "language": "en"
+  },
+  {
+    "id": 32,
+    "query": "The content was too long, I can't cover all of this in one class period",
+    "translated_query": "The content was too long, I can't cover all of this in one class period",
+    "intent": "feedback",
+    "language": "en"
+  },
+  {
+    "id": 33,
+    "query": "I don't like this format, it doesn't work for younger students",
+    "translated_query": "I don't like this format, it doesn't work for younger students",
+    "intent": "feedback",
+    "language": "en"
+  },
+  {
+    "id": 34,
+    "query": "The example you gave was not relatable for students in rural India",
+    "translated_query": "The example you gave was not relatable for students in rural India",
+    "intent": "feedback",
+    "language": "en"
+  },
+  {
+    "id": 35,
+    "query": "Can you make the response shorter? Just the key points please",
+    "translated_query": "Can you make the response shorter? Just the key points please",
+    "intent": "feedback",
+    "language": "en"
+  },
+  {
+    "id": 36,
+    "query": "Great response, my students loved the activity. Will use it again",
+    "translated_query": "Great response, my students loved the activity. Will use it again",
+    "intent": "feedback",
+    "language": "en"
+  },
+  {
+    "id": 37,
+    "query": "यह बहुत अच्छा था, बिल्कुल वैसा जैसा मुझे चाहिए था। धन्यवाद",
+    "translated_query": "This was very good, exactly what I needed. Thank you",
+    "intent": "feedback",
+    "language": "hi"
+  },
+  {
+    "id": 38,
+    "query": "कंटेंट बहुत लंबा था, एक कक्षा में इतना नहीं पढ़ा सकते",
+    "translated_query": "The content was too long, can't teach this much in one class",
+    "intent": "feedback",
+    "language": "hi"
+  },
+  {
+    "id": 39,
+    "query": "मुझे यह फॉर्मेट पसंद नहीं है, कुछ और तरीका बताओ",
+    "translated_query": "I don't like this format, suggest another way",
+    "intent": "feedback",
+    "language": "hi"
+  },
+  {
+    "id": 40,
+    "query": "उदाहरण हमारे गांव के बच्चों के लिए सही नहीं था",
+    "translated_query": "The example was not appropriate for children in our village",
+    "intent": "feedback",
+    "language": "hi"
+  },
+  {
+    "id": 41,
+    "query": "और छोटा जवाब दे सकते हो? बस मुख्य बातें काफी हैं",
+    "translated_query": "Can you give a shorter answer? Just the main points are enough",
+    "intent": "feedback",
+    "language": "hi"
+  },
+  {
+    "id": 42,
+    "query": "बढ़िया जवाब था, बच्चों को बहुत पसंद आया",
+    "translated_query": "It was a great response, the children liked it a lot",
+    "intent": "feedback",
+    "language": "hi"
+  },
+  {
+    "id": 43,
+    "query": "Yeh bahut helpful tha, exactly jo chahiye tha. Thank you!",
+    "translated_query": "This was very helpful, exactly what was needed. Thank you!",
+    "intent": "feedback",
+    "language": "hinglish"
+  },
+  {
+    "id": 44,
+    "query": "Lesson bahut lamba tha yaar, ek period mein itna nahi ho sakta",
+    "translated_query": "The lesson was too long buddy, can't do this much in one period",
+    "intent": "feedback",
+    "language": "hinglish"
+  },
+  {
+    "id": 45,
+    "query": "Mujhe yeh format pasand nahi, kuch aur try karo",
+    "translated_query": "I don't like this format, try something else",
+    "intent": "feedback",
+    "language": "hinglish"
+  },
+  {
+    "id": 46,
+    "query": "Example hamare gaon ke bachon se relate nahi karta tha",
+    "translated_query": "The example was not relatable for children in our village",
+    "intent": "feedback",
+    "language": "hinglish"
+  },
+  {
+    "id": 47,
+    "query": "Thoda chhota response do, sirf key points chahiye",
+    "translated_query": "Give a slightly shorter response, I just need the key points",
+    "intent": "feedback",
+    "language": "hinglish"
+  },
+  {
+    "id": 48,
+    "query": "Ekdum badhiya tha, bachon ne bahut enjoy kiya activity",
+    "translated_query": "It was absolutely great, the children really enjoyed the activity",
+    "intent": "feedback",
+    "language": "hinglish"
+  },
+  {
+    "id": 49,
+    "query": "இது மிகவும் உதவியாக இருந்தது, நன்றி",
+    "translated_query": "This was very helpful, thank you",
+    "intent": "feedback",
+    "language": "ta"
+  },
+  {
+    "id": 50,
+    "query": "பாடம் மிக நீளமாக இருந்தது, ஒரு வகுப்பில் இதை முடிக்க முடியாது",
+    "translated_query": "The lesson was too long, can't finish this in one class",
+    "intent": "feedback",
+    "language": "ta"
+  },
+  {
+    "id": 51,
+    "query": "இந்த வடிவம் எனக்கு பிடிக்கவில்லை, வேறு முறை கொடுங்கள்",
+    "translated_query": "I don't like this format, please give another method",
+    "intent": "feedback",
+    "language": "ta"
+  },
+  {
+    "id": 52,
+    "query": "எடுத்துக்காட்டு கிராமத்து மாணவர்களுக்கு பொருந்தவில்லை",
+    "translated_query": "The example was not suitable for rural students",
+    "intent": "feedback",
+    "language": "ta"
+  },
+  {
+    "id": 53,
+    "query": "கொஞ்சம் சுருக்கமான பதில் கொடுங்கள், முக்கிய புள்ளிகள் மட்டும்",
+    "translated_query": "Give a slightly shorter answer, just the main points",
+    "intent": "feedback",
+    "language": "ta"
+  },
+  {
+    "id": 54,
+    "query": "மிகவும் நல்லது, மாணவர்களுக்கு மிகவும் பிடித்தது",
+    "translated_query": "Very good, the students liked it very much",
+    "intent": "feedback",
+    "language": "ta"
+  },
+  {
+    "id": 55,
+    "query": "ఇది చాలా ఉపయోగకరంగా ఉంది, ధన్యవాదాలు",
+    "translated_query": "This was very useful, thank you",
+    "intent": "feedback",
+    "language": "te"
+  },
+  {
+    "id": 56,
+    "query": "పాఠం చాలా పొడవుగా ఉంది, ఒక పీరియడ్‌లో ఇది పూర్తి చేయలేను",
+    "translated_query": "The lesson was too long, I can't finish this in one period",
+    "intent": "feedback",
+    "language": "te"
+  },
+  {
+    "id": 57,
+    "query": "ఈ ఫార్మాట్ నాకు నచ్చలేదు, మరొక పద్ధతి చెప్పండి",
+    "translated_query": "I don't like this format, please suggest another method",
+    "intent": "feedback",
+    "language": "te"
+  },
+  {
+    "id": 58,
+    "query": "ఉదాహరణ మా గ్రామ విద్యార్థులకు సరిపడలేదు",
+    "translated_query": "The example was not suitable for students in our village",
+    "intent": "feedback",
+    "language": "te"
+  },
+  {
+    "id": 59,
+    "query": "కొంచెం చిన్న సమాధానం ఇవ్వండి, ముఖ్యమైన విషయాలు మాత్రమే",
+    "translated_query": "Give a slightly shorter answer, only the key points",
+    "intent": "feedback",
+    "language": "te"
+  },
+  {
+    "id": 60,
+    "query": "చాలా బాగుంది, విద్యార్థులకు కార్యకలాపం చాలా నచ్చింది",
+    "translated_query": "Very good, the students liked the activity a lot",
+    "intent": "feedback",
+    "language": "te"
+  },
+  {
+    "id": 61,
+    "query": "What is photosynthesis?",
+    "translated_query": "What is photosynthesis?",
+    "intent": "query_resolution_academic",
+    "language": "en"
+  },
+  {
+    "id": 62,
+    "query": "What is the difference between mitosis and meiosis?",
+    "translated_query": "What is the difference between mitosis and meiosis?",
+    "intent": "query_resolution_academic",
+    "language": "en"
+  },
+  {
+    "id": 63,
+    "query": "What causes earthquakes?",
+    "translated_query": "What causes earthquakes?",
+    "intent": "query_resolution_academic",
+    "language": "en"
+  },
+  {
+    "id": 64,
+    "query": "What are the main causes of the French Revolution?",
+    "translated_query": "What are the main causes of the French Revolution?",
+    "intent": "query_resolution_academic",
+    "language": "en"
+  },
+  {
+    "id": 65,
+    "query": "Explain Ohm's law",
+    "translated_query": "Explain Ohm's law",
+    "intent": "query_resolution_academic",
+    "language": "en"
+  },
+  {
+    "id": 66,
+    "query": "What is the difference between a plant cell and an animal cell?",
+    "translated_query": "What is the difference between a plant cell and an animal cell?",
+    "intent": "query_resolution_academic",
+    "language": "en"
+  },
+  {
+    "id": 67,
+    "query": "प्रकाश संश्लेषण क्या है?",
+    "translated_query": "What is photosynthesis?",
+    "intent": "query_resolution_academic",
+    "language": "hi"
+  },
+  {
+    "id": 68,
+    "query": "कोशिका विभाजन और अर्धसूत्रीविभाजन में क्या अंतर है?",
+    "translated_query": "What is the difference between mitosis and meiosis?",
+    "intent": "query_resolution_academic",
+    "language": "hi"
+  },
+  {
+    "id": 69,
+    "query": "भूकंप क्यों आते हैं?",
+    "translated_query": "Why do earthquakes occur?",
+    "intent": "query_resolution_academic",
+    "language": "hi"
+  },
+  {
+    "id": 70,
+    "query": "फ्रांसीसी क्रांति के मुख्य कारण क्या थे?",
+    "translated_query": "What were the main causes of the French Revolution?",
+    "intent": "query_resolution_academic",
+    "language": "hi"
+  },
+  {
+    "id": 71,
+    "query": "ओम का नियम समझाइए",
+    "translated_query": "Explain Ohm's law",
+    "intent": "query_resolution_academic",
+    "language": "hi"
+  },
+  {
+    "id": 72,
+    "query": "पादप कोशिका और जंतु कोशिका में क्या अंतर है?",
+    "translated_query": "What is the difference between a plant cell and an animal cell?",
+    "intent": "query_resolution_academic",
+    "language": "hi"
+  },
+  {
+    "id": 73,
+    "query": "Photosynthesis kya hota hai?",
+    "translated_query": "What is photosynthesis?",
+    "intent": "query_resolution_academic",
+    "language": "hinglish"
+  },
+  {
+    "id": 74,
+    "query": "Mitosis aur meiosis mein kya difference hai?",
+    "translated_query": "What is the difference between mitosis and meiosis?",
+    "intent": "query_resolution_academic",
+    "language": "hinglish"
+  },
+  {
+    "id": 75,
+    "query": "Earthquake kyun aate hain, koi simple explanation do",
+    "translated_query": "Why do earthquakes occur, give a simple explanation",
+    "intent": "query_resolution_academic",
+    "language": "hinglish"
+  },
+  {
+    "id": 76,
+    "query": "French Revolution ke main causes kya the?",
+    "translated_query": "What were the main causes of the French Revolution?",
+    "intent": "query_resolution_academic",
+    "language": "hinglish"
+  },
+  {
+    "id": 77,
+    "query": "Ohm's law kya hai, formula ke saath batao",
+    "translated_query": "What is Ohm's law, explain with formula",
+    "intent": "query_resolution_academic",
+    "language": "hinglish"
+  },
+  {
+    "id": 78,
+    "query": "Plant cell aur animal cell mein kya fark hai?",
+    "translated_query": "What is the difference between a plant cell and an animal cell?",
+    "intent": "query_resolution_academic",
+    "language": "hinglish"
+  },
+  {
+    "id": 79,
+    "query": "ஒளிச்சேர்க்கை என்றால் என்ன?",
+    "translated_query": "What is photosynthesis?",
+    "intent": "query_resolution_academic",
+    "language": "ta"
+  },
+  {
+    "id": 80,
+    "query": "மைட்டோசிஸ் மற்றும் மியோசிஸ் இடையே என்ன வித்தியாசம்?",
+    "translated_query": "What is the difference between mitosis and meiosis?",
+    "intent": "query_resolution_academic",
+    "language": "ta"
+  },
+  {
+    "id": 81,
+    "query": "நிலநடுக்கம் ஏன் வருகிறது?",
+    "translated_query": "Why do earthquakes occur?",
+    "intent": "query_resolution_academic",
+    "language": "ta"
+  },
+  {
+    "id": 82,
+    "query": "பிரெஞ்சு புரட்சியின் முக்கிய காரணங்கள் என்ன?",
+    "translated_query": "What are the main causes of the French Revolution?",
+    "intent": "query_resolution_academic",
+    "language": "ta"
+  },
+  {
+    "id": 83,
+    "query": "ஓம் விதி என்றால் என்ன?",
+    "translated_query": "What is Ohm's law?",
+    "intent": "query_resolution_academic",
+    "language": "ta"
+  },
+  {
+    "id": 84,
+    "query": "தாவர செல்லுக்கும் விலங்கு செல்லுக்கும் என்ன வித்தியாசம்?",
+    "translated_query": "What is the difference between a plant cell and an animal cell?",
+    "intent": "query_resolution_academic",
+    "language": "ta"
+  },
+  {
+    "id": 85,
+    "query": "కిరణజన్య సంయోగక్రియ అంటే ఏమిటి?",
+    "translated_query": "What is photosynthesis?",
+    "intent": "query_resolution_academic",
+    "language": "te"
+  },
+  {
+    "id": 86,
+    "query": "మైటోసిస్ మరియు మియోసిస్ మధ్య తేడా ఏమిటి?",
+    "translated_query": "What is the difference between mitosis and meiosis?",
+    "intent": "query_resolution_academic",
+    "language": "te"
+  },
+  {
+    "id": 87,
+    "query": "భూకంపాలు ఎందుకు వస్తాయి?",
+    "translated_query": "Why do earthquakes occur?",
+    "intent": "query_resolution_academic",
+    "language": "te"
+  },
+  {
+    "id": 88,
+    "query": "ఫ్రెంచ్ విప్లవం యొక్క ముఖ్య కారణాలు ఏమిటి?",
+    "translated_query": "What are the main causes of the French Revolution?",
+    "intent": "query_resolution_academic",
+    "language": "te"
+  },
+  {
+    "id": 89,
+    "query": "ఓమ్ నియమం అంటే ఏమిటి?",
+    "translated_query": "What is Ohm's law?",
+    "intent": "query_resolution_academic",
+    "language": "te"
+  },
+  {
+    "id": 90,
+    "query": "మొక్క కణం మరియు జంతు కణం మధ్య తేడా ఏమిటి?",
+    "translated_query": "What is the difference between a plant cell and an animal cell?",
+    "intent": "query_resolution_academic",
+    "language": "te"
+  },
+  {
+    "id": 91,
+    "query": "A student in my class is completely disengaged — sits quietly and does nothing",
+    "translated_query": "A student in my class is completely disengaged — sits quietly and does nothing",
+    "intent": "query_resolution_sel",
+    "language": "en"
+  },
+  {
+    "id": 92,
+    "query": "There is a bully in my class who constantly disturbs other students. How do I handle this?",
+    "translated_query": "There is a bully in my class who constantly disturbs other students. How do I handle this?",
+    "intent": "query_resolution_sel",
+    "language": "en"
+  },
+  {
+    "id": 93,
+    "query": "One student cries every time they make a mistake, even a small one",
+    "translated_query": "One student cries every time they make a mistake, even a small one",
+    "intent": "query_resolution_sel",
+    "language": "en"
+  },
+  {
+    "id": 94,
+    "query": "Two students fight every single day and it disrupts the whole class",
+    "translated_query": "Two students fight every single day and it disrupts the whole class",
+    "intent": "query_resolution_sel",
+    "language": "en"
+  },
+  {
+    "id": 95,
+    "query": "A child seems very anxious before every exam. They freeze up and go blank.",
+    "translated_query": "A child seems very anxious before every exam. They freeze up and go blank.",
+    "intent": "query_resolution_sel",
+    "language": "en"
+  },
+  {
+    "id": 96,
+    "query": "One bright student has suddenly stopped participating after a comment another student made",
+    "translated_query": "One bright student has suddenly stopped participating after a comment another student made",
+    "intent": "query_resolution_sel",
+    "language": "en"
+  },
+  {
+    "id": 97,
+    "query": "मेरी कक्षा में एक छात्र बिल्कुल भाग नहीं लेता, बस चुपचाप बैठा रहता है",
+    "translated_query": "A student in my class doesn't participate at all, just sits quietly",
+    "intent": "query_resolution_sel",
+    "language": "hi"
+  },
+  {
+    "id": 98,
+    "query": "कक्षा में एक बुली है जो दूसरे बच्चों को परेशान करता रहता है",
+    "translated_query": "There is a bully in the class who keeps troubling other children",
+    "intent": "query_resolution_sel",
+    "language": "hi"
+  },
+  {
+    "id": 99,
+    "query": "एक छात्र गलती होने पर हर बार रो देता है, चाहे गलती कितनी भी छोटी हो",
+    "translated_query": "A student cries every time they make a mistake, no matter how small",
+    "intent": "query_resolution_sel",
+    "language": "hi"
+  },
+  {
+    "id": 100,
+    "query": "दो बच्चे रोज़ आपस में लड़ते हैं और पूरी क्लास disturb हो जाती है",
+    "translated_query": "Two children fight every day and the whole class gets disturbed",
+    "intent": "query_resolution_sel",
+    "language": "hi"
+  },
+  {
+    "id": 101,
+    "query": "परीक्षा से पहले एक बच्चा बहुत घबरा जाता है, कुछ भी याद नहीं रहता उसे",
+    "translated_query": "Before exams a child gets very anxious, they can't remember anything",
+    "intent": "query_resolution_sel",
+    "language": "hi"
+  },
+  {
+    "id": 102,
+    "query": "एक होशियार बच्चा अचानक से क्लास में कुछ नहीं बोलता, किसी की बात से hurt हो गया शायद",
+    "translated_query": "A bright child has suddenly stopped speaking in class, maybe hurt by something someone said",
+    "intent": "query_resolution_sel",
+    "language": "hi"
+  },
+  {
+    "id": 103,
+    "query": "Meri class mein ek baccha bilkul participate nahi karta, chup rehta hai hamesha",
+    "translated_query": "A child in my class never participates, always stays quiet",
+    "intent": "query_resolution_sel",
+    "language": "hinglish"
+  },
+  {
+    "id": 104,
+    "query": "Class mein ek bully hai jo sabko disturb karta rehta hai, kya karoon?",
+    "translated_query": "There is a bully in the class who keeps disturbing everyone, what should I do?",
+    "intent": "query_resolution_sel",
+    "language": "hinglish"
+  },
+  {
+    "id": 105,
+    "query": "Ek baccha mistake karne par rota hai, bahut sensitive hai",
+    "translated_query": "A child cries when they make a mistake, they are very sensitive",
+    "intent": "query_resolution_sel",
+    "language": "hinglish"
+  },
+  {
+    "id": 106,
+    "query": "Do students roz ladte hain, poori class ka mood kharab ho jaata hai",
+    "translated_query": "Two students fight daily, the mood of the whole class gets ruined",
+    "intent": "query_resolution_sel",
+    "language": "hinglish"
+  },
+  {
+    "id": 107,
+    "query": "Exam ke time ek baccha itna anxious ho jaata hai ki sab bhool jaata hai",
+    "translated_query": "During exams one child gets so anxious they forget everything",
+    "intent": "query_resolution_sel",
+    "language": "hinglish"
+  },
+  {
+    "id": 108,
+    "query": "Mera ek acha student achanak se class mein kuch nahi bolta, shayad kisi ne kuch keh diya",
+    "translated_query": "One of my good students has suddenly stopped speaking in class, maybe someone said something",
+    "intent": "query_resolution_sel",
+    "language": "hinglish"
+  },
+  {
+    "id": 109,
+    "query": "என் வகுப்பில் ஒரு மாணவன் எதிலும் பங்கேற்பதில்லை, எப்போதும் அமைதியாக இருக்கிறான்",
+    "translated_query": "A student in my class never participates in anything, always stays quiet",
+    "intent": "query_resolution_sel",
+    "language": "ta"
+  },
+  {
+    "id": 110,
+    "query": "வகுப்பில் ஒரு மாணவன் மற்றவர்களை தொந்தரவு செய்கிறான், என்ன செய்வது?",
+    "translated_query": "A student in the class is troubling others, what should I do?",
+    "intent": "query_resolution_sel",
+    "language": "ta"
+  },
+  {
+    "id": 111,
+    "query": "ஒரு மாணவன் தவறு செய்யும்போதெல்லாம் அழுகிறான், மிகவும் sensitive ஆக இருக்கிறான்",
+    "translated_query": "A student cries every time they make a mistake, they are very sensitive",
+    "intent": "query_resolution_sel",
+    "language": "ta"
+  },
+  {
+    "id": 112,
+    "query": "இரண்டு மாணவர்கள் தினமும் சண்டை போடுகிறார்கள், வகுப்பு சீர்குலைகிறது",
+    "translated_query": "Two students fight every day, the class gets disrupted",
+    "intent": "query_resolution_sel",
+    "language": "ta"
+  },
+  {
+    "id": 113,
+    "query": "தேர்விற்கு முன்பு ஒரு குழந்தை மிகவும் பயந்து போகிறது, எல்லாவற்றையும் மறந்துவிடுகிறது",
+    "translated_query": "Before exams a child gets very scared and forgets everything",
+    "intent": "query_resolution_sel",
+    "language": "ta"
+  },
+  {
+    "id": 114,
+    "query": "என் சிறந்த மாணவன் திடீரென்று வகுப்பில் பேசுவதில்லை, யாரோ ஏதோ சொன்னது மனதில் பட்டிருக்கும்",
+    "translated_query": "My best student has suddenly stopped talking in class, something someone said must have hurt them",
+    "intent": "query_resolution_sel",
+    "language": "ta"
+  },
+  {
+    "id": 115,
+    "query": "నా తరగతిలో ఒక విద్యార్థి అసలు పాల్గొనడు, ఎప్పుడూ నిశ్శబ్దంగా కూర్చుంటాడు",
+    "translated_query": "A student in my class never participates, always sits silently",
+    "intent": "query_resolution_sel",
+    "language": "te"
+  },
+  {
+    "id": 116,
+    "query": "తరగతిలో ఒక బుల్లీ ఉన్నాడు అందరినీ ఇబ్బంది పెడుతున్నాడు, ఏం చేయాలి?",
+    "translated_query": "There is a bully in the class troubling everyone, what should I do?",
+    "intent": "query_resolution_sel",
+    "language": "te"
+  },
+  {
+    "id": 117,
+    "query": "ఒక విద్యార్థి తప్పు చేసినప్పుడల్లా ఏడుస్తాడు, చాలా సెన్సిటివ్‌గా ఉంటాడు",
+    "translated_query": "A student cries every time they make a mistake, they are very sensitive",
+    "intent": "query_resolution_sel",
+    "language": "te"
+  },
+  {
+    "id": 118,
+    "query": "ఇద్దరు విద్యార్థులు రోజూ గొడవపడతారు, తరగతి అంతా దెబ్బతింటుంది",
+    "translated_query": "Two students fight every day, the whole class gets disrupted",
+    "intent": "query_resolution_sel",
+    "language": "te"
+  },
+  {
+    "id": 119,
+    "query": "పరీక్షకు ముందు ఒక పిల్లవాడు చాలా ఆందోళనకు గురవుతాడు, అన్నీ మర్చిపోతాడు",
+    "translated_query": "Before exams a child gets very anxious and forgets everything",
+    "intent": "query_resolution_sel",
+    "language": "te"
+  },
+  {
+    "id": 120,
+    "query": "నా మంచి విద్యార్థి హఠాత్తుగా తరగతిలో మాట్లాడడు, ఎవరో ఏదో అన్నారేమో",
+    "translated_query": "My good student has suddenly stopped talking in class, maybe someone said something",
+    "intent": "query_resolution_sel",
+    "language": "te"
+  },
+  {
+    "id": 121,
+    "query": "How do I prepare for a job interview? What questions are usually asked?",
+    "translated_query": "How do I prepare for a job interview? What questions are usually asked?",
+    "intent": "out_of_service",
+    "language": "en"
+  },
+  {
+    "id": 122,
+    "query": "Which stocks should I invest in right now? Is the market good?",
+    "translated_query": "Which stocks should I invest in right now? Is the market good?",
+    "intent": "out_of_service",
+    "language": "en"
+  },
+  {
+    "id": 123,
+    "query": "Give me tips for JEE Main preparation, my student wants to crack it",
+    "translated_query": "Give me tips for JEE Main preparation, my student wants to crack it",
+    "intent": "out_of_service",
+    "language": "en"
+  },
+  {
+    "id": 124,
+    "query": "What are the best engineering colleges in India after Class 12?",
+    "translated_query": "What are the best engineering colleges in India after Class 12?",
+    "intent": "out_of_service",
+    "language": "en"
+  },
+  {
+    "id": 125,
+    "query": "How can I improve my IELTS speaking score? I am applying abroad.",
+    "translated_query": "How can I improve my IELTS speaking score? I am applying abroad.",
+    "intent": "out_of_service",
+    "language": "en"
+  },
+  {
+    "id": 126,
+    "query": "Write me a Python program to print the Fibonacci series",
+    "translated_query": "Write me a Python program to print the Fibonacci series",
+    "intent": "out_of_service",
+    "language": "en"
+  },
+  {
+    "id": 127,
+    "query": "नौकरी के इंटरव्यू की तैयारी कैसे करें?",
+    "translated_query": "How to prepare for a job interview?",
+    "intent": "out_of_service",
+    "language": "hi"
+  },
+  {
+    "id": 128,
+    "query": "शेयर मार्केट में पैसे लगाना चाहता हूँ, कहाँ से शुरू करूँ?",
+    "translated_query": "I want to invest in the stock market, where should I start?",
+    "intent": "out_of_service",
+    "language": "hi"
+  },
+  {
+    "id": 129,
+    "query": "JEE Main की तैयारी के लिए best books कौन सी हैं?",
+    "translated_query": "What are the best books for JEE Main preparation?",
+    "intent": "out_of_service",
+    "language": "hi"
+  },
+  {
+    "id": 130,
+    "query": "12वीं के बाद कौन से best engineering colleges हैं?",
+    "translated_query": "What are the best engineering colleges after Class 12?",
+    "intent": "out_of_service",
+    "language": "hi"
+  },
+  {
+    "id": 131,
+    "query": "IELTS exam की preparation कैसे करूँ?",
+    "translated_query": "How do I prepare for the IELTS exam?",
+    "intent": "out_of_service",
+    "language": "hi"
+  },
+  {
+    "id": 132,
+    "query": "Python में Fibonacci series का code लिखो",
+    "translated_query": "Write a Fibonacci series code in Python",
+    "intent": "out_of_service",
+    "language": "hi"
+  },
+  {
+    "id": 133,
+    "query": "Job interview ki preparation kaise karein? Koi tips do",
+    "translated_query": "How to prepare for a job interview? Give some tips",
+    "intent": "out_of_service",
+    "language": "hinglish"
+  },
+  {
+    "id": 134,
+    "query": "Share market mein invest karna hai, kahan se start karoon?",
+    "translated_query": "I want to invest in the share market, where should I start?",
+    "intent": "out_of_service",
+    "language": "hinglish"
+  },
+  {
+    "id": 135,
+    "query": "JEE Main ke liye best strategy kya hai, mera beta prepare kar raha hai",
+    "translated_query": "What is the best strategy for JEE Main, my son is preparing",
+    "intent": "out_of_service",
+    "language": "hinglish"
+  },
+  {
+    "id": 136,
+    "query": "India ke top engineering colleges kaun se hain Class 12 ke baad?",
+    "translated_query": "What are the top engineering colleges in India after Class 12?",
+    "intent": "out_of_service",
+    "language": "hinglish"
+  },
+  {
+    "id": 137,
+    "query": "IELTS ki preparation ke liye kya karoon? Abroad jaana hai",
+    "translated_query": "What should I do to prepare for IELTS? I want to go abroad",
+    "intent": "out_of_service",
+    "language": "hinglish"
+  },
+  {
+    "id": 138,
+    "query": "Python mein ek simple calculator program likhdo",
+    "translated_query": "Write a simple calculator program in Python",
+    "intent": "out_of_service",
+    "language": "hinglish"
+  },
+  {
+    "id": 139,
+    "query": "வேலை நேர்காணலுக்கு எப்படி தயார் ஆவது?",
+    "translated_query": "How to prepare for a job interview?",
+    "intent": "out_of_service",
+    "language": "ta"
+  },
+  {
+    "id": 140,
+    "query": "பங்கு சந்தையில் எப்படி முதலீடு செய்வது?",
+    "translated_query": "How to invest in the stock market?",
+    "intent": "out_of_service",
+    "language": "ta"
+  },
+  {
+    "id": 141,
+    "query": "JEE Main தேர்விற்கு எப்படி படிப்பது? என் மகன் தயார் ஆகிறான்",
+    "translated_query": "How to study for JEE Main? My son is preparing",
+    "intent": "out_of_service",
+    "language": "ta"
+  },
+  {
+    "id": 142,
+    "query": "12ம் வகுப்பிற்கு பிறகு இந்தியாவில் சிறந்த பொறியியல் கல்லூரிகள் எவை?",
+    "translated_query": "What are the best engineering colleges in India after Class 12?",
+    "intent": "out_of_service",
+    "language": "ta"
+  },
+  {
+    "id": 143,
+    "query": "IELTS தேர்விற்கு எப்படி தயார் ஆவது?",
+    "translated_query": "How to prepare for the IELTS exam?",
+    "intent": "out_of_service",
+    "language": "ta"
+  },
+  {
+    "id": 144,
+    "query": "Python இல் Fibonacci series program எழுதுங்கள்",
+    "translated_query": "Write a Fibonacci series program in Python",
+    "intent": "out_of_service",
+    "language": "ta"
+  },
+  {
+    "id": 145,
+    "query": "ఉద్యోగ ఇంటర్వ్యూకు ఎలా సిద్ధపడాలి?",
+    "translated_query": "How to prepare for a job interview?",
+    "intent": "out_of_service",
+    "language": "te"
+  },
+  {
+    "id": 146,
+    "query": "స్టాక్ మార్కెట్లో ఎలా పెట్టుబడి పెట్టాలి?",
+    "translated_query": "How to invest in the stock market?",
+    "intent": "out_of_service",
+    "language": "te"
+  },
+  {
+    "id": 147,
+    "query": "JEE Main కోసం ఎలా చదవాలి? నా కొడుకు ప్రిపేర్ అవుతున్నాడు",
+    "translated_query": "How to study for JEE Main? My son is preparing",
+    "intent": "out_of_service",
+    "language": "te"
+  },
+  {
+    "id": 148,
+    "query": "12వ తరగతి తర్వాత భారతదేశంలో అత్యుత్తమ ఇంజినీరింగ్ కళాశాలలు ఏవి?",
+    "translated_query": "What are the best engineering colleges in India after Class 12?",
+    "intent": "out_of_service",
+    "language": "te"
+  },
+  {
+    "id": 149,
+    "query": "IELTS పరీక్షకు ఎలా సిద్ధపడాలి?",
+    "translated_query": "How to prepare for the IELTS exam?",
+    "intent": "out_of_service",
+    "language": "te"
+  },
+  {
+    "id": 150,
+    "query": "Python లో Fibonacci series program రాయండి",
+    "translated_query": "Write a Fibonacci series program in Python",
+    "intent": "out_of_service",
+    "language": "te"
+  },
+  {
+    "id": 151,
+    "query": "I need a lesson on the human digestive system for Class 8 biology",
+    "translated_query": "I need a lesson on the human digestive system for Class 8 biology",
+    "intent": "content_generation",
+    "language": "en"
+  },
+  {
+    "id": 152,
+    "query": "Design an activity to teach place value in large numbers for Class 5",
+    "translated_query": "Design an activity to teach place value in large numbers for Class 5",
+    "intent": "content_generation",
+    "language": "en"
+  },
+  {
+    "id": 153,
+    "query": "Give me content on types of soil and their properties for Class 7 geography",
+    "translated_query": "Give me content on types of soil and their properties for Class 7 geography",
+    "intent": "content_generation",
+    "language": "en"
+  },
+  {
+    "id": 154,
+    "query": "Create a lesson on light and reflection for Class 10 physics",
+    "translated_query": "Create a lesson on light and reflection for Class 10 physics",
+    "intent": "content_generation",
+    "language": "en"
+  },
+  {
+    "id": 155,
+    "query": "Prepare a Class 7 history lesson on the Mughal Empire with a fun activity",
+    "translated_query": "Prepare a Class 7 history lesson on the Mughal Empire with a fun activity",
+    "intent": "content_generation",
+    "language": "en"
+  },
+  {
+    "id": 156,
+    "query": "Class 9 civics — I need an engaging lesson on fundamental rights",
+    "translated_query": "Class 9 civics — I need an engaging lesson on fundamental rights",
+    "intent": "content_generation",
+    "language": "en"
+  },
+  {
+    "id": 157,
+    "query": "कक्षा 8 के लिए पाचन तंत्र का पाठ बनाओ",
+    "translated_query": "Make a lesson on the digestive system for Class 8",
+    "intent": "content_generation",
+    "language": "hi"
+  },
+  {
+    "id": 158,
+    "query": "कक्षा 5 में बड़ी संख्याओं का स्थानीय मान सिखाने के लिए गतिविधि दो",
+    "translated_query": "Give an activity to teach place value of large numbers in Class 5",
+    "intent": "content_generation",
+    "language": "hi"
+  },
+  {
+    "id": 159,
+    "query": "कक्षा 7 भूगोल के लिए मिट्टी के प्रकार और उनके गुणों का कंटेंट दो",
+    "translated_query": "Give content on types of soil and their properties for Class 7 geography",
+    "intent": "content_generation",
+    "language": "hi"
+  },
+  {
+    "id": 160,
+    "query": "कक्षा 10 भौतिक विज्ञान में प्रकाश और परावर्तन का पाठ बनाइए",
+    "translated_query": "Create a lesson on light and reflection for Class 10 physics",
+    "intent": "content_generation",
+    "language": "hi"
+  },
+  {
+    "id": 161,
+    "query": "कक्षा 7 इतिहास में मुगल साम्राज्य पर पाठ बनाओ, कोई मजेदार activity भी हो",
+    "translated_query": "Make a lesson on the Mughal Empire for Class 7 history, include a fun activity",
+    "intent": "content_generation",
+    "language": "hi"
+  },
+  {
+    "id": 162,
+    "query": "कक्षा 9 नागरिक शास्त्र के लिए मौलिक अधिकारों का पाठ चाहिए",
+    "translated_query": "Need a lesson on fundamental rights for Class 9 civics",
+    "intent": "content_generation",
+    "language": "hi"
+  },
+  {
+    "id": 163,
+    "query": "Class 8 biology mein digestive system ka lesson do",
+    "translated_query": "Give a digestive system lesson for Class 8 biology",
+    "intent": "content_generation",
+    "language": "hinglish"
+  },
+  {
+    "id": 164,
+    "query": "Class 5 ke liye badi sankhyaon ka sthaniy man sikhane ki activity chahiye",
+    "translated_query": "Need an activity to teach place value of large numbers for Class 5",
+    "intent": "content_generation",
+    "language": "hinglish"
+  },
+  {
+    "id": 165,
+    "query": "Soil types ke baare mein Class 7 geography ka content do, properties bhi batao",
+    "translated_query": "Give Class 7 geography content on soil types, mention properties too",
+    "intent": "content_generation",
+    "language": "hinglish"
+  },
+  {
+    "id": 166,
+    "query": "Class 10 physics mein light aur reflection ka lesson banao",
+    "translated_query": "Make a light and reflection lesson for Class 10 physics",
+    "intent": "content_generation",
+    "language": "hinglish"
+  },
+  {
+    "id": 167,
+    "query": "Mughal Empire pe Class 7 history ka lesson chahiye, kuch interesting activity ke saath",
+    "translated_query": "Need a Class 7 history lesson on the Mughal Empire with an interesting activity",
+    "intent": "content_generation",
+    "language": "hinglish"
+  },
+  {
+    "id": 168,
+    "query": "Class 9 civics ke liye fundamental rights pe engaging lesson do",
+    "translated_query": "Give an engaging lesson on fundamental rights for Class 9 civics",
+    "intent": "content_generation",
+    "language": "hinglish"
+  },
+  {
+    "id": 169,
+    "query": "வகுப்பு 8 உயிரியல் செரிமான மண்டலம் பாடம் தயாரி",
+    "translated_query": "Prepare a digestive system lesson for Class 8 biology",
+    "intent": "content_generation",
+    "language": "ta"
+  },
+  {
+    "id": 170,
+    "query": "வகுப்பு 5 க்கு பெரிய எண்களின் இட மதிப்பு செயல்பாடு கொடு",
+    "translated_query": "Give a place value activity for large numbers for Class 5",
+    "intent": "content_generation",
+    "language": "ta"
+  },
+  {
+    "id": 171,
+    "query": "வகுப்பு 7 புவியியல் மண் வகைகள் மற்றும் பண்புகள் பாடம்",
+    "translated_query": "Lesson on soil types and properties for Class 7 geography",
+    "intent": "content_generation",
+    "language": "ta"
+  },
+  {
+    "id": 172,
+    "query": "வகுப்பு 10 இயற்பியல் ஒளி மற்றும் பிரதிபலிப்பு பாடம் வேண்டும்",
+    "translated_query": "Need a lesson on light and reflection for Class 10 physics",
+    "intent": "content_generation",
+    "language": "ta"
+  },
+  {
+    "id": 173,
+    "query": "வகுப்பு 7 வரலாறு முகலாயப் பேரரசு பாடம் சுவாரஸ்யமாக",
+    "translated_query": "Make the Class 7 history Mughal Empire lesson interesting",
+    "intent": "content_generation",
+    "language": "ta"
+  },
+  {
+    "id": 174,
+    "query": "வகுப்பு 9 குடிமையியல் அடிப்படை உரிமைகள் பாடம் வேண்டும்",
+    "translated_query": "Need a lesson on fundamental rights for Class 9 civics",
+    "intent": "content_generation",
+    "language": "ta"
+  },
+  {
+    "id": 175,
+    "query": "తరగతి 8 జీవశాస్త్రానికి జీర్ణ వ్యవస్థ పాఠం తయారుచేయి",
+    "translated_query": "Prepare a digestive system lesson for Class 8 biology",
+    "intent": "content_generation",
+    "language": "te"
+  },
+  {
+    "id": 176,
+    "query": "తరగతి 5 కోసం పెద్ద సంఖ్యల స్థాన విలువ కార్యకలాపం ఇవ్వు",
+    "translated_query": "Give a place value activity for large numbers for Class 5",
+    "intent": "content_generation",
+    "language": "te"
+  },
+  {
+    "id": 177,
+    "query": "తరగతి 7 భూగోళ శాస్త్రానికి నేల రకాలు మరియు వాటి లక్షణాల పాఠం",
+    "translated_query": "Lesson on soil types and their properties for Class 7 geography",
+    "intent": "content_generation",
+    "language": "te"
+  },
+  {
+    "id": 178,
+    "query": "తరగతి 10 భౌతిక శాస్త్రానికి కాంతి మరియు పరావర్తనంపై పాఠం",
+    "translated_query": "Lesson on light and reflection for Class 10 physics",
+    "intent": "content_generation",
+    "language": "te"
+  },
+  {
+    "id": 179,
+    "query": "తరగతి 7 చరిత్రకు మొఘల్ సామ్రాజ్యంపై ఆసక్తికరమైన పాఠం",
+    "translated_query": "Interesting lesson on the Mughal Empire for Class 7 history",
+    "intent": "content_generation",
+    "language": "te"
+  },
+  {
+    "id": 180,
+    "query": "తరగతి 9 పౌరశాస్త్రానికి ప్రాథమిక హక్కులపై పాఠం కావాలి",
+    "translated_query": "Need a lesson on fundamental rights for Class 9 civics",
+    "intent": "content_generation",
+    "language": "te"
+  },
+  {
+    "id": 181,
+    "query": "The hook was great but the example didn't land with my students at all",
+    "translated_query": "The hook was great but the example didn't land with my students at all",
+    "intent": "feedback",
+    "language": "en"
+  },
+  {
+    "id": 182,
+    "query": "Response is useful but please remove the emoji formatting, it looks unprofessional",
+    "translated_query": "Response is useful but please remove the emoji formatting, it looks unprofessional",
+    "intent": "feedback",
+    "language": "en"
+  },
+  {
+    "id": 183,
+    "query": "Can you generate content suited for a mixed-ability classroom?",
+    "translated_query": "Can you generate content suited for a mixed-ability classroom?",
+    "intent": "feedback",
+    "language": "en"
+  },
+  {
+    "id": 184,
+    "query": "First time using ShikshaBot and I'm genuinely impressed. Very useful tool.",
+    "translated_query": "First time using ShikshaBot and I'm genuinely impressed. Very useful tool.",
+    "intent": "feedback",
+    "language": "en"
+  },
+  {
+    "id": 185,
+    "query": "The SEL section felt forced and unnatural, it didn't connect to the topic",
+    "translated_query": "The SEL section felt forced and unnatural, it didn't connect to the topic",
+    "intent": "feedback",
+    "language": "en"
+  },
+  {
+    "id": 186,
+    "query": "I asked for Class 6 content but the difficulty level was more like Class 8",
+    "translated_query": "I asked for Class 6 content but the difficulty level was more like Class 8",
+    "intent": "feedback",
+    "language": "en"
+  },
+  {
+    "id": 187,
+    "query": "Hook तो अच्छा था लेकिन उदाहरण बच्चों को समझ नहीं आया",
+    "translated_query": "The hook was good but the example didn't work for the children",
+    "intent": "feedback",
+    "language": "hi"
+  },
+  {
+    "id": 188,
+    "query": "Response उपयोगी है लेकिन emoji हटाओ, professional नहीं लगता",
+    "translated_query": "The response is useful but remove the emojis, it doesn't look professional",
+    "intent": "feedback",
+    "language": "hi"
+  },
+  {
+    "id": 189,
+    "query": "Mixed ability class के लिए content बना सकते हो क्या?",
+    "translated_query": "Can you make content for a mixed ability class?",
+    "intent": "feedback",
+    "language": "hi"
+  },
+  {
+    "id": 190,
+    "query": "पहली बार ShikshaBot use किया, बहुत अच्छा लगा, काम का है",
+    "translated_query": "Used ShikshaBot for the first time, liked it a lot, it's useful",
+    "intent": "feedback",
+    "language": "hi"
+  },
+  {
+    "id": 191,
+    "query": "SEL वाला हिस्सा artificial लगा, topic से naturally नहीं जुड़ा",
+    "translated_query": "The SEL part felt artificial, didn't connect naturally to the topic",
+    "intent": "feedback",
+    "language": "hi"
+  },
+  {
+    "id": 192,
+    "query": "Class 6 माँगा था लेकिन content Class 8 level का था",
+    "translated_query": "I asked for Class 6 but the content was at Class 8 level",
+    "intent": "feedback",
+    "language": "hi"
+  },
+  {
+    "id": 193,
+    "query": "Hook achha tha par example students ko bilkul samajh nahi aaya",
+    "translated_query": "The hook was good but the students didn't understand the example at all",
+    "intent": "feedback",
+    "language": "hinglish"
+  },
+  {
+    "id": 194,
+    "query": "Content theek hai lekin emoji mat dalo, professional nahi lagta",
+    "translated_query": "Content is fine but don't add emojis, it doesn't look professional",
+    "intent": "feedback",
+    "language": "hinglish"
+  },
+  {
+    "id": 195,
+    "query": "Kya mixed-ability class ke liye bhi content de sakte ho?",
+    "translated_query": "Can you also give content for a mixed-ability class?",
+    "intent": "feedback",
+    "language": "hinglish"
+  },
+  {
+    "id": 196,
+    "query": "Pehli baar ShikshaBot use kiya, bahut impressed hoon, useful hai",
+    "translated_query": "Used ShikshaBot for the first time, very impressed, it's useful",
+    "intent": "feedback",
+    "language": "hinglish"
+  },
+  {
+    "id": 197,
+    "query": "SEL wala part forced lag raha tha, topic se naturally connect nahi hua",
+    "translated_query": "The SEL part felt forced, didn't connect naturally to the topic",
+    "intent": "feedback",
+    "language": "hinglish"
+  },
+  {
+    "id": 198,
+    "query": "Maine Class 6 manga tha lekin content Class 8 level ka tha",
+    "translated_query": "I asked for Class 6 but the content was at Class 8 level",
+    "intent": "feedback",
+    "language": "hinglish"
+  },
+  {
+    "id": 199,
+    "query": "Hook நன்றாக இருந்தது ஆனால் உதாரணம் மாணவர்களுக்கு புரியவில்லை",
+    "translated_query": "The hook was good but the example was not understood by students",
+    "intent": "feedback",
+    "language": "ta"
+  },
+  {
+    "id": 200,
+    "query": "பதில் பயனுள்ளது ஆனால் emoji வேண்டாம், தொழில்முறையாக தெரியவில்லை",
+    "translated_query": "The response is useful but no emojis, it doesn't look professional",
+    "intent": "feedback",
+    "language": "ta"
+  },
+  {
+    "id": 201,
+    "query": "Mixed ability வகுப்பிற்கு content தர முடியுமா?",
+    "translated_query": "Can you give content for a mixed ability class?",
+    "intent": "feedback",
+    "language": "ta"
+  },
+  {
+    "id": 202,
+    "query": "முதல் முறை ShikshaBot பயன்படுத்தினேன், மிகவும் பிடித்தது",
+    "translated_query": "Used ShikshaBot for the first time, liked it very much",
+    "intent": "feedback",
+    "language": "ta"
+  },
+  {
+    "id": 203,
+    "query": "SEL பகுதி இயற்கையாக இல்லை, தலைப்புடன் இணைக்கவில்லை",
+    "translated_query": "The SEL part was not natural, didn't connect with the topic",
+    "intent": "feedback",
+    "language": "ta"
+  },
+  {
+    "id": 204,
+    "query": "வகுப்பு 6 கேட்டேன் ஆனால் வகுப்பு 8 அளவிலான content கொடுத்தீர்கள்",
+    "translated_query": "I asked for Class 6 but you gave Class 8 level content",
+    "intent": "feedback",
+    "language": "ta"
+  },
+  {
+    "id": 205,
+    "query": "హుక్ బాగుంది కానీ ఉదాహరణ విద్యార్థులకు అర్థం కాలేదు",
+    "translated_query": "The hook was good but the example was not understood by students",
+    "intent": "feedback",
+    "language": "te"
+  },
+  {
+    "id": 206,
+    "query": "సమాధానం ఉపయోగకరంగా ఉంది కానీ ఎమోజీలు వద్దు, వృత్తిపరంగా లేదు",
+    "translated_query": "The response is useful but no emojis, it doesn't look professional",
+    "intent": "feedback",
+    "language": "te"
+  },
+  {
+    "id": 207,
+    "query": "మిక్స్డ్ అబిలిటీ తరగతికి కంటెంట్ ఇవ్వగలవా?",
+    "translated_query": "Can you give content for a mixed ability class?",
+    "intent": "feedback",
+    "language": "te"
+  },
+  {
+    "id": 208,
+    "query": "మొదటిసారి ShikshaBot వాడాను, చాలా నచ్చింది, ఉపయోగకరంగా ఉంది",
+    "translated_query": "Used ShikshaBot for the first time, liked it a lot, it's useful",
+    "intent": "feedback",
+    "language": "te"
+  },
+  {
+    "id": 209,
+    "query": "SEL భాగం సహజంగా అనిపించలేదు, అంశంతో అనుసంధానం కాలేదు",
+    "translated_query": "The SEL part didn't feel natural, didn't connect with the topic",
+    "intent": "feedback",
+    "language": "te"
+  },
+  {
+    "id": 210,
+    "query": "తరగతి 6 అడిగాను కానీ కంటెంట్ తరగతి 8 స్థాయిలో ఉంది",
+    "translated_query": "I asked for Class 6 but the content was at Class 8 level",
+    "intent": "feedback",
+    "language": "te"
+  },
+  {
+    "id": 211,
+    "query": "What is the difference between speed and velocity?",
+    "translated_query": "What is the difference between speed and velocity?",
+    "intent": "query_resolution_academic",
+    "language": "en"
+  },
+  {
+    "id": 212,
+    "query": "How do vaccines work in the human body?",
+    "translated_query": "How do vaccines work in the human body?",
+    "intent": "query_resolution_academic",
+    "language": "en"
+  },
+  {
+    "id": 213,
+    "query": "What is the Preamble of the Indian Constitution?",
+    "translated_query": "What is the Preamble of the Indian Constitution?",
+    "intent": "query_resolution_academic",
+    "language": "en"
+  },
+  {
+    "id": 214,
+    "query": "What is a food web and how is it different from a food chain?",
+    "translated_query": "What is a food web and how is it different from a food chain?",
+    "intent": "query_resolution_academic",
+    "language": "en"
+  },
+  {
+    "id": 215,
+    "query": "What were the effects of the Industrial Revolution on society?",
+    "translated_query": "What were the effects of the Industrial Revolution on society?",
+    "intent": "query_resolution_academic",
+    "language": "en"
+  },
+  {
+    "id": 216,
+    "query": "Explain the process of rusting with the chemical equation",
+    "translated_query": "Explain the process of rusting with the chemical equation",
+    "intent": "query_resolution_academic",
+    "language": "en"
+  },
+  {
+    "id": 217,
+    "query": "चाल और वेग में क्या अंतर है?",
+    "translated_query": "What is the difference between speed and velocity?",
+    "intent": "query_resolution_academic",
+    "language": "hi"
+  },
+  {
+    "id": 218,
+    "query": "टीका मानव शरीर में कैसे काम करता है?",
+    "translated_query": "How does a vaccine work in the human body?",
+    "intent": "query_resolution_academic",
+    "language": "hi"
+  },
+  {
+    "id": 219,
+    "query": "भारतीय संविधान की प्रस्तावना क्या है?",
+    "translated_query": "What is the Preamble of the Indian Constitution?",
+    "intent": "query_resolution_academic",
+    "language": "hi"
+  },
+  {
+    "id": 220,
+    "query": "खाद्य जाल क्या है और यह खाद्य श्रृंखला से कैसे अलग है?",
+    "translated_query": "What is a food web and how is it different from a food chain?",
+    "intent": "query_resolution_academic",
+    "language": "hi"
+  },
+  {
+    "id": 221,
+    "query": "औद्योगिक क्रांति के समाज पर क्या प्रभाव पड़े?",
+    "translated_query": "What were the effects of the Industrial Revolution on society?",
+    "intent": "query_resolution_academic",
+    "language": "hi"
+  },
+  {
+    "id": 222,
+    "query": "जंग लगने की प्रक्रिया रासायनिक समीकरण के साथ समझाइए",
+    "translated_query": "Explain the process of rusting with the chemical equation",
+    "intent": "query_resolution_academic",
+    "language": "hi"
+  },
+  {
+    "id": 223,
+    "query": "Speed aur velocity mein kya fark hai, simply batao",
+    "translated_query": "What is the difference between speed and velocity, explain simply",
+    "intent": "query_resolution_academic",
+    "language": "hinglish"
+  },
+  {
+    "id": 224,
+    "query": "Vaccine human body mein kaise kaam karta hai?",
+    "translated_query": "How does a vaccine work in the human body?",
+    "intent": "query_resolution_academic",
+    "language": "hinglish"
+  },
+  {
+    "id": 225,
+    "query": "Indian Constitution ki Preamble kya kehti hai?",
+    "translated_query": "What does the Preamble of the Indian Constitution say?",
+    "intent": "query_resolution_academic",
+    "language": "hinglish"
+  },
+  {
+    "id": 226,
+    "query": "Food web kya hota hai? Food chain se kaise different hai?",
+    "translated_query": "What is a food web? How is it different from a food chain?",
+    "intent": "query_resolution_academic",
+    "language": "hinglish"
+  },
+  {
+    "id": 227,
+    "query": "Industrial Revolution ke kya effects the society pe?",
+    "translated_query": "What were the effects of the Industrial Revolution on society?",
+    "intent": "query_resolution_academic",
+    "language": "hinglish"
+  },
+  {
+    "id": 228,
+    "query": "Rusting ki chemical process kya hai, equation bhi batao",
+    "translated_query": "What is the chemical process of rusting, also give the equation",
+    "intent": "query_resolution_academic",
+    "language": "hinglish"
+  },
+  {
+    "id": 229,
+    "query": "வேகம் மற்றும் திசைவேகம் இடையே என்ன வித்தியாசம்?",
+    "translated_query": "What is the difference between speed and velocity?",
+    "intent": "query_resolution_academic",
+    "language": "ta"
+  },
+  {
+    "id": 230,
+    "query": "தடுப்பூசி மனித உடலில் எவ்வாறு செயல்படுகிறது?",
+    "translated_query": "How does a vaccine work in the human body?",
+    "intent": "query_resolution_academic",
+    "language": "ta"
+  },
+  {
+    "id": 231,
+    "query": "இந்திய அரசியலமைப்பின் முன்னுரை என்ன சொல்கிறது?",
+    "translated_query": "What does the Preamble of the Indian Constitution say?",
+    "intent": "query_resolution_academic",
+    "language": "ta"
+  },
+  {
+    "id": 232,
+    "query": "உணவு வலை என்றால் என்ன? உணவு சங்கிலியிலிருந்து எவ்வாறு வேறுபடுகிறது?",
+    "translated_query": "What is a food web? How does it differ from a food chain?",
+    "intent": "query_resolution_academic",
+    "language": "ta"
+  },
+  {
+    "id": 233,
+    "query": "தொழில்துறை புரட்சியின் சமூகத்தில் விளைவுகள் என்ன?",
+    "translated_query": "What were the effects of the Industrial Revolution on society?",
+    "intent": "query_resolution_academic",
+    "language": "ta"
+  },
+  {
+    "id": 234,
+    "query": "துருப்பிடிக்கும் வேதியியல் செயல்முறையை சமன்பாட்டுடன் விளக்குங்கள்",
+    "translated_query": "Explain the chemical process of rusting with the equation",
+    "intent": "query_resolution_academic",
+    "language": "ta"
+  },
+  {
+    "id": 235,
+    "query": "వేగం మరియు వేగం (velocity) మధ్య తేడా ఏమిటి?",
+    "translated_query": "What is the difference between speed and velocity?",
+    "intent": "query_resolution_academic",
+    "language": "te"
+  },
+  {
+    "id": 236,
+    "query": "వ్యాక్సిన్ మానవ శరీరంలో ఎలా పని చేస్తుంది?",
+    "translated_query": "How does a vaccine work in the human body?",
+    "intent": "query_resolution_academic",
+    "language": "te"
+  },
+  {
+    "id": 237,
+    "query": "భారత రాజ్యాంగ ప్రవేశిక ఏమి చెప్తుంది?",
+    "translated_query": "What does the Preamble of the Indian Constitution say?",
+    "intent": "query_resolution_academic",
+    "language": "te"
+  },
+  {
+    "id": 238,
+    "query": "ఆహార వల అంటే ఏమిటి? ఆహార గొలుసు నుండి ఎలా వేరుగా ఉంటుంది?",
+    "translated_query": "What is a food web? How is it different from a food chain?",
+    "intent": "query_resolution_academic",
+    "language": "te"
+  },
+  {
+    "id": 239,
+    "query": "పారిశ్రామిక విప్లవం సమాజంపై ఏ ప్రభావాలు చూపింది?",
+    "translated_query": "What effects did the Industrial Revolution have on society?",
+    "intent": "query_resolution_academic",
+    "language": "te"
+  },
+  {
+    "id": 240,
+    "query": "తుప్పు పట్టే రసాయన ప్రక్రియను సమీకరణంతో వివరించండి",
+    "translated_query": "Explain the chemical process of rusting with the equation",
+    "intent": "query_resolution_academic",
+    "language": "te"
+  },
+  {
+    "id": 241,
+    "query": "A student who was always a topper has started failing and seems very withdrawn lately",
+    "translated_query": "A student who was always a topper has started failing and seems very withdrawn lately",
+    "intent": "query_resolution_sel",
+    "language": "en"
+  },
+  {
+    "id": 242,
+    "query": "After being absent for two weeks, my student came back very sad and doesn't talk to anyone",
+    "translated_query": "After being absent for two weeks, my student came back very sad and doesn't talk to anyone",
+    "intent": "query_resolution_sel",
+    "language": "en"
+  },
+  {
+    "id": 243,
+    "query": "Some students are forming cliques and excluding one child from all group activities",
+    "translated_query": "Some students are forming cliques and excluding one child from all group activities",
+    "intent": "query_resolution_sel",
+    "language": "en"
+  },
+  {
+    "id": 244,
+    "query": "One student always refuses to work in groups and insists on doing everything alone",
+    "translated_query": "One student always refuses to work in groups and insists on doing everything alone",
+    "intent": "query_resolution_sel",
+    "language": "en"
+  },
+  {
+    "id": 245,
+    "query": "I've noticed a student coming to school hungry every day, they seem distracted all the time",
+    "translated_query": "I've noticed a student coming to school hungry every day, they seem distracted all the time",
+    "intent": "query_resolution_sel",
+    "language": "en"
+  },
+  {
+    "id": 246,
+    "query": "A child keeps saying things like 'I'm too stupid for this' and 'I can never do anything right'",
+    "translated_query": "A child keeps saying things like 'I'm too stupid for this' and 'I can never do anything right'",
+    "intent": "query_resolution_sel",
+    "language": "en"
+  },
+  {
+    "id": 247,
+    "query": "जो बच्चा हमेशा first आता था वो अब fail हो रहा है और बहुत withdrawn हो गया है",
+    "translated_query": "A child who always came first is now failing and has become very withdrawn",
+    "intent": "query_resolution_sel",
+    "language": "hi"
+  },
+  {
+    "id": 248,
+    "query": "दो हफ्ते absent रहने के बाद बच्चा बहुत उदास लौटा है और किसी से बात नहीं करता",
+    "translated_query": "After two weeks of absence the child came back very sad and doesn't talk to anyone",
+    "intent": "query_resolution_sel",
+    "language": "hi"
+  },
+  {
+    "id": 249,
+    "query": "कुछ बच्चे group बना कर एक बच्चे को सभी activities से बाहर रख रहे हैं",
+    "translated_query": "Some children are forming groups and excluding one child from all activities",
+    "intent": "query_resolution_sel",
+    "language": "hi"
+  },
+  {
+    "id": 250,
+    "query": "एक बच्चा कभी भी group में काम नहीं करता, हमेशा अकेले करना चाहता है",
+    "translated_query": "One child never works in a group, always wants to do things alone",
+    "intent": "query_resolution_sel",
+    "language": "hi"
+  },
+  {
+    "id": 251,
+    "query": "एक बच्चा रोज भूखा स्कूल आता है, पूरे दिन उसका ध्यान नहीं लगता",
+    "translated_query": "A child comes to school hungry every day, can't concentrate all day",
+    "intent": "query_resolution_sel",
+    "language": "hi"
+  },
+  {
+    "id": 252,
+    "query": "एक बच्चा बार बार कहता है 'मैं बहुत stupid हूँ', खुद को बेकार समझता है",
+    "translated_query": "A child keeps saying 'I am very stupid', considers themselves useless",
+    "intent": "query_resolution_sel",
+    "language": "hi"
+  },
+  {
+    "id": 253,
+    "query": "Jo baccha pehle topper tha ab fail ho raha hai aur bahut withdrawn ho gaya hai",
+    "translated_query": "A child who was previously a topper is now failing and has become very withdrawn",
+    "intent": "query_resolution_sel",
+    "language": "hinglish"
+  },
+  {
+    "id": 254,
+    "query": "Do hafte baad aaya to bahut udaas tha, kisi se baat nahi karta ab",
+    "translated_query": "After two weeks came back very sad, doesn't talk to anyone now",
+    "intent": "query_resolution_sel",
+    "language": "hinglish"
+  },
+  {
+    "id": 255,
+    "query": "Kuch bachche group bana kar ek bacche ko activities se bahar rakh rahe hain",
+    "translated_query": "Some children are forming groups and excluding one child from activities",
+    "intent": "query_resolution_sel",
+    "language": "hinglish"
+  },
+  {
+    "id": 256,
+    "query": "Ek baccha kabhi group mein kaam nahi karta, hamesha akele karna chahta hai",
+    "translated_query": "One child never works in a group, always wants to do things alone",
+    "intent": "query_resolution_sel",
+    "language": "hinglish"
+  },
+  {
+    "id": 257,
+    "query": "Ek baccha roz bhooka school aata hai, din bhar concentrate nahi kar pata",
+    "translated_query": "A child comes to school hungry every day, can't concentrate throughout the day",
+    "intent": "query_resolution_sel",
+    "language": "hinglish"
+  },
+  {
+    "id": 258,
+    "query": "Ek baccha baar baar kehta hai 'main bahut stupid hoon', khud ko bekar samajhta hai",
+    "translated_query": "A child keeps saying 'I am very stupid', considers themselves worthless",
+    "intent": "query_resolution_sel",
+    "language": "hinglish"
+  },
+  {
+    "id": 259,
+    "query": "எப்போதும் முதலிடத்தில் இருந்த மாணவன் தோல்வி அடைகிறான், மிகவும் தனிமையாகி விட்டான்",
+    "translated_query": "A student who always topped is now failing and has become very withdrawn",
+    "intent": "query_resolution_sel",
+    "language": "ta"
+  },
+  {
+    "id": 260,
+    "query": "இரண்டு வாரங்கள் இல்லாமல் வந்த மாணவன் மிகவும் சோகமாக வந்தான், யாரிடமும் பேசவில்லை",
+    "translated_query": "After two weeks of absence the student came back very sad and doesn't talk to anyone",
+    "intent": "query_resolution_sel",
+    "language": "ta"
+  },
+  {
+    "id": 261,
+    "query": "சில மாணவர்கள் குழு உருவாக்கி ஒரு குழந்தையை எல்லா செயல்பாடுகளிலிருந்தும் ஒதுக்குகிறார்கள்",
+    "translated_query": "Some students are forming groups and excluding one child from all activities",
+    "intent": "query_resolution_sel",
+    "language": "ta"
+  },
+  {
+    "id": 262,
+    "query": "ஒரு மாணவன் குழு வேலையை மறுக்கிறான், எப்போதும் தனியாக செய்ய விரும்புகிறான்",
+    "translated_query": "A student refuses group work, always wants to do things alone",
+    "intent": "query_resolution_sel",
+    "language": "ta"
+  },
+  {
+    "id": 263,
+    "query": "ஒரு குழந்தை தினமும் பசியுடன் பள்ளிக்கு வருகிறது, நாள் முழுவதும் கவனிக்கவில்லை",
+    "translated_query": "A child comes to school hungry every day, doesn't concentrate all day",
+    "intent": "query_resolution_sel",
+    "language": "ta"
+  },
+  {
+    "id": 264,
+    "query": "ஒரு குழந்தை தொடர்ந்து 'நான் மிகவும் முட்டாள்' என்று சொல்கிறது",
+    "translated_query": "A child keeps saying 'I am very stupid'",
+    "intent": "query_resolution_sel",
+    "language": "ta"
+  },
+  {
+    "id": 265,
+    "query": "ఎప్పుడూ టాపర్‌గా ఉన్న విద్యార్థి ఇప్పుడు ఫెయిల్ అవుతున్నాడు మరియు చాలా దూరంగా ఉన్నాడు",
+    "translated_query": "A student who was always a topper is now failing and has become very withdrawn",
+    "intent": "query_resolution_sel",
+    "language": "te"
+  },
+  {
+    "id": 266,
+    "query": "రెండు వారాల తర్వాత వచ్చిన విద్యార్థి చాలా దుఃఖంగా ఉన్నాడు, ఎవరితోనూ మాట్లాడడు",
+    "translated_query": "After two weeks of absence the student came back very sad and doesn't talk to anyone",
+    "intent": "query_resolution_sel",
+    "language": "te"
+  },
+  {
+    "id": 267,
+    "query": "కొంతమంది విద్యార్థులు గుంపులు చేసుకుని ఒక పిల్లవాడిని అన్ని కార్యకలాపాల నుండి మినహాయిస్తున్నారు",
+    "translated_query": "Some students are forming groups and excluding one child from all activities",
+    "intent": "query_resolution_sel",
+    "language": "te"
+  },
+  {
+    "id": 268,
+    "query": "ఒక విద్యార్థి గ్రూప్ వర్క్ చేయడానికి ఎప్పుడూ నిరాకరిస్తాడు, ఒంటరిగా చేయాలని ఉంటాడు",
+    "translated_query": "A student always refuses group work, wants to do things alone",
+    "intent": "query_resolution_sel",
+    "language": "te"
+  },
+  {
+    "id": 269,
+    "query": "ఒక పిల్లవాడు రోజూ పాఠశాలకు ఆకలిగా వస్తున్నాడు, రోజంతా ఏకాగ్రత లేదు",
+    "translated_query": "A child comes to school hungry every day, no concentration throughout the day",
+    "intent": "query_resolution_sel",
+    "language": "te"
+  },
+  {
+    "id": 270,
+    "query": "ఒక పిల్లవాడు పదే పదే 'నేను చాలా stupid' అని చెప్తాడు, తనను తాను నిందించుకుంటాడు",
+    "translated_query": "A child keeps saying 'I am very stupid' and blames themselves",
+    "intent": "query_resolution_sel",
+    "language": "te"
+  },
+  {
+    "id": 271,
+    "query": "What diet should I follow to lose belly fat quickly?",
+    "translated_query": "What diet should I follow to lose belly fat quickly?",
+    "intent": "out_of_service",
+    "language": "en"
+  },
+  {
+    "id": 272,
+    "query": "Can you write a wedding speech for my brother's marriage next week?",
+    "translated_query": "Can you write a wedding speech for my brother's marriage next week?",
+    "intent": "out_of_service",
+    "language": "en"
+  },
+  {
+    "id": 273,
+    "query": "Help me draft a complaint letter to the housing society about water supply",
+    "translated_query": "Help me draft a complaint letter to the housing society about water supply",
+    "intent": "out_of_service",
+    "language": "en"
+  },
+  {
+    "id": 274,
+    "query": "What is the current gold price in India today?",
+    "translated_query": "What is the current gold price in India today?",
+    "intent": "out_of_service",
+    "language": "en"
+  },
+  {
+    "id": 275,
+    "query": "Suggest a good Netflix series to watch this weekend with family",
+    "translated_query": "Suggest a good Netflix series to watch this weekend with family",
+    "intent": "out_of_service",
+    "language": "en"
+  },
+  {
+    "id": 276,
+    "query": "My phone screen cracked. Should I repair it or buy a new phone?",
+    "translated_query": "My phone screen cracked. Should I repair it or buy a new phone?",
+    "intent": "out_of_service",
+    "language": "en"
+  },
+  {
+    "id": 277,
+    "query": "पेट की चर्बी कम करने के लिए कौन सा diet follow करूँ?",
+    "translated_query": "Which diet should I follow to reduce belly fat?",
+    "intent": "out_of_service",
+    "language": "hi"
+  },
+  {
+    "id": 278,
+    "query": "अगले हफ्ते भाई की शादी है, speech लिख दो",
+    "translated_query": "My brother's wedding is next week, write a speech",
+    "intent": "out_of_service",
+    "language": "hi"
+  },
+  {
+    "id": 279,
+    "query": "पानी की supply के बारे में housing society को complaint letter draft करो",
+    "translated_query": "Draft a complaint letter to the housing society about water supply",
+    "intent": "out_of_service",
+    "language": "hi"
+  },
+  {
+    "id": 280,
+    "query": "आज भारत में सोने का भाव क्या है?",
+    "translated_query": "What is the gold price in India today?",
+    "intent": "out_of_service",
+    "language": "hi"
+  },
+  {
+    "id": 281,
+    "query": "इस weekend family के साथ देखने के लिए कोई Netflix series बताओ",
+    "translated_query": "Suggest a Netflix series to watch with family this weekend",
+    "intent": "out_of_service",
+    "language": "hi"
+  },
+  {
+    "id": 282,
+    "query": "मेरे फोन की screen टूट गई, repair करवाऊँ या नया लूँ?",
+    "translated_query": "My phone screen broke, should I repair it or buy a new one?",
+    "intent": "out_of_service",
+    "language": "hi"
+  },
+  {
+    "id": 283,
+    "query": "Belly fat khatam karne ke liye kaunsa diet follow karoon?",
+    "translated_query": "Which diet should I follow to lose belly fat?",
+    "intent": "out_of_service",
+    "language": "hinglish"
+  },
+  {
+    "id": 284,
+    "query": "Bhai ki shaadi hai agle hafte, wedding speech likh do",
+    "translated_query": "My brother's wedding is next week, write a wedding speech",
+    "intent": "out_of_service",
+    "language": "hinglish"
+  },
+  {
+    "id": 285,
+    "query": "Paani ki problem ke baare mein housing society ko complaint letter chahiye",
+    "translated_query": "Need a complaint letter to the housing society about the water problem",
+    "intent": "out_of_service",
+    "language": "hinglish"
+  },
+  {
+    "id": 286,
+    "query": "Aaj sone ka bhav kya hai India mein?",
+    "translated_query": "What is the gold price in India today?",
+    "intent": "out_of_service",
+    "language": "hinglish"
+  },
+  {
+    "id": 287,
+    "query": "Is weekend family ke saath dekhne ke liye Netflix pe kya hai achha?",
+    "translated_query": "What's good on Netflix to watch with family this weekend?",
+    "intent": "out_of_service",
+    "language": "hinglish"
+  },
+  {
+    "id": 288,
+    "query": "Meri phone ki screen toot gayi, repair karwaaun ya naya loon?",
+    "translated_query": "My phone screen broke, should I get it repaired or buy a new one?",
+    "intent": "out_of_service",
+    "language": "hinglish"
+  },
+  {
+    "id": 289,
+    "query": "வயிற்று கொழுப்பை குறைக்க என்ன diet பின்பற்றவேண்டும்?",
+    "translated_query": "What diet should I follow to reduce belly fat?",
+    "intent": "out_of_service",
+    "language": "ta"
+  },
+  {
+    "id": 290,
+    "query": "அடுத்த வாரம் என் அண்ணன் திருமணம், பேச்சு எழுதி கொடுங்கள்",
+    "translated_query": "My brother's wedding is next week, please write a speech",
+    "intent": "out_of_service",
+    "language": "ta"
+  },
+  {
+    "id": 291,
+    "query": "தண்ணீர் விநியோக பிரச்சனையில் வீட்டு சங்கத்திற்கு புகார் கடிதம் தேவை",
+    "translated_query": "Need a complaint letter to the housing society about the water supply problem",
+    "intent": "out_of_service",
+    "language": "ta"
+  },
+  {
+    "id": 292,
+    "query": "இன்று இந்தியாவில் தங்கத்தின் விலை என்ன?",
+    "translated_query": "What is the gold price in India today?",
+    "intent": "out_of_service",
+    "language": "ta"
+  },
+  {
+    "id": 293,
+    "query": "இந்த வார இறுதியில் குடும்பத்துடன் பார்க்க Netflix-ல் என்ன நல்லது?",
+    "translated_query": "What's good on Netflix to watch with family this weekend?",
+    "intent": "out_of_service",
+    "language": "ta"
+  },
+  {
+    "id": 294,
+    "query": "என் ஃபோன் திரை உடைந்துவிட்டது, பழுது பார்க்கலாமா அல்லது புதியது வாங்கலாமா?",
+    "translated_query": "My phone screen broke, should I repair it or buy a new one?",
+    "intent": "out_of_service",
+    "language": "ta"
+  },
+  {
+    "id": 295,
+    "query": "పొట్ట కొవ్వు తగ్గించుకోవడానికి ఏ డైట్ అనుసరించాలి?",
+    "translated_query": "Which diet should I follow to reduce belly fat?",
+    "intent": "out_of_service",
+    "language": "te"
+  },
+  {
+    "id": 296,
+    "query": "వచ్చే వారం నా అన్న పెళ్లి, వివాహ ప్రసంగం రాయండి",
+    "translated_query": "My brother's wedding is next week, write a wedding speech",
+    "intent": "out_of_service",
+    "language": "te"
+  },
+  {
+    "id": 297,
+    "query": "నీటి సరఫరా సమస్యపై హౌసింగ్ సొసైటీకి ఫిర్యాదు లేఖ కావాలి",
+    "translated_query": "Need a complaint letter to the housing society about the water supply issue",
+    "intent": "out_of_service",
+    "language": "te"
+  },
+  {
+    "id": 298,
+    "query": "ఈరోజు భారతదేశంలో బంగారం ధర ఎంత?",
+    "translated_query": "What is the gold price in India today?",
+    "intent": "out_of_service",
+    "language": "te"
+  },
+  {
+    "id": 299,
+    "query": "ఈ వారాంతంలో కుటుంబంతో చూడటానికి Netflix లో ఏమి బాగుంటుంది?",
+    "translated_query": "What's good on Netflix to watch with family this weekend?",
+    "intent": "out_of_service",
+    "language": "te"
+  },
+  {
+    "id": 300,
+    "query": "నా ఫోన్ స్క్రీన్ పగిలిపోయింది, రిపేర్ చేయించాలా లేదా కొత్తది కొనాలా?",
+    "translated_query": "My phone screen broke, should I repair it or buy a new one?",
+    "intent": "out_of_service",
+    "language": "te"
+  }
+]
