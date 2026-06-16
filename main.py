@@ -175,7 +175,7 @@ async def _twilio_wa_send(to_wa: str, response: dict):
     url = f"https://api.twilio.com/2010-04-01/Accounts/{config.TWILIO_ACCOUNT_SID}/Messages.json"
     async with httpx.AsyncClient() as c:
         if response["type"] == "buttons" and config.TWILIO_LANG_TEMPLATE_SID:
-            await c.post(
+            r = await c.post(
                 url,
                 auth=(config.TWILIO_ACCOUNT_SID, config.TWILIO_AUTH_TOKEN),
                 data={
@@ -185,9 +185,11 @@ async def _twilio_wa_send(to_wa: str, response: dict):
                 },
                 timeout=15.0,
             )
+            if r.status_code >= 400:
+                print(f"[twilio] buttons send failed {r.status_code}: {r.text[:300]}", flush=True)
         else:
             for chunk in _wa_split(response["text"]):
-                await c.post(
+                r = await c.post(
                     url,
                     auth=(config.TWILIO_ACCOUNT_SID, config.TWILIO_AUTH_TOKEN),
                     data={
@@ -197,6 +199,8 @@ async def _twilio_wa_send(to_wa: str, response: dict):
                     },
                     timeout=15.0,
                 )
+                if r.status_code >= 400:
+                    print(f"[twilio] send failed {r.status_code}: {r.text[:300]}", flush=True)
 
 
 # ── Health ──────────────────────────────────────────────────────────────────────
