@@ -203,8 +203,22 @@ async def _twilio_wa_send(to_wa: str, response: dict):
                     print(f"[twilio] send failed {r.status_code}: {r.text[:300]}", flush=True)
 
 
-# ── Health ──────────────────────────────────────────────────────────────────────
+# ── Health / diagnostics ────────────────────────────────────────────────────────
 
 @app.get("/health")
 def health():
     return {"status": "ok"}
+
+@app.get("/config-check")
+def config_check():
+    return {
+        "TWILIO_ACCOUNT_SID":       bool(config.TWILIO_ACCOUNT_SID),
+        "TWILIO_AUTH_TOKEN":        bool(config.TWILIO_AUTH_TOKEN),
+        "TWILIO_WA_NUMBER":         bool(config.TWILIO_WA_NUMBER),
+        "TWILIO_LANG_TEMPLATE_SID": bool(config.TWILIO_LANG_TEMPLATE_SID),
+        "GROQ_API_KEY":             bool(config.GROQ_API_KEY),
+        "OPENAI_API_KEY":           bool(config.OPENAI_API_KEY),
+        "SUPABASE_URL":             bool(config.SUPABASE_URL),
+        "SUPABASE_KEY":             bool(config.SUPABASE_KEY),
+        "sid_prefix":               config.TWILIO_ACCOUNT_SID[:6] if config.TWILIO_ACCOUNT_SID else "EMPTY",
+    }
