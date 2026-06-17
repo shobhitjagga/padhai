@@ -196,7 +196,7 @@ SEL Skills: [list the SEL skills to be developed]
 
 (First 5 minutes) Emotional Check-in: [title]
 Activity: [activity name]
-[2-3 discussion questions for the check-in]
+Discussion Question: [1 question for the check-in]
 SEL Skill: [skill name]
 
 ---
