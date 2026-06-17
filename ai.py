@@ -249,8 +249,8 @@ Teacher asks:
 2. [question]
 3. [question]
 
-Exit Ticket:
-Students write one line: "From today I will __."
+Homework:
+[One specific, doable homework question or task directly from the NCERT chapter — not generic, tied to today's concepts]
 
 ---
 
