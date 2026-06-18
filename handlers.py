@@ -9,7 +9,7 @@ _language_cache: dict[str, str] = {}  # chat_id → language, mirrors DB within 
 # ── Onboarding ─────────────────────────────────────────────────────────────────
 
 ONBOARDING_WELCOME = (
-    "👋 Welcome to ShikshaBot!\n\n"
+    "👋 Welcome to Padhai Bot!\n\n"
     "I'm your teaching assistant for NCERT classrooms.\n\n"
     "Please choose your preferred language:"
 )
@@ -125,7 +125,7 @@ def handle_message(chat_id: int, text: str, user_name: str) -> dict:
 
     elif intent == "feedback":
         db.log_message(uid, text, intent, "")
-        return _text("Thank you for the feedback! It helps us improve ShikshaBot.")
+        return _text("Thank you for the feedback! It helps us improve Padhai Bot.")
 
     elif intent == "sel_observation":
         response = ai.resolve_sel_observation(text, grade, language, chat_id=uid)

@@ -160,7 +160,7 @@ Return ONLY valid JSON with these keys:
   "language":"en|hi|ta|te|mr|kn|bn"
 }"""
 
-CONTENT_PROMPT = """You are ShikshaBot, an educational assistant for Indian government school teachers.
+CONTENT_PROMPT = """You are Padhai Bot, an educational assistant for Indian government school teachers.
 Generate a complete 45-minute SEL-integrated lesson plan strictly following NCERT curriculum.
 
 Subject : {subject}
@@ -258,14 +258,13 @@ Keep SEL woven into academic content throughout — do NOT add a separate SEL se
 Use India-relevant examples (local food, cricket, festivals, everyday objects — NOT pizza or US references).
 Mindfulness must be guided imagination only, no physical props."""
 
-QUERY_PROMPT = """You are ShikshaBot, an educational assistant for Indian school teachers.
+QUERY_PROMPT = """You are Padhai Bot, an educational assistant for Indian school teachers.
 Answer based on NCERT curriculum for Class {grade}. Be accurate, concise, and grade-appropriate.
 Keep answer under 150 words. Respond in {language}."""
 
-SEL_OBS_PROMPT = """You are ShikshaBot, a supportive assistant for Indian school teachers.
+SEL_OBS_PROMPT = """You are Padhai Bot, a supportive assistant for Indian school teachers.
 A teacher has shared an observation about a student's behaviour or emotional state.
-The student is in Class {grade}.
-
+{grade_line}
 Respond with:
 1. Acknowledge: validate the teacher's concern warmly (1 sentence)
 2. Possible reasons: 2-3 common reasons this behaviour occurs at this age/grade
@@ -275,7 +274,7 @@ Respond with:
 Be practical, non-judgmental, and grounded in classroom reality.
 Keep under 200 words. Respond in {language}."""
 
-CONTENT_EVAL_PROMPT = """You are a quality evaluator for ShikshaBot, an educational chatbot for Indian school teachers.
+CONTENT_EVAL_PROMPT = """You are a quality evaluator for Padhai Bot, an educational chatbot for Indian school teachers.
 
 Evaluate the lesson plan below on 9 criteria. The lesson plan is in {language}.
 
@@ -470,12 +469,13 @@ def evaluate_content(subject: str, topic: str, grade: str, sel_dimension: str,
 
 
 def resolve_sel_observation(observation: str, grade: str = "8", language: str = "en", chat_id: str = "") -> str:
+    grade_line = f"The student is in Class {grade}." if grade and grade != "8" else ""
     return _groq_call(
         chat_id=chat_id,
         function="resolve_sel_observation",
         model="llama-3.3-70b-versatile",
         messages=[
-            {"role": "system", "content": SEL_OBS_PROMPT.format(grade=grade, language=_lang_name(language))},
+            {"role": "system", "content": SEL_OBS_PROMPT.format(grade_line=grade_line, language=_lang_name(language))},
             {"role": "user",   "content": observation},
         ],
         temperature=0.5,
