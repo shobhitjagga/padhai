@@ -143,18 +143,23 @@ SEL_PEDAGOGY = """Pedagogical principles (from Delhi Happiness Curriculum + CBSE
 INTENT_PROMPT = """You are an intent classifier for an educational bot used by Indian school teachers.
 
 Classify the message into exactly one intent:
-- "content"         : teacher wants a lesson, explanation, or activity on a subject/topic
-                      e.g. "give me a lesson on fractions", "activity for water cycle"
-- "query"           : teacher has a specific academic/curriculum question wanting a direct answer
-                      e.g. "what is photosynthesis", "explain Newton's laws"
-- "feedback"        : teacher is expressing a reaction to the bot — positive or negative
-                      e.g. "I like this", "this was helpful", "not useful", "great response", "I don't like this"
-- "sel_observation" : teacher is sharing an observation about a student's behaviour or emotional state
-                      e.g. "student is not engaging", "student not speaking up", "child seems distracted", "student is very shy"
+- "content_generation"       : teacher wants a lesson, explanation, or activity on a subject/topic
+                               e.g. "give me a lesson on fractions", "activity for water cycle"
+- "query_resolution_academic": teacher has a specific academic/curriculum question wanting a direct answer
+                               e.g. "what is photosynthesis", "explain Newton's laws"
+- "feedback"                 : teacher is expressing a reaction to the bot — positive or negative
+                               e.g. "I like this", "this was helpful", "not useful", "great response", "I don't like this"
+- "query_resolution_sel"     : teacher is sharing an observation about a student's behaviour or emotional state
+                               e.g. "student is not engaging", "student not speaking up", "child seems distracted", "student is very shy"
+- "out_of_service"           : message is unrelated to NCERT classroom teaching
+                               e.g. JEE/NEET/IELTS prep, stock market, coding help, personal advice, college admissions
+- "language_change"          : teacher wants to change the bot's response language
+                               e.g. "respond in Hindi", "Hindi mein baat karo", "switch to English", "Tamil mein jawab do"
+                               For this intent, set "language" to the REQUESTED target language (not the input language)
 
 Return ONLY valid JSON with these keys:
 {
-  "intent":  "content|query|feedback|sel_observation",
+  "intent":  "content_generation|query_resolution_academic|feedback|query_resolution_sel|out_of_service|language_change",
   "subject": "Mathematics|Science|Social Science|English|Hindi|General",
   "topic":   "specific topic if mentioned, else empty string",
   "grade":   "grade number as string, default 8 if not mentioned",
@@ -372,7 +377,7 @@ def classify_intent(text: str, chat_id: str = "") -> dict:
         return json.loads(output)
     except Exception as e:
         print(f"[classify_intent error] {e}")
-        return {"intent": "query", "subject": "General", "topic": "", "grade": "8", "language": "en"}
+        return {"intent": "query_resolution_academic", "subject": "General", "topic": "", "grade": "8", "language": "en"}
 
 
 GROQ_CONTENT_MODELS = [

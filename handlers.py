@@ -74,6 +74,23 @@ FEATURE_INTRO = {
     ),
 }
 
+OUT_OF_SERVICE_MSG = {
+    "en": "I'm Padhai Bot — I help with NCERT classroom teaching (Classes 6–10). I can't help with JEE/NEET prep, stock markets, coding, or other topics outside school teaching. Try asking me for a lesson plan or a curriculum question!",
+    "hi": "मैं Padhai Bot हूँ — मैं NCERT कक्षा शिक्षण (कक्षा 6–10) में मदद करता हूँ। JEE/NEET, शेयर बाज़ार, कोडिंग या अन्य विषयों में मैं मदद नहीं कर सकता। पाठ योजना या पाठ्यक्रम से जुड़ा कोई सवाल पूछें!",
+    "ta": "நான் Padhai Bot — NCERT வகுப்பு கற்பித்தலில் (6–10 வகுப்பு) உதவுகிறேன். JEE/NEET, பங்கு சந்தை, coding போன்ற தலைப்புகளில் உதவ முடியாது. பாட திட்டம் அல்லது பாடத்திட்ட கேள்வி கேளுங்கள்!",
+    "te": "నేను Padhai Bot — NCERT తరగతి బోధనలో (6–10 తరగతులు) సహాయం చేస్తాను. JEE/NEET, స్టాక్ మార్కెట్, కోడింగ్ వంటి అంశాలలో సహాయం చేయలేను. పాఠ్య ప్రణాళిక లేదా పాఠ్యక్రమ ప్రశ్న అడగండి!",
+}
+
+LANGUAGE_CHANGED_MSG = {
+    "en": "Done! I'll respond in English from now on.",
+    "hi": "ठीक है! अब मैं हिंदी में जवाब दूँगा।",
+    "ta": "சரி! இனி நான் தமிழில் பதில் தருவேன்.",
+    "te": "సరే! ఇకపై నేను తెలుగులో సమాధానం ఇస్తాను.",
+    "mr": "ठीक आहे! आता मी मराठीत उत्तर देईन.",
+    "kn": "ಸರಿ! ಇನ್ನು ಮುಂದೆ ನಾನು ಕನ್ನಡದಲ್ಲಿ ಉತ್ತರಿಸುತ್ತೇನೆ.",
+    "bn": "ঠিক আছে! এখন থেকে আমি বাংলায় উত্তর দেব।",
+}
+
 # ── Response helpers ────────────────────────────────────────────────────────────
 
 def _text(msg: str) -> dict:
@@ -100,10 +117,10 @@ def handle_message(chat_id: int, text: str, user_name: str) -> dict:
         return _text(FEATURE_INTRO.get(language, FEATURE_INTRO["en"]))
 
     classification = ai.classify_intent(text, chat_id=uid)
-    intent = classification.get("intent", "query")
+    intent = classification.get("intent", "query_resolution_academic")
     grade  = classification.get("grade", "8")
 
-    if intent == "content":
+    if intent == "content_generation":
         subject = classification.get("subject", "General")
         topic   = classification.get("topic", "")
 
@@ -127,10 +144,21 @@ def handle_message(chat_id: int, text: str, user_name: str) -> dict:
         db.log_message(uid, text, intent, "")
         return _text("Thank you for the feedback! It helps us improve Padhai Bot.")
 
-    elif intent == "sel_observation":
+    elif intent == "query_resolution_sel":
         response = ai.resolve_sel_observation(text, grade, language, chat_id=uid)
 
-    else:  # query
+    elif intent == "out_of_service":
+        db.log_message(uid, text, intent, "")
+        return _text(OUT_OF_SERVICE_MSG.get(language, OUT_OF_SERVICE_MSG["en"]))
+
+    elif intent == "language_change":
+        new_lang = classification.get("language", language)
+        _language_cache[uid] = new_lang
+        db.complete_onboarding(uid, "", new_lang)
+        db.log_message(uid, text, intent, "")
+        return _text(LANGUAGE_CHANGED_MSG.get(new_lang, LANGUAGE_CHANGED_MSG["en"]))
+
+    else:  # query_resolution_academic
         response = ai.resolve_query(text, grade, language, chat_id=uid)
 
     db.log_message(uid, text, intent, response)
