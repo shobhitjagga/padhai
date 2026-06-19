@@ -3,6 +3,7 @@ from groq import Groq
 from openai import OpenAI
 import config
 import db
+from ncert_data import get_hindi9_context
 
 _groq_client = None
 _openai_client = None
@@ -180,7 +181,7 @@ Use these reflection questions (adapt to fit the lesson topic):
 
 {sel_pedagogy}
 --- END SEL GROUNDING ---
-
+{chapter_context}
 CRITICAL: Write the ENTIRE lesson plan in {language}. Every word — section headers, time labels, activity descriptions, questions, and the exit ticket — must be in {language}. Do not use any other language.
 
 Structure the lesson plan EXACTLY as follows:
@@ -382,6 +383,10 @@ GROQ_CONTENT_MODELS = [
 def generate_content(subject: str, topic: str, grade: str, sel_dim: str,
                      language: str = "en", chat_id: str = "") -> str:
     guidance = SEL_GUIDANCE.get(sel_dim, {})
+
+    is_hindi9 = grade == "9" and subject.strip().lower() in ["hindi", "हिंदी"]
+    chapter_context = "\n" + get_hindi9_context(topic) + "\n" if is_hindi9 else ""
+
     prompt = CONTENT_PROMPT.format(
         subject=subject,
         topic=topic or subject,
@@ -392,6 +397,7 @@ def generate_content(subject: str, topic: str, grade: str, sel_dim: str,
         sel_activities=guidance.get("activities", ""),
         sel_reflection=guidance.get("reflection_hi", ""),
         sel_pedagogy=SEL_PEDAGOGY,
+        chapter_context=chapter_context,
     )
     # Primary: OpenAI GPT-4.1 (better NCERT knowledge)
     if _oa_client():
