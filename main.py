@@ -176,27 +176,34 @@ async def _twilio_wa_send(to_wa: str, response: dict):
     """Send response via Twilio REST API — uses Content Template for language buttons."""
     url = f"https://api.twilio.com/2010-04-01/Accounts/{config.TWILIO_ACCOUNT_SID}/Messages.json"
     async with httpx.AsyncClient() as c:
-        is_lang_selection = (
-            response["type"] == "buttons"
-            and config.TWILIO_LANG_TEMPLATE_SID
-            and all(b["data"].startswith("lang_") for b in response.get("buttons", []))
-        )
-        if is_lang_selection:
+        _BUTTON_TEMPLATE_MAP = {
+            "lang_":  config.TWILIO_LANG_TEMPLATE_SID,
+            "fb_1_":  config.TWILIO_FEEDBACK_Q1_SID,
+            "fb_2_":  config.TWILIO_FEEDBACK_Q2_SID,
+            "fb_3_":  config.TWILIO_FEEDBACK_Q3_SID,
+        }
+        template_sid = None
+        if response["type"] == "buttons":
+            first_data = response.get("buttons", [{}])[0].get("data", "")
+            for prefix, sid in _BUTTON_TEMPLATE_MAP.items():
+                if first_data.startswith(prefix) and sid:
+                    template_sid = sid
+                    break
+
+        if template_sid:
             r = await c.post(
                 url,
                 auth=(config.TWILIO_ACCOUNT_SID, config.TWILIO_AUTH_TOKEN),
                 data={
                     "From":       f"whatsapp:{config.TWILIO_WA_NUMBER}",
                     "To":         to_wa,
-                    "ContentSid": config.TWILIO_LANG_TEMPLATE_SID,
+                    "ContentSid": template_sid,
                 },
                 timeout=15.0,
             )
             if r.status_code >= 400:
                 print(f"[twilio] buttons send failed {r.status_code}: {r.text[:300]}", flush=True)
         else:
-            # For feedback/other buttons, send as numbered text since WhatsApp doesn't
-            # support arbitrary interactive buttons without pre-approved templates
             body = _twilio_buttons_text(response) if response["type"] == "buttons" else response["text"]
             for chunk in _wa_split(body):
                 r = await c.post(
