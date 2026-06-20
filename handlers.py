@@ -4,7 +4,8 @@ import db
 
 # In-memory fallback caches (reset on restart — good enough for MVP)
 _sel_counters: dict[int, int] = {}
-_language_cache: dict[str, str] = {}  # chat_id → language, mirrors DB within the session
+_language_cache: dict[str, str] = {}   # chat_id → language, mirrors DB within the session
+_feedback_state: dict[str, dict] = {}  # chat_id → {step, topic, q1, q2}
 
 # ── Onboarding ─────────────────────────────────────────────────────────────────
 
@@ -74,11 +75,66 @@ FEATURE_INTRO = {
     ),
 }
 
+_FEEDBACK_QUESTIONS = {
+    1: {
+        "text": {
+            "en": "📊 Quick feedback on today's lesson:\n\nWas the content aligned with NCERT?",
+            "hi": "📊 आज के पाठ पर त्वरित प्रतिक्रिया:\n\nक्या सामग्री NCERT के अनुरूप थी?",
+            "ta": "📊 இன்றைய பாடம் பற்றிய கருத்து:\n\nதிருத்தம் NCERT உடன் ஒத்திருந்ததா?",
+            "te": "📊 నేటి పాఠంపై అభిప్రాయం:\n\nకంటెంట్ NCERT కి అనుగుణంగా ఉందా?",
+        },
+        "buttons": [
+            {"label": "✅ Yes, fully",  "data": "fb_1_full"},
+            {"label": "🟡 Partially",   "data": "fb_1_partial"},
+            {"label": "❌ No",           "data": "fb_1_no"},
+        ],
+    },
+    2: {
+        "text": {
+            "en": "Was the SEL integration helpful for teaching?",
+            "hi": "क्या SEL एकीकरण पढ़ाने में सहायक था?",
+            "ta": "SEL ஒருங்கிணைப்பு கற்பிக்க உதவியதா?",
+            "te": "SEL ఇంటిగ్రేషన్ బోధనలో సహాయపడిందా?",
+        },
+        "buttons": [
+            {"label": "✅ Yes",       "data": "fb_2_yes"},
+            {"label": "🟡 Somewhat", "data": "fb_2_partial"},
+            {"label": "❌ No",        "data": "fb_2_no"},
+        ],
+    },
+    3: {
+        "text": {
+            "en": "Did students participate in the group activity?",
+            "hi": "क्या छात्रों ने समूह गतिविधि में भाग लिया?",
+            "ta": "மாணவர்கள் குழு செயல்பாட்டில் பங்கேற்றனரா?",
+            "te": "విద్యార్థులు గ్రూప్ యాక్టివిటీలో పాల్గొన్నారా?",
+        },
+        "buttons": [
+            {"label": "✅ Yes, actively", "data": "fb_3_yes"},
+            {"label": "🟡 Some students", "data": "fb_3_partial"},
+            {"label": "❌ Not much",       "data": "fb_3_no"},
+        ],
+    },
+}
+
+_FEEDBACK_THANKS = {
+    "en": "Thank you! Your feedback helps us improve Padhai Bot. 🙏",
+    "hi": "धन्यवाद! आपकी प्रतिक्रिया से हम बेहतर होते हैं। 🙏",
+    "ta": "நன்றி! உங்கள் கருத்து மேம்படுத்த உதவுகிறது. 🙏",
+    "te": "ధన్యవాదాలు! మీ అభిప్రాయం మెరుగుపరచడంలో సహాయపడుతుంది. 🙏",
+}
+
+def _feedback_q(step: int, language: str) -> dict:
+    q = _FEEDBACK_QUESTIONS[step]
+    text = q["text"].get(language, q["text"]["en"])
+    return _buttons(text, q["buttons"])
+
+
 OUT_OF_SERVICE_MSG = {
-    "en": "I'm Padhai Bot — I help with NCERT classroom teaching (Classes 6–10). I can't help with JEE/NEET prep, stock markets, coding, or other topics outside school teaching. Try asking me for a lesson plan or a curriculum question!",
-    "hi": "मैं Padhai Bot हूँ — मैं NCERT कक्षा शिक्षण (कक्षा 6–10) में मदद करता हूँ। JEE/NEET, शेयर बाज़ार, कोडिंग या अन्य विषयों में मैं मदद नहीं कर सकता। पाठ योजना या पाठ्यक्रम से जुड़ा कोई सवाल पूछें!",
-    "ta": "நான் Padhai Bot — NCERT வகுப்பு கற்பித்தலில் (6–10 வகுப்பு) உதவுகிறேன். JEE/NEET, பங்கு சந்தை, coding போன்ற தலைப்புகளில் உதவ முடியாது. பாட திட்டம் அல்லது பாடத்திட்ட கேள்வி கேளுங்கள்!",
-    "te": "నేను Padhai Bot — NCERT తరగతి బోధనలో (6–10 తరగతులు) సహాయం చేస్తాను. JEE/NEET, స్టాక్ మార్కెట్, కోడింగ్ వంటి అంశాలలో సహాయం చేయలేను. పాఠ్య ప్రణాళిక లేదా పాఠ్యక్రమ ప్రశ్న అడగండి!",
+    "en": "I'm Padhai Bot — I help with NCERT classroom teaching (Classes 1–10). I can't help with JEE/NEET prep, stock markets, coding, or other topics outside school teaching. Try asking me for a lesson plan or a curriculum question!",
+    "hi": "मैं Padhai Bot हूँ — मैं NCERT कक्षा शिक्षण (कक्षा 1–10) में मदद करता हूँ। JEE/NEET, शेयर बाज़ार, कोडिंग या अन्य विषयों में मैं मदद नहीं कर सकता। पाठ योजना या पाठ्यक्रम से जुड़ा कोई सवाल पूछें!",
+    "ta": "நான் Padhai Bot — NCERT வகுப்பு கற்பித்தலில் (1–10 வகுப்பு) உதவுகிறேன். JEE/NEET, பங்கு சந்தை, coding போன்ற தலைப்புகளில் உதவ முடியாது. பாட திட்டம் அல்லது பாடத்திட்ட கேள்வி கேளுங்கள்!",
+    "te": "నేను Padhai Bot — NCERT తరగతి బోధనలో (1–10 తరగతులు) సహాయం చేస్తాను. JEE/NEET, స్టాక్ మార్కెట్, కోడింగ్ వంటి అంశాలలో సహాయం చేయలేను. పాఠ్య ప్రణాళిక లేదా పాఠ్యక్రమ ప్రశ్న అడగండి!",
 }
 
 LANGUAGE_CHANGED_MSG = {
@@ -140,6 +196,12 @@ def handle_message(chat_id: int, text: str, user_name: str) -> dict:
                     print(f"[content_eval] FLAGGED chat={c} topic={t!r} failed={failed}")
         threading.Thread(target=_eval_bg, daemon=True).start()
 
+        # Set up feedback state and send Q1 immediately after content
+        # TODO: schedule this for 2–3 hours later once a scheduler is wired in
+        _feedback_state[uid] = {"step": 1, "topic": f"{subject} — {topic}".strip(" —"), "q1": None, "q2": None}
+        db.log_message(uid, text, intent, response)
+        return [_text(response), _feedback_q(1, language)]
+
     elif intent == "feedback":
         db.log_message(uid, text, intent, "")
         return _text("Thank you for the feedback! It helps us improve Padhai Bot.")
@@ -161,17 +223,52 @@ def handle_message(chat_id: int, text: str, user_name: str) -> dict:
     else:  # query_resolution_academic
         response = ai.resolve_query(text, grade, language, chat_id=uid)
 
+    # If a new content request arrives while feedback is pending, clear stale state
+    _feedback_state.pop(uid, None)
+
     db.log_message(uid, text, intent, response)
     return _text(response)
 
 
 def handle_callback(chat_id: int, data: str, user_name: str) -> dict:
-    """Handles inline button presses — currently only language selection."""
     uid = str(chat_id)
+
+    # Language selection
     lang_map = {"lang_en": "en", "lang_hi": "hi", "lang_ta": "ta", "lang_te": "te"}
     lang = lang_map.get(data)
     if lang:
-        _language_cache[uid] = lang  # cache immediately so next message doesn't re-trigger onboarding
+        _language_cache[uid] = lang
         db.complete_onboarding(uid, user_name, lang)
         return _text(FEATURE_INTRO[lang])
+
+    # Feedback buttons
+    if data.startswith("fb_"):
+        return _handle_feedback_callback(uid, data)
+
+    return _text("")
+
+
+def _handle_feedback_callback(uid: str, data: str) -> dict:
+    state = _feedback_state.get(uid)
+    language = _language_cache.get(uid, "en")
+
+    if not state:
+        return _text("")
+
+    if state["step"] == 1 and data.startswith("fb_1_"):
+        state["q1"] = data[5:]   # "full" | "partial" | "no"
+        state["step"] = 2
+        return _feedback_q(2, language)
+
+    if state["step"] == 2 and data.startswith("fb_2_"):
+        state["q2"] = data[5:]   # "yes" | "partial" | "no"
+        state["step"] = 3
+        return _feedback_q(3, language)
+
+    if state["step"] == 3 and data.startswith("fb_3_"):
+        q3 = data[5:]            # "yes" | "partial" | "no"
+        db.log_usage_feedback(uid, state["topic"], state["q1"], state["q2"], q3)
+        del _feedback_state[uid]
+        return _text(_FEEDBACK_THANKS.get(language, _FEEDBACK_THANKS["en"]))
+
     return _text("")

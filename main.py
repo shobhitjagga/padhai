@@ -38,7 +38,8 @@ async def telegram_webhook(request: Request):
         return {"ok": True}
 
     result = await asyncio.to_thread(handle_message, chat_id, text, username)
-    await _tg_send(chat_id, result)
+    for r in (result if isinstance(result, list) else [result]):
+        await _tg_send(chat_id, r)
     return {"ok": True}
 
 
@@ -158,7 +159,8 @@ async def twilio_whatsapp(request: Request):
         return Response(content="<Response/>", media_type="application/xml")
 
     result = await asyncio.to_thread(handle_message, number, body, name)
-    await _twilio_wa_send(from_, result)
+    for r in (result if isinstance(result, list) else [result]):
+        await _twilio_wa_send(from_, r)
     return Response(content="<Response/>", media_type="application/xml")
 
 
@@ -171,10 +173,15 @@ def _twilio_buttons_text(response: dict) -> str:
 
 
 async def _twilio_wa_send(to_wa: str, response: dict):
-    """Send response via Twilio REST API — uses Content Template for buttons."""
+    """Send response via Twilio REST API — uses Content Template for language buttons."""
     url = f"https://api.twilio.com/2010-04-01/Accounts/{config.TWILIO_ACCOUNT_SID}/Messages.json"
     async with httpx.AsyncClient() as c:
-        if response["type"] == "buttons" and config.TWILIO_LANG_TEMPLATE_SID:
+        is_lang_selection = (
+            response["type"] == "buttons"
+            and config.TWILIO_LANG_TEMPLATE_SID
+            and all(b["data"].startswith("lang_") for b in response.get("buttons", []))
+        )
+        if is_lang_selection:
             r = await c.post(
                 url,
                 auth=(config.TWILIO_ACCOUNT_SID, config.TWILIO_AUTH_TOKEN),
@@ -188,7 +195,10 @@ async def _twilio_wa_send(to_wa: str, response: dict):
             if r.status_code >= 400:
                 print(f"[twilio] buttons send failed {r.status_code}: {r.text[:300]}", flush=True)
         else:
-            for chunk in _wa_split(response["text"]):
+            # For feedback/other buttons, send as numbered text since WhatsApp doesn't
+            # support arbitrary interactive buttons without pre-approved templates
+            body = _twilio_buttons_text(response) if response["type"] == "buttons" else response["text"]
+            for chunk in _wa_split(body):
                 r = await c.post(
                     url,
                     auth=(config.TWILIO_ACCOUNT_SID, config.TWILIO_AUTH_TOKEN),

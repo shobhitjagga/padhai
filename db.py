@@ -108,6 +108,27 @@ def log_content_eval(chat_id: str, subject: str, topic: str, grade: str,
         pass
 
 
+def log_usage_feedback(chat_id: str, topic: str, ncert_aligned: str,
+                       sel_helpful: str, students_participated: str):
+    try:
+        c = client()
+        if c:
+            import json
+            c.table("messages").insert({
+                "chat_id": str(chat_id),
+                "text":    f"[feedback] {topic}",
+                "intent":  "usage_feedback",
+                "response": json.dumps({
+                    "topic":                 topic,
+                    "ncert_aligned":         ncert_aligned,
+                    "sel_helpful":           sel_helpful,
+                    "students_participated": students_participated,
+                }),
+            }).execute()
+    except Exception:
+        pass
+
+
 def get_content_count(chat_id: str) -> int:
     try:
         c = client()
