@@ -439,16 +439,16 @@ def generate_content(subject: str, topic: str, grade: str, sel_dim: str,
 
 
 def resolve_query(question: str, grade: str = "8", language: str = "en", chat_id: str = "") -> str:
-    return _groq_call(
+    return _openai_call(
         chat_id=chat_id,
         function="resolve_query",
-        model="llama-3.1-8b-instant",
+        model="gpt-4.1-mini",
         messages=[
             {"role": "system", "content": QUERY_PROMPT.format(grade=grade, language=_lang_name(language))},
             {"role": "user",   "content": question},
         ],
         temperature=0.3,
-        max_tokens=250,
+        max_tokens=400,
     )
 
 
