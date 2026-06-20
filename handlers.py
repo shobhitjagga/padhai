@@ -157,7 +157,7 @@ def _buttons(msg: str, buttons: list[dict]) -> dict:
 
 # ── Public handlers ─────────────────────────────────────────────────────────────
 
-def handle_message(chat_id: int, text: str, user_name: str) -> dict:
+def handle_message(chat_id: int, text: str, user_name: str, channel: str = "telegram") -> dict:
     uid = str(chat_id)
 
     # Onboarding: any message from an unregistered user triggers language selection
@@ -196,11 +196,11 @@ def handle_message(chat_id: int, text: str, user_name: str) -> dict:
                     print(f"[content_eval] FLAGGED chat={c} topic={t!r} failed={failed}")
         threading.Thread(target=_eval_bg, daemon=True).start()
 
-        # Set up feedback state and send Q1 immediately after content
-        # TODO: schedule this for 2–3 hours later once a scheduler is wired in
-        _feedback_state[uid] = {"step": 1, "topic": f"{subject} — {topic}".strip(" —"), "q1": None, "q2": None}
+        # Schedule feedback Q1 for next 2 PM IST — do not send immediately
+        topic_label = f"{subject} — {topic}".strip(" —")
+        db.schedule_feedback_q1(uid, language, topic_label, channel)
         db.log_message(uid, text, intent, response)
-        return [_text(response), _feedback_q(1, language)]
+        return _text(response)
 
     elif intent == "feedback":
         db.log_message(uid, text, intent, "")

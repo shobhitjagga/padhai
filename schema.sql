@@ -40,3 +40,14 @@ create table if not exists content_evals (
     passed          boolean,
     created_at      timestamp default now()
 );
+
+create table if not exists feedback_jobs (
+    id           bigserial primary key,
+    chat_id      text not null,
+    language     text not null default 'en',
+    topic        text not null default '',
+    channel      text not null default 'telegram',  -- 'telegram' | 'whatsapp'
+    scheduled_at timestamptz not null,
+    sent_at      timestamptz,
+    created_at   timestamptz default now()
+);

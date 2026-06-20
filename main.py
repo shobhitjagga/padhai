@@ -1,11 +1,49 @@
 import asyncio
-from fastapi import FastAPI, Form, Request, Response
-from pydantic import BaseModel
+from fastapi import FastAPI, Request, Response
 import httpx
 import config
-from handlers import handle_message, handle_callback
+import db
+from handlers import handle_message, handle_callback, _feedback_state, _feedback_q, _language_cache
 
 app = FastAPI()
+
+
+@app.on_event("startup")
+async def startup():
+    asyncio.create_task(_feedback_scheduler())
+
+
+async def _feedback_scheduler():
+    """Poll every 60 s; send feedback Q1 to any teacher whose 2 PM has arrived."""
+    while True:
+        await asyncio.sleep(60)
+        try:
+            jobs = db.get_due_feedback_jobs()
+            for job in jobs:
+                await _dispatch_feedback_q1(job)
+        except Exception as e:
+            print(f"[scheduler] {e}", flush=True)
+
+
+async def _dispatch_feedback_q1(job: dict):
+    uid      = job["chat_id"]
+    language = job.get("language", "en")
+    topic    = job.get("topic", "")
+    channel  = job.get("channel", "telegram")
+
+    _feedback_state[uid] = {"step": 1, "topic": topic, "q1": None, "q2": None}
+    _language_cache[uid] = language
+
+    q1 = _feedback_q(1, language)
+    try:
+        if channel == "telegram":
+            await _tg_send(int(uid), q1)
+        else:
+            await _twilio_wa_send(f"whatsapp:+{uid}", q1)
+        db.mark_feedback_job_sent(job["id"])
+        print(f"[scheduler] sent feedback Q1 → {uid} ({channel})", flush=True)
+    except Exception as e:
+        print(f"[scheduler] failed to send to {uid}: {e}", flush=True)
 
 
 # ── Telegram ────────────────────────────────────────────────────────────────────
@@ -37,7 +75,7 @@ async def telegram_webhook(request: Request):
     if not text:
         return {"ok": True}
 
-    result = await asyncio.to_thread(handle_message, chat_id, text, username)
+    result = await asyncio.to_thread(handle_message, chat_id, text, username, channel="telegram")
     for r in (result if isinstance(result, list) else [result]):
         await _tg_send(chat_id, r)
     return {"ok": True}
@@ -158,7 +196,7 @@ async def twilio_whatsapp(request: Request):
     if not body:
         return Response(content="<Response/>", media_type="application/xml")
 
-    result = await asyncio.to_thread(handle_message, number, body, name)
+    result = await asyncio.to_thread(handle_message, number, body, name, channel="whatsapp")
     for r in (result if isinstance(result, list) else [result]):
         await _twilio_wa_send(from_, r)
     return Response(content="<Response/>", media_type="application/xml")

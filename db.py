@@ -1,5 +1,17 @@
+from datetime import datetime, timezone, timedelta
 from supabase import create_client
 import config
+
+_IST = timezone(timedelta(hours=5, minutes=30))
+
+def _next_2pm_utc() -> str:
+    """Return the next 2:00 PM IST as a UTC ISO string."""
+    now_ist = datetime.now(_IST)
+    target  = now_ist.replace(hour=14, minute=0, second=0, microsecond=0)
+    if now_ist >= target:
+        target += timedelta(days=1)
+    return target.astimezone(timezone.utc).isoformat()
+
 
 _client = None
 
@@ -144,3 +156,48 @@ def get_content_count(chat_id: str) -> int:
     except Exception:
         pass
     return 0
+
+
+def schedule_feedback_q1(chat_id: str, language: str, topic: str, channel: str):
+    """Insert a feedback job scheduled for the next 2 PM IST."""
+    try:
+        c = client()
+        if c:
+            c.table("feedback_jobs").insert({
+                "chat_id":      str(chat_id),
+                "language":     language,
+                "topic":        topic,
+                "channel":      channel,
+                "scheduled_at": _next_2pm_utc(),
+            }).execute()
+    except Exception as e:
+        print(f"[schedule_feedback_q1] {e}", flush=True)
+
+
+def get_due_feedback_jobs() -> list:
+    """Return all unsent jobs whose scheduled_at has passed."""
+    try:
+        c = client()
+        if c:
+            now = datetime.now(timezone.utc).isoformat()
+            result = (
+                c.table("feedback_jobs")
+                .select("*")
+                .lte("scheduled_at", now)
+                .is_("sent_at", "null")
+                .execute()
+            )
+            return result.data or []
+    except Exception as e:
+        print(f"[get_due_feedback_jobs] {e}", flush=True)
+    return []
+
+
+def mark_feedback_job_sent(job_id: int):
+    try:
+        c = client()
+        if c:
+            now = datetime.now(timezone.utc).isoformat()
+            c.table("feedback_jobs").update({"sent_at": now}).eq("id", job_id).execute()
+    except Exception as e:
+        print(f"[mark_feedback_job_sent] {e}", flush=True)
