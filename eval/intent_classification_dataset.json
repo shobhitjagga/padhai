@@ -2098,5 +2098,215 @@
     "translated_query": "My phone screen broke, should I repair it or buy a new one?",
     "intent": "out_of_service",
     "language": "te"
+  },
+  {
+    "id": 301,
+    "query": "Can you please respond in Hindi from now on?",
+    "translated_query": "Can you please respond in Hindi from now on?",
+    "intent": "language_change",
+    "language": "en"
+  },
+  {
+    "id": 302,
+    "query": "Switch to Tamil please",
+    "translated_query": "Switch to Tamil please",
+    "intent": "language_change",
+    "language": "en"
+  },
+  {
+    "id": 303,
+    "query": "I would prefer if you replied in Telugu",
+    "translated_query": "I would prefer if you replied in Telugu",
+    "intent": "language_change",
+    "language": "en"
+  },
+  {
+    "id": 304,
+    "query": "Please change your language to Hindi",
+    "translated_query": "Please change your language to Hindi",
+    "intent": "language_change",
+    "language": "en"
+  },
+  {
+    "id": 305,
+    "query": "Can you speak to me in Marathi?",
+    "translated_query": "Can you speak to me in Marathi?",
+    "intent": "language_change",
+    "language": "en"
+  },
+  {
+    "id": 306,
+    "query": "Please respond in English only",
+    "translated_query": "Please respond in English only",
+    "intent": "language_change",
+    "language": "en"
+  },
+  {
+    "id": 307,
+    "query": "Hindi mein jawab do",
+    "translated_query": "Give answers in Hindi",
+    "intent": "language_change",
+    "language": "hi"
+  },
+  {
+    "id": 308,
+    "query": "Kripya Hindi mein baat karein",
+    "translated_query": "Please speak in Hindi",
+    "intent": "language_change",
+    "language": "hi"
+  },
+  {
+    "id": 309,
+    "query": "Aab se sirf Hindi mein reply karo",
+    "translated_query": "Reply only in Hindi from now on",
+    "intent": "language_change",
+    "language": "hi"
+  },
+  {
+    "id": 310,
+    "query": "Mujhe English mein jawab chahiye",
+    "translated_query": "I want replies in English",
+    "intent": "language_change",
+    "language": "hi"
+  },
+  {
+    "id": 311,
+    "query": "Tamil mein baat karo",
+    "translated_query": "Speak in Tamil",
+    "intent": "language_change",
+    "language": "hi"
+  },
+  {
+    "id": 312,
+    "query": "Bhasha badlo, Telugu mein samjhao",
+    "translated_query": "Change language, explain in Telugu",
+    "intent": "language_change",
+    "language": "hi"
+  },
+  {
+    "id": 313,
+    "query": "Bhai Hindi mein baat kar na",
+    "translated_query": "Bro, speak in Hindi",
+    "intent": "language_change",
+    "language": "hinglish"
+  },
+  {
+    "id": 314,
+    "query": "Please Telugu mein reply karo",
+    "translated_query": "Please reply in Telugu",
+    "intent": "language_change",
+    "language": "hinglish"
+  },
+  {
+    "id": 315,
+    "query": "English mein change kar do responses",
+    "translated_query": "Change responses to English",
+    "intent": "language_change",
+    "language": "hinglish"
+  },
+  {
+    "id": 316,
+    "query": "Hindi mein switch karo yaar, samajh nahi aata",
+    "translated_query": "Switch to Hindi, I dont understand",
+    "intent": "language_change",
+    "language": "hinglish"
+  },
+  {
+    "id": 317,
+    "query": "Tamil mein jawab chahiye mujhe",
+    "translated_query": "I want answers in Tamil",
+    "intent": "language_change",
+    "language": "hinglish"
+  },
+  {
+    "id": 318,
+    "query": "Abse Hindi mein hi bolna, English mushkil hai",
+    "translated_query": "Speak in Hindi from now, English is difficult",
+    "intent": "language_change",
+    "language": "hinglish"
+  },
+  {
+    "id": 319,
+    "query": "தமிழில் பதில் சொல்லுங்கள்",
+    "translated_query": "Please reply in Tamil",
+    "intent": "language_change",
+    "language": "ta"
+  },
+  {
+    "id": 320,
+    "query": "தமிழ் மொழியில் பேசுங்கள்",
+    "translated_query": "Please speak in Tamil language",
+    "intent": "language_change",
+    "language": "ta"
+  },
+  {
+    "id": 321,
+    "query": "English-ல் மட்டும் பதில் தாருங்கள்",
+    "translated_query": "Please reply only in English",
+    "intent": "language_change",
+    "language": "ta"
+  },
+  {
+    "id": 322,
+    "query": "Hindi-ல் பேசுங்கள் please",
+    "translated_query": "Please speak in Hindi",
+    "intent": "language_change",
+    "language": "ta"
+  },
+  {
+    "id": 323,
+    "query": "மொழியை தமிழுக்கு மாற்றுங்கள்",
+    "translated_query": "Change the language to Tamil",
+    "intent": "language_change",
+    "language": "ta"
+  },
+  {
+    "id": 324,
+    "query": "Telugu-ல் பதில் சொல்லுங்கள்",
+    "translated_query": "Please reply in Telugu",
+    "intent": "language_change",
+    "language": "ta"
+  },
+  {
+    "id": 325,
+    "query": "తెలుగులో సమాధానం చెప్పండి",
+    "translated_query": "Please answer in Telugu",
+    "intent": "language_change",
+    "language": "te"
+  },
+  {
+    "id": 326,
+    "query": "దయచేసి తెలుగులో మాట్లాడండి",
+    "translated_query": "Please speak in Telugu",
+    "intent": "language_change",
+    "language": "te"
+  },
+  {
+    "id": 327,
+    "query": "Hindi lo cheppandi please",
+    "translated_query": "Please tell in Hindi",
+    "intent": "language_change",
+    "language": "te"
+  },
+  {
+    "id": 328,
+    "query": "English lo reply ivvandi",
+    "translated_query": "Please reply in English",
+    "intent": "language_change",
+    "language": "te"
+  },
+  {
+    "id": 329,
+    "query": "భాషను తెలుగుకు మార్చండి",
+    "translated_query": "Change the language to Telugu",
+    "intent": "language_change",
+    "language": "te"
+  },
+  {
+    "id": 330,
+    "query": "తమిళంలో సమాధానం ఇవ్వండి",
+    "translated_query": "Please answer in Tamil",
+    "intent": "language_change",
+    "language": "te"
   }
 ]

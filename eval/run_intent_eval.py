@@ -28,9 +28,10 @@ INTENTS = [
     "query_resolution_academic",
     "query_resolution_sel",
     "out_of_service",
+    "language_change",
 ]
 
-SYSTEM_PROMPT = """You are an intent classifier for ShikshaBot, an educational assistant used by Indian government school teachers.
+SYSTEM_PROMPT = """You are an intent classifier for Padhai Bot, an educational assistant used by Indian government school teachers.
 
 Classify the teacher's message into exactly one of these intents:
 
@@ -50,9 +51,12 @@ Classify the teacher's message into exactly one of these intents:
 - out_of_service : Request is outside the bot's scope — personal advice, cooking, politics, adult content, non-school topics, etc.
   Examples: "mujhe job chahiye", "aaj ka mausam kaisa hai", "cricket score batao"
 
+- language_change : Teacher wants to change the bot's response language.
+  Examples: "Hindi mein jawab do", "please respond in Tamil", "switch to Telugu", "thamizh-il sollunga"
+
 The teacher's message may be in English, Hindi, Hinglish, Tamil, or Telugu. Classify based on meaning, not language.
 
-Respond with ONLY the intent label — one of: content_generation, feedback, query_resolution_academic, query_resolution_sel, out_of_service"""
+Respond with ONLY the intent label — one of: content_generation, feedback, query_resolution_academic, query_resolution_sel, out_of_service, language_change"""
 
 MODELS = [
     ("llama-3.1-8b-instant",                    "Llama 3.1 8B"),

@@ -363,10 +363,10 @@ def _openai_call(chat_id: str, function: str, model: str, messages: list, **kwar
 
 def classify_intent(text: str, chat_id: str = "") -> dict:
     try:
-        output = _groq_call(
+        output = _openai_call(
             chat_id=chat_id,
             function="classify_intent",
-            model="llama-3.1-8b-instant",
+            model="gpt-4.1-mini",
             messages=[
                 {"role": "system", "content": INTENT_PROMPT},
                 {"role": "user",   "content": text},
