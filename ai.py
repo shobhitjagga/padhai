@@ -162,7 +162,7 @@ Return ONLY valid JSON with these keys:
   "intent":  "content_generation|query_resolution_academic|feedback|query_resolution_sel|out_of_service|language_change",
   "subject": "Mathematics|Science|Social Science|English|Hindi|General",
   "topic":   "specific topic if mentioned, else empty string",
-  "grade":   "grade number as string, default 8 if not mentioned",
+  "grade":   "grade number as string, or empty string if not mentioned",
   "language":"en|hi|ta|te|mr|kn|bn"
 }"""
 
@@ -265,7 +265,7 @@ Use India-relevant examples (local food, cricket, festivals, everyday objects â€
 Mindfulness must be guided imagination only, no physical props."""
 
 QUERY_PROMPT = """You are Padhai Bot, an educational assistant for Indian school teachers.
-Answer based on NCERT curriculum for Class {grade}. Be accurate, concise, and grade-appropriate.
+Answer based on NCERT curriculum{grade_str}. Be accurate, concise, and grade-appropriate.
 Keep answer under 150 words. Respond in {language}."""
 
 SEL_OBS_PROMPT = """You are Padhai Bot, a supportive assistant for Indian school teachers.
@@ -377,7 +377,7 @@ def classify_intent(text: str, chat_id: str = "") -> dict:
         return json.loads(output)
     except Exception as e:
         print(f"[classify_intent error] {e}")
-        return {"intent": "query_resolution_academic", "subject": "General", "topic": "", "grade": "8", "language": "en"}
+        return {"intent": "query_resolution_academic", "subject": "General", "topic": "", "grade": "", "language": "en"}
 
 
 GROQ_CONTENT_MODELS = [
@@ -438,13 +438,14 @@ def generate_content(subject: str, topic: str, grade: str, sel_dim: str,
     raise last_err
 
 
-def resolve_query(question: str, grade: str = "8", language: str = "en", chat_id: str = "") -> str:
+def resolve_query(question: str, grade: str = "", language: str = "en", chat_id: str = "") -> str:
+    grade_str = f" for Class {grade}" if grade else ""
     return _openai_call(
         chat_id=chat_id,
         function="resolve_query",
         model="gpt-4.1-mini",
         messages=[
-            {"role": "system", "content": QUERY_PROMPT.format(grade=grade, language=_lang_name(language))},
+            {"role": "system", "content": QUERY_PROMPT.format(grade_str=grade_str, language=_lang_name(language))},
             {"role": "user",   "content": question},
         ],
         temperature=0.3,
@@ -479,8 +480,8 @@ def evaluate_content(subject: str, topic: str, grade: str, sel_dimension: str,
         return None
 
 
-def resolve_sel_observation(observation: str, grade: str = "8", language: str = "en", chat_id: str = "") -> str:
-    grade_line = f"The student is in Class {grade}." if grade and grade != "8" else ""
+def resolve_sel_observation(observation: str, grade: str = "", language: str = "en", chat_id: str = "") -> str:
+    grade_line = f"The student is in Class {grade}." if grade else ""
     return _groq_call(
         chat_id=chat_id,
         function="resolve_sel_observation",

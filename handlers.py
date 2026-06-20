@@ -118,7 +118,7 @@ def handle_message(chat_id: int, text: str, user_name: str) -> dict:
 
     classification = ai.classify_intent(text, chat_id=uid)
     intent = classification.get("intent", "query_resolution_academic")
-    grade  = classification.get("grade", "8")
+    grade  = classification.get("grade", "")
 
     if intent == "content_generation":
         subject = classification.get("subject", "General")
