@@ -482,10 +482,10 @@ def evaluate_content(subject: str, topic: str, grade: str, sel_dimension: str,
 
 def resolve_sel_observation(observation: str, grade: str = "", language: str = "en", chat_id: str = "") -> str:
     grade_line = f"The student is in Class {grade}." if grade else ""
-    return _groq_call(
+    return _openai_call(
         chat_id=chat_id,
         function="resolve_sel_observation",
-        model="llama-3.3-70b-versatile",
+        model="gpt-4.1-mini",
         messages=[
             {"role": "system", "content": SEL_OBS_PROMPT.format(grade_line=grade_line, language=_lang_name(language))},
             {"role": "user",   "content": observation},

@@ -207,7 +207,16 @@ def handle_message(chat_id: int, text: str, user_name: str) -> dict:
         return _text("Thank you for the feedback! It helps us improve Padhai Bot.")
 
     elif intent == "query_resolution_sel":
-        response = ai.resolve_sel_observation(text, grade, language, chat_id=uid)
+        try:
+            response = ai.resolve_sel_observation(text, grade, language, chat_id=uid)
+        except Exception as e:
+            print(f"[sel_obs error] {e}", flush=True)
+            response = {
+                "en": "I'm having trouble connecting right now. Please try again in a moment.",
+                "hi": "अभी कनेक्शन में समस्या है। कृपया थोड़ी देर बाद फिर कोशिश करें।",
+                "ta": "தற்போது இணைப்பில் சிக்கல் உள்ளது. சற்று நேரம் கழித்து மீண்டும் முயற்சிக்கவும்.",
+                "te": "ప్రస్తుతం కనెక్షన్‌లో సమస్య ఉంది. దయచేసి కొంత సేపటి తర్వాత మళ్ళీ ప్రయత్నించండి.",
+            }.get(language, "I'm having trouble connecting right now. Please try again in a moment.")
 
     elif intent == "out_of_service":
         db.log_message(uid, text, intent, "")
