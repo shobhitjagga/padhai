@@ -1,450 +1,488 @@
 id,query,true_intent,language,Llama 3.1 8B,Llama 4 Scout 17B,GPT-4.1 Nano,GPT-4.1 Mini,GPT-4o Mini,Qwen3 32B,Llama 3.3 70B
-23,வகுப்பு 5 அறிவியல் உணவு சங்கிலி செயல்பாடு கொடுங்கள்,content_generation,ta,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
+170,வகுப்பு 5 க்கு பெரிய எண்களின் இட மதிப்பு செயல்பாடு கொடு,content_generation,ta,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
 okay, let's see. the user wrote ""வகுப்பு",content_generation
-63,What causes earthquakes?,query_resolution_academic,en,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
-okay, let's see. the user asked, ""what causes earthquakes?"" i need to",query_resolution_academic
-298,ఈరోజు భారతదేశంలో బంగారం ధర ఎంత?,out_of_service,te,out_of_service,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
-okay, let's see. the user is asking in telugu, ""ఈర",out_of_service
-282,"मेरे फोन की screen टूट गई, repair करवाऊँ या नया लूँ?",out_of_service,hi,out_of_service,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
-okay, let's see. the user is asking in hindi: ""mere phone ki",
-179,తరగతి 7 చరిత్రకు మొఘల్ సామ్రాజ్యంపై ఆసక్తికరమైన పాఠం,content_generation,te,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
-okay, let's see. the user wrote in telugu: ""తరగత",content_generation
-93,"One student cries every time they make a mistake, even a small one",query_resolution_sel,en,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
-okay, let's see. the teacher's message is about a student who cries every time",
-90,మొక్క కణం మరియు జంతు కణం మధ్య తేడా ఏమిటి?,query_resolution_academic,te,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
-okay, let's see. the user is asking in telugu: ""what is the",query_resolution_academic
-276,My phone screen cracked. Should I repair it or buy a new phone?,out_of_service,en,out_of_service,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
-okay, let's see. the user is asking about whether to repair their cracked phone screen",
-112,"இரண்டு மாணவர்கள் தினமும் சண்டை போடுகிறார்கள், வகுப்பு சீர்குலைகிறது",query_resolution_sel,ta,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
-okay, let's see. the teacher's message is in tamil. translating it",query_resolution_sel
-105,"Ek baccha mistake karne par rota hai, bahut sensitive hai",query_resolution_sel,hinglish,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
-okay, let's see. the teacher's message is in hindi: ""ek baccha",query_resolution_sel
-38,"कंटेंट बहुत लंबा था, एक कक्षा में इतना नहीं पढ़ा सकते",feedback,hi,content_generation,feedback,feedback,feedback,feedback,"<think>
-okay, let's see. the user wrote in hindi: ""कंटें",feedback
-56,"పాఠం చాలా పొడవుగా ఉంది, ఒక పీరియడ్‌లో ఇది పూర్తి చేయలేను",feedback,te,query_resolution_sel,feedback,feedback,feedback,feedback,"<think>
-okay, let's see. the user wrote in telugu: ""పా",
-108,"Mera ek acha student achanak se class mein kuch nahi bolta, shayad kisi ne kuch keh diya",query_resolution_sel,hinglish,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
-okay, let's see. the teacher is saying that a good student has suddenly stopped talking",query_resolution_sel
-208,"మొదటిసారి ShikshaBot వాడాను, చాలా నచ్చింది, ఉపయోగకరంగా ఉంది",feedback,te,feedback,feedback,feedback,feedback,feedback,"<think>
-okay, let's see. the user wrote in telugu: ""మొ",
-250,"एक बच्चा कभी भी group में काम नहीं करता, हमेशा अकेले करना चाहता है",query_resolution_sel,hi,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
-okay, let's see. the teacher's message is in hindi. the translation would be",query_resolution_sel
-12,कक्षा 10 के लिए रासायनिक अभिक्रियाओं का पाठ दीजिए,content_generation,hi,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
-okay, let's see. the user wrote ""कक्षा 10",
-107,Exam ke time ek baccha itna anxious ho jaata hai ki sab bhool jaata hai,query_resolution_sel,hinglish,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
-okay, let's see. the teacher's message is about a student who becomes so anxious",query_resolution_sel
-165,"Soil types ke baare mein Class 7 geography ka content do, properties bhi batao",content_generation,hinglish,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
-okay, let's see. the user is asking for content on soil types for class",
-31,"This lesson was very helpful, exactly what I needed. Thank you!",feedback,en,feedback,feedback,feedback,feedback,feedback,"<think>
-okay, let's see. the user wrote, ""this lesson was very helpful, exactly",feedback
-26,తరగతి 8 కోసం కిరణజన్య సంయోగక్రియపై తరగతి గది కార్యకలాపం ఇవ్వు,content_generation,te,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
-okay, let's see. the user wrote in telugu: ""తరగత",
-146,స్టాక్ మార్కెట్లో ఎలా పెట్టుబడి పెట్టాలి?,out_of_service,te,out_of_service,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
-okay, let's see. the user is asking in telugu: ""స",out_of_service
-256,"Ek baccha kabhi group mein kaam nahi karta, hamesha akele karna chahta hai",query_resolution_sel,hinglish,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
-okay, let's see. the teacher's message is in hindi: ""ek baccha",
-50,"பாடம் மிக நீளமாக இருந்தது, ஒரு வகுப்பில் இதை முடிக்க முடியாது",feedback,ta,query_resolution_sel,feedback,feedback,feedback,feedback,"<think>
-okay, let's see. the user wrote in tamil: ""பாடம",feedback
+123,"Give me tips for JEE Main preparation, my student wants to crack it",out_of_service,en,content_generation,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
+okay, let's see. the user is a teacher asking for tips for jee main",query_resolution_academic
+182,"Response is useful but please remove the emoji formatting, it looks unprofessional",feedback,en,i'll make sure to provide responses without emojis.,i'll provide the intent label without any emojis. please go ahead and provide the teacher's message for,feedback,feedback,feedback,"<think>
+okay, let's see. the user is a teacher using padhai bot. they sent",feedback
+24,வகுப்பு 9 சமூக அறிவியலுக்கு ஜனநாயகம் பாடத்தை உருவாக்கு,content_generation,ta,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
+okay, let's see. the user wrote ""வகுப்பு",content_generation
 194,"Content theek hai lekin emoji mat dalo, professional nahi lagta",feedback,hinglish,content_generation,feedback,feedback,feedback,feedback,"<think>
-okay, let's see. the teacher's message is ""content theek hai lekin",feedback
-167,"Mughal Empire pe Class 7 history ka lesson chahiye, kuch interesting activity ke saath",content_generation,hinglish,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
-okay, let's see. the user is asking for a lesson on the mughal",content_generation
-251,"एक बच्चा रोज भूखा स्कूल आता है, पूरे दिन उसका ध्यान नहीं लगता",query_resolution_sel,hi,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
-okay, let's see. the teacher's message is in hindi. it says, """,
-154,Create a lesson on light and reflection for Class 10 physics,content_generation,en,"**lesson title:** light and reflection
-
-**class:** class 10 physics
-
-**subject:** physics",content_generation,content_generation,content_generation,content_generation,"<think>
-okay, let's see. the user wants me to classify their message into one of the",content_generation
-142,12ம் வகுப்பிற்கு பிறகு இந்தியாவில் சிறந்த பொறியியல் கல்லூரிகள் எவை?,out_of_service,ta,query_resolution_academic,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
-okay, let's see. the user is asking in tamil: ""12ம்",
-163,Class 8 biology mein digestive system ka lesson do,content_generation,hinglish,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
-okay, let's see. the user is asking for a lesson on the digestive system for",content_generation
-258,"Ek baccha baar baar kehta hai 'main bahut stupid hoon', khud ko bekar samajhta hai",query_resolution_sel,hinglish,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
-okay, let's see. the teacher's message is in hindi. the user is talking",
+okay, let's see. the teacher's message is in hindi. they said, """,feedback
+322,Hindi-ல் பேசுங்கள் please,language_change,ta,language_change,language_change,language_change,language_change,language_change,"<think>
+okay, let's see. the user wrote ""hindi-ல் ப",language_change
+89,ఓమ్ నియమం అంటే ఏమిటి?,query_resolution_academic,te,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
+okay, let's see. the user is asking ""ఓమ్",query_resolution_academic
+305,Can you speak to me in Marathi?,language_change,en,language_change,language_change,language_change,language_change,language_change,"<think>
+okay, let's see. the user is asking, ""can you speak to me in",out_of_service
+286,Aaj sone ka bhav kya hai India mein?,out_of_service,hinglish,out_of_service,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
+okay, let's see. the user is asking, ""aaj sone ka bh",out_of_service
+124,What are the best engineering colleges in India after Class 12?,out_of_service,en,out_of_service,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
+okay, let's see. the user is asking about the best engineering colleges in india after",out_of_service
+292,இன்று இந்தியாவில் தங்கத்தின் விலை என்ன?,out_of_service,ta,query_resolution_academic,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
+okay, let's see. the user is asking in tamil, ""இன்ற",out_of_service
+249,कुछ बच्चे group बना कर एक बच्चे को सभी activities से बाहर रख रहे हैं,query_resolution_sel,hi,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
+okay, let's see. the teacher's message is in hindi. the translation would be",query_resolution_sel
+295,పొట్ట కొవ్వు తగ్గించుకోవడానికి ఏ డైట్ అనుసరించాలి?,out_of_service,te,query_resolution_academic,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
+okay, let's see. the user is asking in telugu: ""ప",out_of_service
+233,தொழில்துறை புரட்சியின் சமூகத்தில் விளைவுகள் என்ன?,query_resolution_academic,ta,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
+okay, let's see. the user is asking in tamil: ""தொழ",query_resolution_academic
+46,Example hamare gaon ke bachon se relate nahi karta tha,feedback,hinglish,query_resolution_sel,query_resolution_sel,feedback,feedback,feedback,"<think>
+okay, let's see. the user wrote, ""example hamare gaon ke bach",feedback
+122,Which stocks should I invest in right now? Is the market good?,out_of_service,en,out_of_service,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
+okay, let's see. the user is asking about which stocks to invest in and whether",out_of_service
+299,ఈ వారాంతంలో కుటుంబంతో చూడటానికి Netflix లో ఏమి బాగుంటుంది?,out_of_service,te,out_of_service,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
+okay, let's see. the user is asking in telugu. the message translates to",out_of_service
+85,కిరణజన్య సంయోగక్రియ అంటే ఏమిటి?,query_resolution_academic,te,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
+okay, let's see. the user is asking ""కిరణజ",query_resolution_academic
+224,Vaccine human body mein kaise kaam karta hai?,query_resolution_academic,hinglish,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
+okay, let's see. the user is asking, ""vaccine human body mein k",query_resolution_academic
+121,How do I prepare for a job interview? What questions are usually asked?,out_of_service,en,out_of_service,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
+okay, let's see. the user is asking about preparing for a job interview and what",out_of_service
+48,"Ekdum badhiya tha, bachon ne bahut enjoy kiya activity",feedback,hinglish,feedback,feedback,feedback,feedback,feedback,"<think>
+okay, let's see. the teacher's message is ""ekdum badhiya",feedback
+116,"తరగతిలో ఒక బుల్లీ ఉన్నాడు అందరినీ ఇబ్బంది పెడుతున్నాడు, ఏం చేయాలి?",query_resolution_sel,te,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
+okay, let's see. the teacher's message is in telugu. translating",query_resolution_sel
+274,What is the current gold price in India today?,out_of_service,en,out_of_service,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
+okay, let's see. the user is asking about the current gold price in india today",out_of_service
 126,Write me a Python program to print the Fibonacci series,out_of_service,en,"**fibonacci series program**
 ================================
 
 ### description
 
-this program prints the fibonacci series up to","## fibonacci series program
-### overview
-
-the fibonacci series is a series of numbers where a number is",out_of_service,out_of_service,out_of_service,"<think>
+this program prints the fibonacci series up to","the user's request appears to be related to generating content for teaching programming concepts, specifically creating a fibonacci series",out_of_service,out_of_service,out_of_service,"<think>
 okay, let's see. the user asked for a python program to print the fibonacci series","```python
 def fibonacci(n):
     """"""
     generate the fibonacci series up to the nth term."
-79,ஒளிச்சேர்க்கை என்றால் என்ன?,query_resolution_academic,ta,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
-okay, let's see. the user is asking ""ஒளிச்ச",
-83,ஓம் விதி என்றால் என்ன?,query_resolution_academic,ta,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
-okay, let's see. the user is asking ""ஓம் வித",query_resolution_academic
-153,Give me content on types of soil and their properties for Class 7 geography,content_generation,en,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
-okay, let's see. the user is asking for content on types of soil and their",
-239,పారిశ్రామిక విప్లవం సమాజంపై ఏ ప్రభావాలు చూపింది?,query_resolution_academic,te,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
-okay, let's see. the user is asking in telugu: ""ప",query_resolution_academic
-180,తరగతి 9 పౌరశాస్త్రానికి ప్రాథమిక హక్కులపై పాఠం కావాలి,content_generation,te,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
-okay, let's see. the user wrote in telugu: ""తరగత",content_generation
-173,வகுப்பு 7 வரலாறு முகலாயப் பேரரசு பாடம் சுவாரஸ்யமாக,content_generation,ta,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
-okay, let's see. the user wrote ""வகுப்பு",content_generation
-121,How do I prepare for a job interview? What questions are usually asked?,out_of_service,en,out_of_service,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
-okay, let's see. the user is asking about preparing for a job interview and what",out_of_service
-48,"Ekdum badhiya tha, bachon ne bahut enjoy kiya activity",feedback,hinglish,feedback,feedback,feedback,feedback,feedback,"<think>
-okay, let's see. the teacher's message is ""ekdum badhiya",feedback
-138,Python mein ek simple calculator program likhdo,out_of_service,hinglish,yeh program ek simple calculator hai jo user se input lekar uska result return karta hai,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
-okay, let's see. the user is asking to write a simple calculator program in python",content_generation
-272,Can you write a wedding speech for my brother's marriage next week?,out_of_service,en,out_of_service,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
-okay, let's see. the user is asking for a wedding speech for their brother's",out_of_service
-162,कक्षा 9 नागरिक शास्त्र के लिए मौलिक अधिकारों का पाठ चाहिए,content_generation,hi,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
-okay, let's see. the user is asking for ""कक्षा",content_generation
-227,Industrial Revolution ke kya effects the society pe?,query_resolution_academic,hinglish,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
-okay, let's see. the user is asking about the effects of the industrial revolution on",query_resolution_academic
-67,प्रकाश संश्लेषण क्या है?,query_resolution_academic,hi,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
-okay, let's see. the user asked ""प्रकाश संश",query_resolution_academic
-65,Explain Ohm's law,query_resolution_academic,en,content_generation,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
-okay, let's see. the user asked ""explain ohm's law"". first",query_resolution_academic
-59,"కొంచెం చిన్న సమాధానం ఇవ్వండి, ముఖ్యమైన విషయాలు మాత్రమే",feedback,te,query_resolution_academic,"to proceed, i need the teacher's message to classify the intent. please provide the message. i'll",feedback,query_resolution_academic,out_of_service,"<think>
-okay, let's see. the user wrote in telugu: ""కొ",
-233,தொழில்துறை புரட்சியின் சமூகத்தில் விளைவுகள் என்ன?,query_resolution_academic,ta,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
-okay, let's see. the user is asking in tamil: ""தொழ",query_resolution_academic
-253,Jo baccha pehle topper tha ab fail ho raha hai aur bahut withdrawn ho gaya hai,query_resolution_sel,hinglish,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
-okay, let's see. the teacher's message is in hindi. the translation would be",
-11,कक्षा 5 के लिए हिंदी व्याकरण — संज्ञा और सर्वनाम — का पाठ बनाओ,content_generation,hi,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
-okay, let's see. the user is asking for a lesson on hindi grammar for class",content_generation
-139,வேலை நேர்காணலுக்கு எப்படி தயார் ஆவது?,out_of_service,ta,query_resolution_sel,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
-okay, let's see. the user is asking in tamil: ""வேல",
-42,"बढ़िया जवाब था, बच्चों को बहुत पसंद आया",feedback,hi,feedback,feedback,feedback,feedback,feedback,"<think>
-okay, let's see. the user wrote ""बढ़िया",feedback
-221,औद्योगिक क्रांति के समाज पर क्या प्रभाव पड़े?,query_resolution_academic,hi,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
-okay, let's see. the user is asking in hindi: ""औद्य",
-145,ఉద్యోగ ఇంటర్వ్యూకు ఎలా సిద్ధపడాలి?,out_of_service,te,out_of_service,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
-okay, let's see. the user is asking in telugu: ""ఉద",out_of_service
-290,"அடுத்த வாரம் என் அண்ணன் திருமணம், பேச்சு எழுதி கொடுங்கள்",out_of_service,ta,out_of_service,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
-okay, let's see. the user wrote in tamil: ""அடுத",
-58,ఉదాహరణ మా గ్రామ విద్యార్థులకు సరిపడలేదు,feedback,te,query_resolution_sel,out_of_service,feedback,feedback,feedback,"<think>
-okay, let's see. the user wrote in telugu: ""ఉద",feedback
-186,I asked for Class 6 content but the difficulty level was more like Class 8,feedback,en,query_resolution_academic,feedback,feedback,feedback,feedback,"<think>
-okay, let's see. the user is a teacher who mentioned they asked for class",
-101,"परीक्षा से पहले एक बच्चा बहुत घबरा जाता है, कुछ भी याद नहीं रहता उसे",query_resolution_sel,hi,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
-okay, let's see. the teacher's message is in hindi. the translation would be",query_resolution_sel
-211,What is the difference between speed and velocity?,query_resolution_academic,en,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
-okay, let's see. the user is asking, ""what is the difference between speed",
-293,இந்த வார இறுதியில் குடும்பத்துடன் பார்க்க Netflix-ல் என்ன நல்லது?,out_of_service,ta,out_of_service,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
-okay, let's see. the user is asking in tamil. the question translates to """,out_of_service
-60,"చాలా బాగుంది, విద్యార్థులకు కార్యకలాపం చాలా నచ్చింది",feedback,te,query_resolution_sel,feedback,feedback,feedback,feedback,"<think>
-okay, let's see. the user wrote in telugu: ""చా",
-53,"கொஞ்சம் சுருக்கமான பதில் கொடுங்கள், முக்கிய புள்ளிகள் மட்டும்",feedback,ta,query_resolution_academic,"தேவையான பதிலை தருகிறேன்
-
-முட",feedback,query_resolution_academic,out_of_service,"<think>
-okay, let's see. the user wrote in tamil: ""கொஞ",query_resolution_academic
-238,ఆహార వల అంటే ఏమిటి? ఆహార గొలుసు నుండి ఎలా వేరుగా ఉంటుంది?,query_resolution_academic,te,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
-okay, let's see. the user is asking in telugu. the question is """,
-226,Food web kya hota hai? Food chain se kaise different hai?,query_resolution_academic,hinglish,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
-okay, let's see. the user is asking about the food web and how it's",query_resolution_academic
+34,The example you gave was not relatable for students in rural India,feedback,en,content_generation,feedback,feedback,feedback,feedback,"<think>
+okay, let's see. the user is a teacher using padhai bot, and they",feedback
 111,"ஒரு மாணவன் தவறு செய்யும்போதெல்லாம் அழுகிறான், மிகவும் sensitive ஆக இருக்கிறான்",query_resolution_sel,ta,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
-okay, let's see. the teacher's message is in tamil. translating it",
-51,"இந்த வடிவம் எனக்கு பிடிக்கவில்லை, வேறு முறை கொடுங்கள்",feedback,ta,query_resolution_academic,feedback,feedback,feedback,feedback,"<think>
-okay, let's see. the user wrote in tamil: ""இந்த",query_resolution_academic
-103,"Meri class mein ek baccha bilkul participate nahi karta, chup rehta hai hamesha",query_resolution_sel,hinglish,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
-okay, let's see. the teacher is saying that there's a child in their class",query_resolution_sel
-29,తరగతి 10 కోసం రసాయన చర్యలపై కంటెంట్ ఇవ్వు,content_generation,te,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
-okay, let's see. the user wrote ""తరగతి 1",content_generation
-118,"ఇద్దరు విద్యార్థులు రోజూ గొడవపడతారు, తరగతి అంతా దెబ్బతింటుంది",query_resolution_sel,te,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
-okay, let's see. the user's message is in telugu. translating",query_resolution_sel
-200,"பதில் பயனுள்ளது ஆனால் emoji வேண்டாம், தொழில்முறையாக தெரியவில்லை",feedback,ta,query_resolution_academic,feedback,feedback,feedback,feedback,"<think>
-okay, let's see. the user wrote in tamil: ""பதில்",feedback
-97,"मेरी कक्षा में एक छात्र बिल्कुल भाग नहीं लेता, बस चुपचाप बैठा रहता है",query_resolution_sel,hi,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
-okay, let's see. the teacher's message is in hindi. they're saying that",query_resolution_sel
-209,"SEL భాగం సహజంగా అనిపించలేదు, అంశంతో అనుసంధానం కాలేదు",feedback,te,query_resolution_sel,feedback,query_resolution_sel,feedback,feedback,"<think>
-okay, let's see. the user wrote in telugu: ""sel భ",query_resolution_sel
-300,"నా ఫోన్ స్క్రీన్ పగిలిపోయింది, రిపేర్ చేయించాలా లేదా కొత్తది కొనాలా?",out_of_service,te,out_of_service,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
-okay, let's see. the user is a teacher using shikshabot, and",out_of_service
-280,आज भारत में सोने का भाव क्या है?,out_of_service,hi,out_of_service,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
-okay, let's see. the user is asking, ""आज भार",out_of_service
-72,पादप कोशिका और जंतु कोशिका में क्या अंतर है?,query_resolution_academic,hi,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
-okay, let's see. the user is asking in hindi: ""पादप",query_resolution_academic
-281,इस weekend family के साथ देखने के लिए कोई Netflix series बताओ,out_of_service,hi,out_of_service,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
-okay, let's see. the user is asking for a netflix series recommendation to watch with",out_of_service
-273,Help me draft a complaint letter to the housing society about water supply,out_of_service,en,content_generation,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
-okay, let's see. the user is asking for help to draft a complaint letter about",out_of_service
-222,जंग लगने की प्रक्रिया रासायनिक समीकरण के साथ समझाइए,query_resolution_academic,hi,content_generation,query_resolution_academic,query_resolution_academic,query_resolution_academic,content_generation,"<think>
-okay, let's see. the user is asking about the process of rusting with a",content_generation
-189,Mixed ability class के लिए content बना सकते हो क्या?,feedback,hi,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
-okay, let's see. the teacher is asking, ""mixed ability class ke liye",content_generation
-286,Aaj sone ka bhav kya hai India mein?,out_of_service,hinglish,out_of_service,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
-okay, let's see. the user is asking, ""aaj sone ka bh",out_of_service
-17,French Revolution Class 9 ke liye content banao — causes aur effects cover karo,content_generation,hinglish,content_generation,content_generation,content_generation,out_of_service,content_generation,"<think>
-okay, let's see. the user is asking for content on the french revolution for class",content_generation
-39,"मुझे यह फॉर्मेट पसंद नहीं है, कुछ और तरीका बताओ",feedback,hi,content_generation,feedback,feedback,feedback,feedback,"<think>
-okay, let's see. the user wrote, ""मुझे यह",out_of_service
-82,பிரெஞ்சு புரட்சியின் முக்கிய காரணங்கள் என்ன?,query_resolution_academic,ta,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
-okay, let's see. the user is asking in tamil about the main causes of the",query_resolution_academic
-20,வகுப்பு 8 க்கு ஒளிச்சேர்க்கை பற்றிய வகுப்பறை செயல்பாடு கொடு,content_generation,ta,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
-okay, let's see. the user wrote in tamil: ""வகுப",content_generation
-255,Kuch bachche group bana kar ek bacche ko activities se bahar rakh rahe hain,query_resolution_sel,hinglish,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
-okay, let's see. the teacher's message is in hindi: ""kuch bach",query_resolution_sel
-24,வகுப்பு 9 சமூக அறிவியலுக்கு ஜனநாயகம் பாடத்தை உருவாக்கு,content_generation,ta,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
-okay, let's see. the user wrote in tamil: ""வகுப",content_generation
-195,Kya mixed-ability class ke liye bhi content de sakte ho?,feedback,hinglish,content_generation,content_generation,query_resolution_sel,content_generation,out_of_service,"<think>
-okay, let's see. the teacher is asking, ""kya mixed-ability class",content_generation
-73,Photosynthesis kya hota hai?,query_resolution_academic,hinglish,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
-okay, let's see. the user asked ""photosynthesis kya hota hai?""",query_resolution_academic
-61,What is photosynthesis?,query_resolution_academic,en,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
-okay, let's see. the user asked, ""what is photosynthesis?"" i need",query_resolution_academic
-197,"SEL wala part forced lag raha tha, topic se naturally connect nahi hua",feedback,hinglish,query_resolution_sel,feedback,feedback,feedback,feedback,"<think>
-okay, let's see. the user wrote, ""sel wala part forced lag r",feedback
-244,One student always refuses to work in groups and insists on doing everything alone,query_resolution_sel,en,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
-okay, let's see. the teacher's message is about a student who refuses to work",query_resolution_sel
-223,"Speed aur velocity mein kya fark hai, simply batao",query_resolution_academic,hinglish,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
-okay, let's see. the user is asking ""speed aur velocity mein kya fark",query_resolution_academic
-76,French Revolution ke main causes kya the?,query_resolution_academic,hinglish,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
-okay, let's see. the user is asking about the main causes of the french revolution",query_resolution_academic
-4,Give me content to explain Newton's laws of motion to Class 9 students,content_generation,en,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
-okay, let's see. the user is asking for content to explain newton's laws of",content_generation
-184,First time using ShikshaBot and I'm genuinely impressed. Very useful tool.,feedback,en,feedback,feedback,feedback,feedback,feedback,"<think>
-okay, let's see. the user is a teacher using shikshabot for the",feedback
-159,कक्षा 7 भूगोल के लिए मिट्टी के प्रकार और उनके गुणों का कंटेंट दो,content_generation,hi,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
-okay, let's see. the user is asking for content on soil types and their properties",content_generation
-21,வகுப்பு 9 இயற்பியலுக்கு நியூட்டன் விதிகள் பாடம் வேண்டும்,content_generation,ta,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
-okay, let's see. the user wrote ""வகுப்பு",content_generation
-13,Class 6 ke liye fractions ka ek simple lesson do,content_generation,hinglish,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
-okay, let's see. the user wrote, ""class 6 ke liye fractions",content_generation
-243,Some students are forming cliques and excluding one child from all group activities,query_resolution_sel,en,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
-okay, let's see. the teacher's message is about some students forming cliques and",query_resolution_sel
-89,ఓమ్ నియమం అంటే ఏమిటి?,query_resolution_academic,te,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
-okay, let's see. the user is asking ""ఓమ్",query_resolution_academic
-157,कक्षा 8 के लिए पाचन तंत्र का पाठ बनाओ,content_generation,hi,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
-okay, let's see. the user wrote ""कक्षा 8 क",content_generation
-176,తరగతి 5 కోసం పెద్ద సంఖ్యల స్థాన విలువ కార్యకలాపం ఇవ్వు,content_generation,te,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
-okay, let's see. the user wrote ""తరగతి 5",content_generation
-160,कक्षा 10 भौतिक विज्ञान में प्रकाश और परावर्तन का पाठ बनाइए,content_generation,hi,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
-okay, let's see. the user wrote ""कक्षा 10",content_generation
-254,"Do hafte baad aaya to bahut udaas tha, kisi se baat nahi karta ab",query_resolution_sel,hinglish,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
-okay, let's see. the teacher's message is in hindi. the translation would be",query_resolution_sel
-52,எடுத்துக்காட்டு கிராமத்து மாணவர்களுக்கு பொருந்தவில்லை,feedback,ta,query_resolution_sel,out_of_service,query_resolution_academic,feedback,feedback,"<think>
-okay, let's see. the user wrote in tamil: ""எடுத",feedback
-234,துருப்பிடிக்கும் வேதியியல் செயல்முறையை சமன்பாட்டுடன் விளக்குங்கள்,query_resolution_academic,ta,query_resolution_academic,content_generation,query_resolution_academic,query_resolution_academic,content_generation,"<think>
-okay, let's see. the user wrote in tamil: ""துருப",content_generation
+okay, let's see. the teacher's message is in tamil. translating it",query_resolution_sel
+258,"Ek baccha baar baar kehta hai 'main bahut stupid hoon', khud ko bekar samajhta hai",query_resolution_sel,hinglish,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
+okay, let's see. the teacher's message is in hindi. the user is describing",query_resolution_sel
+83,ஓம் விதி என்றால் என்ன?,query_resolution_academic,ta,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
+okay, let's see. the user asked ""ஓம் விதி",query_resolution_academic
 205,హుక్ బాగుంది కానీ ఉదాహరణ విద్యార్థులకు అర్థం కాలేదు,feedback,te,query_resolution_sel,feedback,feedback,feedback,feedback,"<think>
 okay, let's see. the user wrote in telugu: ""హు",feedback
-236,వ్యాక్సిన్ మానవ శరీరంలో ఎలా పని చేస్తుంది?,query_resolution_academic,te,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
-okay, let's see. the user is asking in telugu: ""వ్",query_resolution_academic
-78,Plant cell aur animal cell mein kya fark hai?,query_resolution_academic,hinglish,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
-okay, let's see. the user is asking ""plant cell aur animal cell mein k",query_resolution_academic
-182,"Response is useful but please remove the emoji formatting, it looks unprofessional",feedback,en,i'll make sure to remove the emoji formatting in my responses.,"i will provide the intent label without emojis.
-
-please go ahead and provide the teacher's message for",feedback,feedback,feedback,"<think>
-okay, let's see. the user is a teacher using shikshabot. they",feedback
-220,खाद्य जाल क्या है और यह खाद्य श्रृंखला से कैसे अलग है?,query_resolution_academic,hi,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
-okay, let's see. the user is asking in hindi: ""खाद",query_resolution_academic
-1,Generate a lesson on fractions for Class 6,content_generation,en,"**content generation intent**
-
-lesson title: understanding fractions for class 6
-
-**objective:**",content_generation,content_generation,content_generation,content_generation,"<think>
-okay, let's see. the user asked to generate a lesson on fractions for class",content_generation
-269,"ఒక పిల్లవాడు రోజూ పాఠశాలకు ఆకలిగా వస్తున్నాడు, రోజంతా ఏకాగ్రత లేదు",query_resolution_sel,te,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
-okay, let's see. the user's message is in telugu. translating",query_resolution_sel
-156,Class 9 civics — I need an engaging lesson on fundamental rights,content_generation,en,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
-okay, let's see. the user is asking for a lesson on fundamental rights for class",content_generation
-169,வகுப்பு 8 உயிரியல் செரிமான மண்டலம் பாடம் தயாரி,content_generation,ta,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
-okay, let's see. the user wrote ""வகுப்பு",content_generation
-5,Prepare an engaging activity for teaching the water cycle to Class 6,content_generation,en,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
-okay, let's see. the user wants me to classify their message into one of the",content_generation
-203,"SEL பகுதி இயற்கையாக இல்லை, தலைப்புடன் இணைக்கவில்லை",feedback,ta,query_resolution_sel,query_resolution_sel,query_resolution_sel,feedback,query_resolution_sel,"<think>
-okay, let's see. the user wrote in tamil: ""sel பகு",query_resolution_sel
-87,భూకంపాలు ఎందుకు వస్తాయి?,query_resolution_academic,te,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
-okay, let's see. the user is asking in telugu, ""భ",query_resolution_academic
-125,How can I improve my IELTS speaking score? I am applying abroad.,out_of_service,en,out_of_service,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
-okay, let's see. the user is asking how to improve their ielts speaking",out_of_service
-231,இந்திய அரசியலமைப்பின் முன்னுரை என்ன சொல்கிறது?,query_resolution_academic,ta,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
-okay, let's see. the user is asking in tamil: ""இந",query_resolution_academic
-279,पानी की supply के बारे में housing society को complaint letter draft करो,out_of_service,hi,out_of_service,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
-okay, let's see. the user is asking for a complaint letter draft about water supply",out_of_service
-117,"ఒక విద్యార్థి తప్పు చేసినప్పుడల్లా ఏడుస్తాడు, చాలా సెన్సిటివ్‌గా ఉంటాడు",query_resolution_sel,te,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
-okay, let's see. the teacher's message is in telugu. translating",query_resolution_sel
-140,பங்கு சந்தையில் எப்படி முதலீடு செய்வது?,out_of_service,ta,out_of_service,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
-okay, let's see. the user is asking in tamil: ""பங",out_of_service
-144,Python இல் Fibonacci series program எழுதுங்கள்,out_of_service,ta,content_generation,out_of_service,out_of_service,out_of_service,content_generation,"<think>
-okay, let's see. the user is asking to write a fibonacci series program in python",content_generation
-85,కిరణజన్య సంయోగక్రియ అంటే ఏమిటి?,query_resolution_academic,te,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
-okay, let's see. the user is asking ""కిరణజ",query_resolution_academic
-166,Class 10 physics mein light aur reflection ka lesson banao,content_generation,hinglish,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
-okay, let's see. the user is asking for a lesson on light and reflection for",content_generation
-224,Vaccine human body mein kaise kaam karta hai?,query_resolution_academic,hinglish,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
-okay, let's see. the user is asking, ""vaccine human body mein k",query_resolution_academic
-217,चाल और वेग में क्या अंतर है?,query_resolution_academic,hi,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
-okay, let's see. the user is asking in hindi: ""चाल",query_resolution_academic
-104,"Class mein ek bully hai jo sabko disturb karta rehta hai, kya karoon?",query_resolution_sel,hinglish,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
-okay, let's see. the teacher is asking about a student who is bullying others in",query_resolution_sel
-132,Python में Fibonacci series का code लिखो,out_of_service,hi,content_generation,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
-okay, let's see. the user is asking for a python code to generate the fibonacci",content_generation
-44,"Lesson bahut lamba tha yaar, ek period mein itna nahi ho sakta",feedback,hinglish,feedback,feedback,feedback,feedback,feedback,"<think>
-okay, let's see. the teacher's message is in hindi. they said, """,feedback
-225,Indian Constitution ki Preamble kya kehti hai?,query_resolution_academic,hinglish,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
-okay, let's see. the user is asking about the preamble of the indian constitution",query_resolution_academic
-274,What is the current gold price in India today?,out_of_service,en,out_of_service,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
-okay, let's see. the user is asking about the current gold price in india today",out_of_service
-202,"முதல் முறை ShikshaBot பயன்படுத்தினேன், மிகவும் பிடித்தது",feedback,ta,feedback,feedback,feedback,feedback,feedback,"<think>
-okay, let's see. the user wrote in tamil: ""முதல்",feedback
-62,What is the difference between mitosis and meiosis?,query_resolution_academic,en,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
-okay, let's see. the user is asking about the difference between mitosis and me",query_resolution_academic
-32,"The content was too long, I can't cover all of this in one class period",feedback,en,content_generation,feedback,feedback,feedback,feedback,"<think>
-okay, let's see. the teacher is saying that the content provided was too long and",feedback
-137,IELTS ki preparation ke liye kya karoon? Abroad jaana hai,out_of_service,hinglish,out_of_service,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
-okay, let's see. the user is asking about ielts preparation and wants to",out_of_service
-80,மைட்டோசிஸ் மற்றும் மியோசிஸ் இடையே என்ன வித்தியாசம்?,query_resolution_academic,ta,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
-okay, let's see. the user is asking in tamil about the difference between mitosis",query_resolution_academic
-265,ఎప్పుడూ టాపర్‌గా ఉన్న విద్యార్థి ఇప్పుడు ఫెయిల్ అవుతున్నాడు మరియు చాలా దూరంగా ఉన్నాడు,query_resolution_sel,te,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
-okay, let's see. the user's message is in telugu. translating",query_resolution_sel
-246,A child keeps saying things like 'I'm too stupid for this' and 'I can never do anything right',query_resolution_sel,en,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
-okay, let's see. the teacher's message is about a child who keeps saying negative",query_resolution_sel
-252,"एक बच्चा बार बार कहता है 'मैं बहुत stupid हूँ', खुद को बेकार समझता है",query_resolution_sel,hi,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
-okay, let's see. the teacher's message is in hindi. the user is describing",query_resolution_sel
-40,उदाहरण हमारे गांव के बच्चों के लिए सही नहीं था,feedback,hi,feedback,feedback,feedback,feedback,feedback,"<think>
-okay, let's see. the user wrote, ""उदाहरण ह",feedback
-120,"నా మంచి విద్యార్థి హఠాత్తుగా తరగతిలో మాట్లాడడు, ఎవరో ఏదో అన్నారేమో",query_resolution_sel,te,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
-okay, let's see. the user wrote in telugu: ""నా",query_resolution_sel
-249,कुछ बच्चे group बना कर एक बच्चे को सभी activities से बाहर रख रहे हैं,query_resolution_sel,hi,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
-okay, let's see. the teacher's message is in hindi. the translation would be",query_resolution_sel
-25,తరగతి 7 కోసం భిన్నాల పాఠం తయారు చేయి,content_generation,te,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
-okay, let's see. the user wrote ""తరగతి 7",content_generation
-241,A student who was always a topper has started failing and seems very withdrawn lately,query_resolution_sel,en,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
-okay, let's see. the teacher is talking about a student who used to be a",query_resolution_sel
-175,తరగతి 8 జీవశాస్త్రానికి జీర్ణ వ్యవస్థ పాఠం తయారుచేయి,content_generation,te,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
-okay, let's see. the user wrote ""తరగతి 8",content_generation
-171,வகுப்பு 7 புவியியல் மண் வகைகள் மற்றும் பண்புகள் பாடம்,content_generation,ta,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
-okay, let's see. the user wrote ""வகுப்பு",content_generation
-102,"एक होशियार बच्चा अचानक से क्लास में कुछ नहीं बोलता, किसी की बात से hurt हो गया शायद",query_resolution_sel,hi,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
-okay, let's see. the teacher's message is in hindi. the translation would be",query_resolution_sel
-214,What is a food web and how is it different from a food chain?,query_resolution_academic,en,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
-okay, let's see. the user is asking, ""what is a food web and",query_resolution_academic
-192,Class 6 माँगा था लेकिन content Class 8 level का था,feedback,hi,feedback,feedback,feedback,feedback,feedback,"<think>
-okay, let's see. the user wrote, ""class 6 माँग",feedback
-27,తరగతి 9 కోసం న్యూటన్ చలన నియమాలపై పాఠం కావాలి,content_generation,te,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
-okay, let's see. the user wrote in telugu: ""తరగత",content_generation
-230,தடுப்பூசி மனித உடலில் எவ்வாறு செயல்படுகிறது?,query_resolution_academic,ta,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
-okay, let's see. the user is asking in tamil: ""தடுப",query_resolution_academic
-150,Python లో Fibonacci series program రాయండి,out_of_service,te,content_generation,out_of_service,out_of_service,out_of_service,content_generation,"<think>
-okay, let's see. the user is asking for a python program to generate the fibonacci",query_resolution_academic
-188,"Response उपयोगी है लेकिन emoji हटाओ, professional नहीं लगता",feedback,hi,feedback,feedback,feedback,feedback,feedback,"<think>
-okay, let's see. the user wrote: ""response उपयोग",feedback
-116,"తరగతిలో ఒక బుల్లీ ఉన్నాడు అందరినీ ఇబ్బంది పెడుతున్నాడు, ఏం చేయాలి?",query_resolution_sel,te,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
-okay, let's see. the teacher's message is in telugu. translating",query_resolution_sel
-181,The hook was great but the example didn't land with my students at all,feedback,en,feedback,feedback,feedback,feedback,feedback,"<think>
-okay, let's see. the teacher is saying that the hook was great but the example",feedback
-185,"The SEL section felt forced and unnatural, it didn't connect to the topic",feedback,en,feedback,feedback,feedback,feedback,feedback,"<think>
-okay, let's see. the user is a teacher using shikshabot, and",feedback
-122,Which stocks should I invest in right now? Is the market good?,out_of_service,en,out_of_service,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
-okay, let's see. the user is asking about which stocks to invest in and whether",out_of_service
-260,"இரண்டு வாரங்கள் இல்லாமல் வந்த மாணவன் மிகவும் சோகமாக வந்தான், யாரிடமும் பேசவில்லை",query_resolution_sel,ta,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
-okay, let's see. the teacher's message is in tamil. translating it",query_resolution_sel
-109,"என் வகுப்பில் ஒரு மாணவன் எதிலும் பங்கேற்பதில்லை, எப்போதும் அமைதியாக இருக்கிறான்",query_resolution_sel,ta,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
-okay, let's see. the user is a teacher who's asking about a student in",query_resolution_sel
-135,"JEE Main ke liye best strategy kya hai, mera beta prepare kar raha hai",out_of_service,hinglish,query_resolution_academic,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
-okay, let's see. the teacher is asking about the best strategy for jee main",out_of_service
-81,நிலநடுக்கம் ஏன் வருகிறது?,query_resolution_academic,ta,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
-okay, let's see. the user is asking ""நிலநட",query_resolution_academic
-130,12वीं के बाद कौन से best engineering colleges हैं?,out_of_service,hi,out_of_service,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
-okay, let's see. the user is asking about the best engineering colleges after 1",query_resolution_academic
-266,"రెండు వారాల తర్వాత వచ్చిన విద్యార్థి చాలా దుఃఖంగా ఉన్నాడు, ఎవరితోనూ మాట్లాడడు",query_resolution_sel,te,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
-okay, let's see. the user's message is in telugu. translating",query_resolution_sel
-10,कक्षा 9 के लिए भारत का भूगोल पढ़ाने की गतिविधि चाहिए,content_generation,hi,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
-okay, let's see. the user is asking for an activity to teach geography of india",content_generation
-295,పొట్ట కొవ్వు తగ్గించుకోవడానికి ఏ డైట్ అనుసరించాలి?,out_of_service,te,out_of_service,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
-okay, let's see. the user is asking in telugu: ""ప",out_of_service
-123,"Give me tips for JEE Main preparation, my student wants to crack it",out_of_service,en,content_generation,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
-okay, let's see. the user is a teacher asking for tips for jee main",query_resolution_academic
-183,Can you generate content suited for a mixed-ability classroom?,feedback,en,content_generation,content_generation,content_generation,content_generation,out_of_service,"<think>
-okay, let's see. the user is asking, ""can you generate content suited for",content_generation
-91,A student in my class is completely disengaged — sits quietly and does nothing,query_resolution_sel,en,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
-okay, let's see. the teacher is talking about a student who's completely diseng",query_resolution_sel
-19,வகுப்பு 7 க்கான பின்னங்கள் பாடத்தை உருவாக்கு,content_generation,ta,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
-okay, let's see. the user wrote ""வகுப்பு",content_generation
-74,Mitosis aur meiosis mein kya difference hai?,query_resolution_academic,hinglish,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
-okay, let's see. the user is asking ""mitosis aur meiosis mein k",query_resolution_academic
-57,"ఈ ఫార్మాట్ నాకు నచ్చలేదు, మరొక పద్ధతి చెప్పండి",feedback,te,మీరు కావలసి,feedback,feedback,feedback,out_of_service,"<think>
-okay, let's see. the user wrote in telugu: ""ఈ ఫ",out_of_service
-131,IELTS exam की preparation कैसे करूँ?,out_of_service,hi,out_of_service,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
-okay, let's see. the user is asking about preparing for the ielts exam",out_of_service
-248,दो हफ्ते absent रहने के बाद बच्चा बहुत उदास लौटा है और किसी से बात नहीं करता,query_resolution_sel,hi,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
-okay, let's see. the teacher's message is in hindi. the user is saying",query_resolution_sel
-22,வகுப்பு 6 க்கு நீர் சுழற்சி பாடம் தயாரி,content_generation,ta,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
-okay, let's see. the user wrote ""வகுப்பு",content_generation
-47,"Thoda chhota response do, sirf key points chahiye",feedback,hinglish,content_generation,content_generation,feedback,feedback,out_of_service,"<think>
-okay, let's see. the user wrote, ""thoda chhota response do",content_generation
-30,తరగతి 9 సామాజిక శాస్త్రానికి ప్రజాస్వామ్యంపై పాఠం తయారుచేయి,content_generation,te,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
-okay, let's see. the user wrote in telugu: ""తరగత",content_generation
-261,சில மாணவர்கள் குழு உருவாக்கி ஒரு குழந்தையை எல்லா செயல்பாடுகளிலிருந்தும் ஒதுக்குகிறார்கள்,query_resolution_sel,ta,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
-okay, let's see. the user's message is in tamil. translating it",query_resolution_sel
-141,JEE Main தேர்விற்கு எப்படி படிப்பது? என் மகன் தயார் ஆகிறான்,out_of_service,ta,query_resolution_academic,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
-okay, let's see. the user is asking in tamil: ""jee main",out_of_service
-14,"Mujhe Class 8 ke liye photosynthesis ka content chahiye, students ko samajh nahi aata",content_generation,hinglish,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
-okay, let's see. the teacher is asking for content related to photosynthesis for class",content_generation
-115,"నా తరగతిలో ఒక విద్యార్థి అసలు పాల్గొనడు, ఎప్పుడూ నిశ్శబ్దంగా కూర్చుంటాడు",query_resolution_sel,te,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
-okay, let's see. the user's message is in telugu. translating",query_resolution_sel
-100,दो बच्चे रोज़ आपस में लड़ते हैं और पूरी क्लास disturb हो जाती है,query_resolution_sel,hi,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
+97,"मेरी कक्षा में एक छात्र बिल्कुल भाग नहीं लेता, बस चुपचाप बैठा रहता है",query_resolution_sel,hi,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
 okay, let's see. the teacher's message is in hindi. they're saying that",query_resolution_sel
-219,भारतीय संविधान की प्रस्तावना क्या है?,query_resolution_academic,hi,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
-okay, let's see. the user is asking in hindi, ""भारत",query_resolution_academic
-268,"ఒక విద్యార్థి గ్రూప్ వర్క్ చేయడానికి ఎప్పుడూ నిరాకరిస్తాడు, ఒంటరిగా చేయాలని ఉంటాడు",query_resolution_sel,te,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
-okay, let's see. the teacher's message is in telugu. translating",query_resolution_sel
+65,Explain Ohm's law,query_resolution_academic,en,content_generation,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
+okay, let's see. the user asked ""explain ohm's law"". first",query_resolution_academic
+222,जंग लगने की प्रक्रिया रासायनिक समीकरण के साथ समझाइए,query_resolution_academic,hi,content_generation,query_resolution_academic,query_resolution_academic,query_resolution_academic,content_generation,"<think>
+okay, let's see. the user wrote ""जंग लगने",content_generation
+67,प्रकाश संश्लेषण क्या है?,query_resolution_academic,hi,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
+okay, let's see. the user asked ""प्रकाश संश",query_resolution_academic
+63,What causes earthquakes?,query_resolution_academic,en,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
+okay, let's see. the user asked, ""what causes earthquakes?"" i need to",query_resolution_academic
+11,कक्षा 5 के लिए हिंदी व्याकरण — संज्ञा और सर्वनाम — का पाठ बनाओ,content_generation,hi,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
+okay, let's see. the user wrote: ""कक्षा 5",content_generation
+237,భారత రాజ్యాంగ ప్రవేశిక ఏమి చెప్తుంది?,query_resolution_academic,te,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
+okay, let's see. the user is asking in telugu: ""భ",query_resolution_academic
+243,Some students are forming cliques and excluding one child from all group activities,query_resolution_sel,en,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
+okay, let's see. the teacher's message is about some students forming cliques and",query_resolution_sel
+93,"One student cries every time they make a mistake, even a small one",query_resolution_sel,en,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
+okay, let's see. the teacher's message is about a student who cries every time",query_resolution_sel
+131,IELTS exam की preparation कैसे करूँ?,out_of_service,hi,query_resolution_academic,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
+okay, let's see. the user is asking about preparing for the ielts exam",out_of_service
+72,पादप कोशिका और जंतु कोशिका में क्या अंतर है?,query_resolution_academic,hi,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
+okay, let's see. the user is asking in hindi: ""पादप",query_resolution_academic
+304,Please change your language to Hindi,language_change,en,content_generation,language_change,language_change,language_change,language_change,"<think>
+okay, let's see. the user wrote, ""please change your language to hindi.""",language_change
+108,"Mera ek acha student achanak se class mein kuch nahi bolta, shayad kisi ne kuch keh diya",query_resolution_sel,hinglish,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
+okay, let's see. the teacher is saying that a good student has suddenly stopped talking",query_resolution_sel
+317,Tamil mein jawab chahiye mujhe,language_change,hinglish,language_change,language_change,language_change,language_change,language_change,"<think>
+okay, let's see. the user wrote ""tamil mein jawab chahiye",language_change
+56,"పాఠం చాలా పొడవుగా ఉంది, ఒక పీరియడ్‌లో ఇది పూర్తి చేయలేను",feedback,te,query_resolution_academic,feedback,feedback,feedback,feedback,"<think>
+okay, let's see. the user wrote in telugu: ""పా",query_resolution_sel
+79,ஒளிச்சேர்க்கை என்றால் என்ன?,query_resolution_academic,ta,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
+okay, let's see. the user asked ""ஒளிச்ச",query_resolution_academic
 152,Design an activity to teach place value in large numbers for Class 5,content_generation,en,"**activity title:** ""place value treasure hunt""
 
 **subject:** mathematics (class 5)
 
 **",content_generation,content_generation,content_generation,content_generation,"<think>
 okay, let's see. the user is asking for an activity to teach place value in",content_generation
-128,"शेयर मार्केट में पैसे लगाना चाहता हूँ, कहाँ से शुरू करूँ?",out_of_service,hi,out_of_service,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
-okay, let's see. the user is asking about investing in the stock market and where",out_of_service
-41,और छोटा जवाब दे सकते हो? बस मुख्य बातें काफी हैं,feedback,hi,content_generation,"मैं समझ गया। मैं सीधे इंटेंट लेबल दूंगा। 
-
-कृपया",feedback,feedback,feedback,"<think>
-okay, let's see. the user wrote, ""और छोटा",content_generation
-170,வகுப்பு 5 க்கு பெரிய எண்களின் இட மதிப்பு செயல்பாடு கொடு,content_generation,ta,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
-okay, let's see. the user wrote in tamil: ""வகுப",content_generation
-119,"పరీక్షకు ముందు ఒక పిల్లవాడు చాలా ఆందోళనకు గురవుతాడు, అన్నీ మర్చిపోతాడు",query_resolution_sel,te,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
+156,Class 9 civics — I need an engaging lesson on fundamental rights,content_generation,en,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
+okay, let's see. the user is asking for a lesson on fundamental rights for class",content_generation
+302,Switch to Tamil please,language_change,en,language_change,language_change,language_change,language_change,language_change,"<think>
+okay, let's see. the user wrote ""switch to tamil please."" so i need",language_change
+179,తరగతి 7 చరిత్రకు మొఘల్ సామ్రాజ్యంపై ఆసక్తికరమైన పాఠం,content_generation,te,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
+okay, let's see. the user wrote in telugu: ""తరగత",content_generation
+100,दो बच्चे रोज़ आपस में लड़ते हैं और पूरी क्लास disturb हो जाती है,query_resolution_sel,hi,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
+okay, let's see. the teacher's message is in hindi. they're saying that",query_resolution_sel
+58,ఉదాహరణ మా గ్రామ విద్యార్థులకు సరిపడలేదు,feedback,te,query_resolution_sel,out_of_service,feedback,feedback,feedback,"<think>
+okay, let's see. the user wrote ""ఉదాహర",feedback
+197,"SEL wala part forced lag raha tha, topic se naturally connect nahi hua",feedback,hinglish,query_resolution_sel,feedback,feedback,feedback,feedback,"<think>
+okay, let's see. the user wrote, ""sel wala part forced lag r",feedback
+220,खाद्य जाल क्या है और यह खाद्य श्रृंखला से कैसे अलग है?,query_resolution_academic,hi,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
+okay, let's see. the user is asking in hindi: ""खाद",query_resolution_academic
+50,"பாடம் மிக நீளமாக இருந்தது, ஒரு வகுப்பில் இதை முடிக்க முடியாது",feedback,ta,query_resolution_sel,feedback,feedback,feedback,feedback,"<think>
+okay, let's see. the user wrote in tamil: ""பாடம",feedback
+265,ఎప్పుడూ టాపర్‌గా ఉన్న విద్యార్థి ఇప్పుడు ఫెయిల్ అవుతున్నాడు మరియు చాలా దూరంగా ఉన్నాడు,query_resolution_sel,te,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
 okay, let's see. the user's message is in telugu. translating",query_resolution_sel
-292,இன்று இந்தியாவில் தங்கத்தின் விலை என்ன?,out_of_service,ta,out_of_service,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
-okay, let's see. the user is asking in tamil, ""இன்ற",out_of_service
-267,కొంతమంది విద్యార్థులు గుంపులు చేసుకుని ఒక పిల్లవాడిని అన్ని కార్యకలాపాల నుండి మినహాయిస్తున్నారు,query_resolution_sel,te,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
+324,Telugu-ல் பதில் சொல்லுங்கள்,language_change,ta,language_change,language_change,language_change,language_change,language_change,"<think>
+okay, let's see. the user wrote ""telugu-ல் பத",language_change
+118,"ఇద్దరు విద్యార్థులు రోజూ గొడవపడతారు, తరగతి అంతా దెబ్బతింటుంది",query_resolution_sel,te,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
 okay, let's see. the user's message is in telugu. translating",query_resolution_sel
+290,"அடுத்த வாரம் என் அண்ணன் திருமணம், பேச்சு எழுதி கொடுங்கள்",out_of_service,ta,language_change,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
+okay, let's see. the user wrote in tamil: ""அடுத",out_of_service
+176,తరగతి 5 కోసం పెద్ద సంఖ్యల స్థాన విలువ కార్యకలాపం ఇవ్వు,content_generation,te,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
+okay, let's see. the user wrote ""తరగతి 5",content_generation
+256,"Ek baccha kabhi group mein kaam nahi karta, hamesha akele karna chahta hai",query_resolution_sel,hinglish,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
+okay, let's see. the teacher's message is in hindi: ""ek baccha",query_resolution_sel
+4,Give me content to explain Newton's laws of motion to Class 9 students,content_generation,en,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
+okay, let's see. the user is asking for content to explain newton's laws of",content_generation
+279,पानी की supply के बारे में housing society को complaint letter draft करो,out_of_service,hi,content_generation,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
+okay, let's see. the user is asking for a complaint letter draft regarding water supply",out_of_service
+261,சில மாணவர்கள் குழு உருவாக்கி ஒரு குழந்தையை எல்லா செயல்பாடுகளிலிருந்தும் ஒதுக்குகிறார்கள்,query_resolution_sel,ta,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
+okay, let's see. the user's message is in tamil. translating it",query_resolution_sel
+211,What is the difference between speed and velocity?,query_resolution_academic,en,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
+okay, let's see. the user is asking, ""what is the difference between speed",query_resolution_academic
+104,"Class mein ek bully hai jo sabko disturb karta rehta hai, kya karoon?",query_resolution_sel,hinglish,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
+okay, let's see. the teacher is saying there's a bully in the class who",query_resolution_sel
 151,I need a lesson on the human digestive system for Class 8 biology,content_generation,en,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
 okay, let's see. the user is asking for a lesson on the human digestive system",content_generation
-34,The example you gave was not relatable for students in rural India,feedback,en,content_generation,feedback,feedback,feedback,feedback,"<think>
-okay, let's see. the user's message is ""the example you gave was not",feedback
-201,Mixed ability வகுப்பிற்கு content தர முடியுமா?,feedback,ta,query_resolution_academic,content_generation,query_resolution_sel,content_generation,content_generation,"<think>
+53,"கொஞ்சம் சுருக்கமான பதில் கொடுங்கள், முக்கிய புள்ளிகள் மட்டும்",feedback,ta,query_resolution_academic,content_generation,feedback,query_resolution_academic,language_change,"<think>
+okay, let's see. the user wrote ""கொஞ்சம",query_resolution_academic
+201,Mixed ability வகுப்பிற்கு content தர முடியுமா?,feedback,ta,query_resolution_academic,content_generation,content_generation,content_generation,content_generation,"<think>
 okay, let's see. the user is asking in tamil: ""mixed ability வ",content_generation
-199,Hook நன்றாக இருந்தது ஆனால் உதாரணம் மாணவர்களுக்கு புரியவில்லை,feedback,ta,feedback,feedback,feedback,feedback,feedback,"<think>
-okay, let's see. the user wrote in tamil: ""hook நன",feedback
-174,வகுப்பு 9 குடிமையியல் அடிப்படை உரிமைகள் பாடம் வேண்டும்,content_generation,ta,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
-okay, let's see. the user wrote ""வகுப்பு",content_generation
-71,ओम का नियम समझाइए,query_resolution_academic,hi,content_generation,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
-okay, let's see. the user wrote ""ओम का निय",query_resolution_academic
-284,"Bhai ki shaadi hai agle hafte, wedding speech likh do",out_of_service,hinglish,out_of_service,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
-okay, let's see. the user is asking for a wedding speech for their brother's",out_of_service
-149,IELTS పరీక్షకు ఎలా సిద్ధపడాలి?,out_of_service,te,query_resolution_academic,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
-okay, let's see. the user is asking in telugu: ""ielts",out_of_service
-113,"தேர்விற்கு முன்பு ஒரு குழந்தை மிகவும் பயந்து போகிறது, எல்லாவற்றையும் மறந்துவிடுகிறது",query_resolution_sel,ta,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
-okay, let's see. the teacher's message is in tamil. translating it",query_resolution_sel
-297,నీటి సరఫరా సమస్యపై హౌసింగ్ సొసైటీకి ఫిర్యాదు లేఖ కావాలి,out_of_service,te,query_resolution_academic,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
-okay, let's see. the user is asking for a complaint letter to a housing society",out_of_service
+51,"இந்த வடிவம் எனக்கு பிடிக்கவில்லை, வேறு முறை கொடுங்கள்",feedback,ta,language_change,feedback,feedback,feedback,feedback,"<think>
+okay, let's see. the user wrote in tamil: ""இந்த",language_change
+241,A student who was always a topper has started failing and seems very withdrawn lately,query_resolution_sel,en,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
+okay, let's see. the teacher is talking about a student who used to be a",query_resolution_sel
+38,"कंटेंट बहुत लंबा था, एक कक्षा में इतना नहीं पढ़ा सकते",feedback,hi,content_generation,feedback,feedback,feedback,feedback,"<think>
+okay, let's see. the user wrote, ""कंटेंट",feedback
+60,"చాలా బాగుంది, విద్యార్థులకు కార్యకలాపం చాలా నచ్చింది",feedback,te,query_resolution_sel,feedback,feedback,feedback,feedback,"<think>
+okay, let's see. the user message is in telugu. translating it",feedback
+189,Mixed ability class के लिए content बना सकते हो क्या?,feedback,hi,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
+okay, let's see. the teacher is asking, ""mixed ability class ke liye",content_generation
+154,Create a lesson on light and reflection for Class 10 physics,content_generation,en,"**lesson title:** light and reflection
+
+**class:** class 10 physics
+
+**subject:** physics",content_generation,content_generation,content_generation,content_generation,"<think>
+okay, let's see. the user wants me to classify their message into one of the",content_generation
+13,Class 6 ke liye fractions ka ek simple lesson do,content_generation,hinglish,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
+okay, let's see. the user wrote, ""class 6 ke liye fractions",content_generation
+73,Photosynthesis kya hota hai?,query_resolution_academic,hinglish,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
+okay, let's see. the user is asking ""photosynthesis kya hota hai",query_resolution_academic
+186,I asked for Class 6 content but the difficulty level was more like Class 8,feedback,en,content_generation,feedback,feedback,feedback,feedback,"<think>
+okay, let's see. the user is a teacher who mentioned they asked for class",feedback
+162,कक्षा 9 नागरिक शास्त्र के लिए मौलिक अधिकारों का पाठ चाहिए,content_generation,hi,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
+okay, let's see. the user is asking for ""कक्षा",content_generation
+227,Industrial Revolution ke kya effects the society pe?,query_resolution_academic,hinglish,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
+okay, let's see. the user is asking about the effects of the industrial revolution on",query_resolution_academic
+330,తమిళంలో సమాధానం ఇవ్వండి,language_change,te,నేను తప్పక త,language_change,language_change,language_change,language_change,"<think>
+okay, let's see. the user wrote ""తమిళం",language_change
+244,One student always refuses to work in groups and insists on doing everything alone,query_resolution_sel,en,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
+okay, let's see. the teacher's message is about a student who refuses to work",query_resolution_sel
+255,Kuch bachche group bana kar ek bacche ko activities se bahar rakh rahe hain,query_resolution_sel,hinglish,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
+okay, let's see. the teacher's message is in hindi. the translation would be",query_resolution_sel
+31,"This lesson was very helpful, exactly what I needed. Thank you!",feedback,en,feedback,feedback,feedback,feedback,feedback,"<think>
+okay, let's see. the user wrote, ""this lesson was very helpful, exactly",feedback
+59,"కొంచెం చిన్న సమాధానం ఇవ్వండి, ముఖ్యమైన విషయాలు మాత్రమే",feedback,te,భావన ప్రకార,"to classify the intent, i'll need the teacher's message. please provide it. i'll respond with one",feedback,query_resolution_academic,language_change,"<think>
+okay, let's see. the user wrote ""కొంచ",query_resolution_academic
 278,"अगले हफ्ते भाई की शादी है, speech लिख दो",out_of_service,hi,out_of_service,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
 okay, let's see. the user wrote, ""अगले हफ",out_of_service
-299,ఈ వారాంతంలో కుటుంబంతో చూడటానికి Netflix లో ఏమి బాగుంటుంది?,out_of_service,te,out_of_service,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
-okay, let's see. the user is asking in telugu: ""ఈ వ",out_of_service
-229,வேகம் மற்றும் திசைவேகம் இடையே என்ன வித்தியாசம்?,query_resolution_academic,ta,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
-okay, let's see. the user is asking in tamil: ""வேக",query_resolution_academic
-46,Example hamare gaon ke bachon se relate nahi karta tha,feedback,hinglish,query_resolution_sel,query_resolution_sel,feedback,feedback,feedback,"<think>
-okay, let's see. the user wrote, ""example hamare gaon ke bach",feedback
-237,భారత రాజ్యాంగ ప్రవేశిక ఏమి చెప్తుంది?,query_resolution_academic,te,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
-okay, let's see. the user is asking in telugu: ""భ",query_resolution_academic
-124,What are the best engineering colleges in India after Class 12?,out_of_service,en,out_of_service,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
-okay, let's see. the user is asking about the best engineering colleges in india after",query_resolution_academic
-289,வயிற்று கொழுப்பை குறைக்க என்ன diet பின்பற்றவேண்டும்?,out_of_service,ta,out_of_service,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
-okay, let's see. the user is asking in tamil about a diet to reduce belly",out_of_service
-210,తరగతి 6 అడిగాను కానీ కంటెంట్ తరగతి 8 స్థాయిలో ఉంది,feedback,te,query_resolution_academic,feedback,content_generation,feedback,feedback,"<think>
-okay, let's see. the user wrote in telugu: ""తరగత",feedback
+149,IELTS పరీక్షకు ఎలా సిద్ధపడాలి?,out_of_service,te,query_resolution_academic,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
+okay, let's see. the user is asking in telugu: ""ielts",out_of_service
+312,"Bhasha badlo, Telugu mein samjhao",language_change,hi,language_change,language_change,language_change,language_change,language_change,"<think>
+okay, let's see. the user wrote ""bhasha badlo, telugu",language_change
+17,French Revolution Class 9 ke liye content banao — causes aur effects cover karo,content_generation,hinglish,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
+okay, let's see. the user is asking for content on the french revolution for class",content_generation
+199,Hook நன்றாக இருந்தது ஆனால் உதாரணம் மாணவர்களுக்கு புரியவில்லை,feedback,ta,feedback,feedback,feedback,feedback,feedback,"<think>
+okay, let's see. the user wrote in tamil: ""hook நன",feedback
+119,"పరీక్షకు ముందు ఒక పిల్లవాడు చాలా ఆందోళనకు గురవుతాడు, అన్నీ మర్చిపోతాడు",query_resolution_sel,te,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
+okay, let's see. the user wrote in telugu: ""పర",query_resolution_sel
+140,பங்கு சந்தையில் எப்படி முதலீடு செய்வது?,out_of_service,ta,out_of_service,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
+okay, let's see. the user is asking in tamil, ""பங",out_of_service
+223,"Speed aur velocity mein kya fark hai, simply batao",query_resolution_academic,hinglish,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
+okay, let's see. the user is asking ""speed aur velocity mein kya fark",query_resolution_academic
+101,"परीक्षा से पहले एक बच्चा बहुत घबरा जाता है, कुछ भी याद नहीं रहता उसे",query_resolution_sel,hi,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
+okay, let's see. the teacher's message is in hindi. the translation would be",query_resolution_sel
+234,துருப்பிடிக்கும் வேதியியல் செயல்முறையை சமன்பாட்டுடன் விளக்குங்கள்,query_resolution_academic,ta,query_resolution_academic,content_generation,query_resolution_academic,query_resolution_academic,content_generation,"<think>
+okay, let's see. the user wrote in tamil: ""துருப",content_generation
+76,French Revolution ke main causes kya the?,query_resolution_academic,hinglish,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
+okay, let's see. the user is asking about the main causes of the french revolution",query_resolution_academic
+82,பிரெஞ்சு புரட்சியின் முக்கிய காரணங்கள் என்ன?,query_resolution_academic,ta,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
+okay, let's see. the user is asking in tamil: ""பிர",query_resolution_academic
+219,भारतीय संविधान की प्रस्तावना क्या है?,query_resolution_academic,hi,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
+okay, let's see. the user is asking ""भारतीय स",query_resolution_academic
+184,First time using ShikshaBot and I'm genuinely impressed. Very useful tool.,feedback,en,feedback,feedback,feedback,feedback,feedback,"<think>
+okay, let's see. the user is a teacher using shikshabot for the",feedback
+251,"एक बच्चा रोज भूखा स्कूल आता है, पूरे दिन उसका ध्यान नहीं लगता",query_resolution_sel,hi,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
+okay, let's see. the teacher's message is in hindi. the user says,",query_resolution_sel
+329,భాషను తెలుగుకు మార్చండి,language_change,te,మీ సందేశాన్,language_change,language_change,language_change,language_change,"<think>
+okay, let's see. the user wrote ""భాషన",language_change
+12,कक्षा 10 के लिए रासायनिक अभिक्रियाओं का पाठ दीजिए,content_generation,hi,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
+okay, let's see. the user wrote ""कक्षा 10",content_generation
+141,JEE Main தேர்விற்கு எப்படி படிப்பது? என் மகன் தயார் ஆகிறான்,out_of_service,ta,query_resolution_academic,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
+okay, let's see. the user is asking in tamil: ""jee main",out_of_service
+180,తరగతి 9 పౌరశాస్త్రానికి ప్రాథమిక హక్కులపై పాఠం కావాలి,content_generation,te,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
+okay, let's see. the user wrote in telugu: ""తరగత",content_generation
+226,Food web kya hota hai? Food chain se kaise different hai?,query_resolution_academic,hinglish,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
+okay, let's see. the user is asking about the food web and how it's",query_resolution_academic
+321,English-ல் மட்டும் பதில் தாருங்கள்,language_change,ta,content_generation,language_change,language_change,language_change,language_change,"<think>
+okay, let's see. the user wrote ""english-ல் மட",language_change
+301,Can you please respond in Hindi from now on?,language_change,en,language_change,language_change,language_change,language_change,language_change,"<think>
+okay, the user is asking me to respond in hindi from now on. let me check",language_change
+254,"Do hafte baad aaya to bahut udaas tha, kisi se baat nahi karta ab",query_resolution_sel,hinglish,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
+okay, let's see. the teacher's message is in hindi. the translation would be",query_resolution_sel
+87,భూకంపాలు ఎందుకు వస్తాయి?,query_resolution_academic,te,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
+okay, let's see. the user asked, ""భూకం",query_resolution_academic
+208,"మొదటిసారి ShikshaBot వాడాను, చాలా నచ్చింది, ఉపయోగకరంగా ఉంది",feedback,te,feedback,feedback,feedback,feedback,feedback,"<think>
+okay, let's see. the user wrote in telugu: ""మొ",feedback
+105,"Ek baccha mistake karne par rota hai, bahut sensitive hai",query_resolution_sel,hinglish,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
+okay, let's see. the teacher's message is in hindi: ""ek baccha",query_resolution_sel
+195,Kya mixed-ability class ke liye bhi content de sakte ho?,feedback,hinglish,content_generation,query_resolution_sel,query_resolution_academic,content_generation,content_generation,"<think>
+okay, let's see. the teacher is asking, ""kya mixed-ability class",content_generation
 232,உணவு வலை என்றால் என்ன? உணவு சங்கிலியிலிருந்து எவ்வாறு வேறுபடுகிறது?,query_resolution_academic,ta,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
 okay, let's see. the user is asking in tamil: ""உணவ",query_resolution_academic
+90,మొక్క కణం మరియు జంతు కణం మధ్య తేడా ఏమిటి?,query_resolution_academic,te,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
+okay, let's see. the user is asking in telugu: ""what is the",query_resolution_academic
+327,Hindi lo cheppandi please,language_change,te,language_change,language_change,language_change,language_change,language_change,"<think>
+okay, let's see. the user wrote ""hindi lo cheppandi please"".",language_change
+113,"தேர்விற்கு முன்பு ஒரு குழந்தை மிகவும் பயந்து போகிறது, எல்லாவற்றையும் மறந்துவிடுகிறது",query_resolution_sel,ta,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
+okay, let's see. the teacher's message is in tamil. translating it",query_resolution_sel
+29,తరగతి 10 కోసం రసాయన చర్యలపై కంటెంట్ ఇవ్వు,content_generation,te,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
+okay, let's see. the user wrote ""తరగతి 1",content_generation
+138,Python mein ek simple calculator program likhdo,out_of_service,hinglish,yeh ek simple calculator program hai jo python mein likha gaya hai. yeh program user,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
+okay, let's see. the user is asking to write a simple calculator program in python",content_generation
+135,"JEE Main ke liye best strategy kya hai, mera beta prepare kar raha hai",out_of_service,hinglish,content_generation,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
+okay, let's see. the user is asking about the best strategy for jee main",out_of_service
+200,"பதில் பயனுள்ளது ஆனால் emoji வேண்டாம், தொழில்முறையாக தெரியவில்லை",feedback,ta,query_resolution_academic,feedback,feedback,feedback,feedback,"<think>
+okay, let's see. the user wrote in tamil: ""பதில்",feedback
+71,ओम का नियम समझाइए,query_resolution_academic,hi,content_generation,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
+okay, let's see. the user wrote ""ओम का निय",query_resolution_academic
+21,வகுப்பு 9 இயற்பியலுக்கு நியூட்டன் விதிகள் பாடம் வேண்டும்,content_generation,ta,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
+okay, let's see. the user wrote ""வகுப்பு",content_generation
+250,"एक बच्चा कभी भी group में काम नहीं करता, हमेशा अकेले करना चाहता है",query_resolution_sel,hi,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
+okay, let's see. the teacher's message is in hindi. the message says,",query_resolution_sel
+289,வயிற்று கொழுப்பை குறைக்க என்ன diet பின்பற்றவேண்டும்?,out_of_service,ta,out_of_service,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
+okay, let's see. the user is asking in tamil: ""வயிற",out_of_service
+217,चाल और वेग में क्या अंतर है?,query_resolution_academic,hi,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
+okay, let's see. the user is asking in hindi: ""चाल",query_resolution_academic
+61,What is photosynthesis?,query_resolution_academic,en,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
+okay, let's see. the user asked, ""what is photosynthesis?"" i need",query_resolution_academic
+209,"SEL భాగం సహజంగా అనిపించలేదు, అంశంతో అనుసంధానం కాలేదు",feedback,te,query_resolution_sel,feedback,query_resolution_sel,feedback,feedback,"<think>
+okay, let's see. the user wrote in telugu: ""sel భ",query_resolution_sel
+145,ఉద్యోగ ఇంటర్వ్యూకు ఎలా సిద్ధపడాలి?,out_of_service,te,query_resolution_academic,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
+okay, let's see. the user is asking in telugu: ""ఉద",out_of_service
+320,தமிழ் மொழியில் பேசுங்கள்,language_change,ta,மொழி மாற்றம்,language_change,language_change,language_change,language_change,"<think>
+okay, let's see. the user wrote ""தமிழ் ம",language_change
+160,कक्षा 10 भौतिक विज्ञान में प्रकाश और परावर्तन का पाठ बनाइए,content_generation,hi,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
+okay, let's see. the user wrote ""कक्षा 10",content_generation
+78,Plant cell aur animal cell mein kya fark hai?,query_resolution_academic,hinglish,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
+okay, let's see. the user is asking ""plant cell aur animal cell mein k",query_resolution_academic
+163,Class 8 biology mein digestive system ka lesson do,content_generation,hinglish,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
+okay, let's see. the user is asking for a lesson on the digestive system for",content_generation
+144,Python இல் Fibonacci series program எழுதுங்கள்,out_of_service,ta,language_change,out_of_service,out_of_service,out_of_service,content_generation,"<think>
+okay, let's see. the user wrote ""python இல் fibonacci series program",content_generation
+20,வகுப்பு 8 க்கு ஒளிச்சேர்க்கை பற்றிய வகுப்பறை செயல்பாடு கொடு,content_generation,ta,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
+okay, let's see. the user wrote in tamil: ""வகுப",content_generation
+153,Give me content on types of soil and their properties for Class 7 geography,content_generation,en,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
+okay, let's see. the user is asking for content on types of soil and their",content_generation
+5,Prepare an engaging activity for teaching the water cycle to Class 6,content_generation,en,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
+okay, let's see. the user wants me to classify their message into one of the",content_generation
+26,తరగతి 8 కోసం కిరణజన్య సంయోగక్రియపై తరగతి గది కార్యకలాపం ఇవ్వు,content_generation,te,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
+okay, let's see. the user wrote in telugu: ""తరగత",content_generation
+303,I would prefer if you replied in Telugu,language_change,en,నేను తెలుగు,language_change,language_change,language_change,language_change,"<think>
+okay, let's see. the user wrote, ""i would prefer if you replied in",language_change
+239,పారిశ్రామిక విప్లవం సమాజంపై ఏ ప్రభావాలు చూపింది?,query_resolution_academic,te,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
+okay, let's see. the user is asking in telugu: ""ప",query_resolution_academic
+231,இந்திய அரசியலமைப்பின் முன்னுரை என்ன சொல்கிறது?,query_resolution_academic,ta,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
+okay, let's see. the user is asking in tamil: ""இந",query_resolution_academic
+167,"Mughal Empire pe Class 7 history ka lesson chahiye, kuch interesting activity ke saath",content_generation,hinglish,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
+okay, let's see. the user is asking for a lesson on the mughal",content_generation
+316,"Hindi mein switch karo yaar, samajh nahi aata",language_change,hinglish,language_change,language_change,language_change,language_change,language_change,"<think>
+okay, let's see. the user wrote, ""hindi mein switch karo ya",language_change
+272,Can you write a wedding speech for my brother's marriage next week?,out_of_service,en,out_of_service,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
+okay, let's see. the user is asking for a wedding speech for their brother's",out_of_service
+238,ఆహార వల అంటే ఏమిటి? ఆహార గొలుసు నుండి ఎలా వేరుగా ఉంటుంది?,query_resolution_academic,te,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
+okay, let's see. the user is asking in telugu. the question is about",query_resolution_academic
+159,कक्षा 7 भूगोल के लिए मिट्टी के प्रकार और उनके गुणों का कंटेंट दो,content_generation,hi,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
+okay, let's see. the user is asking for content on soil types and their properties",content_generation
+157,कक्षा 8 के लिए पाचन तंत्र का पाठ बनाओ,content_generation,hi,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
+okay, let's see. the user wrote ""कक्षा 8 क",content_generation
+203,"SEL பகுதி இயற்கையாக இல்லை, தலைப்புடன் இணைக்கவில்லை",feedback,ta,query_resolution_sel,query_resolution_sel,query_resolution_sel,feedback,feedback,"<think>
+okay, let's see. the user wrote in tamil: ""sel பகு",query_resolution_sel
+229,வேகம் மற்றும் திசைவேகம் இடையே என்ன வித்தியாசம்?,query_resolution_academic,ta,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
+okay, let's see. the user is asking in tamil: ""வேக",query_resolution_academic
+23,வகுப்பு 5 அறிவியல் உணவு சங்கிலி செயல்பாடு கொடுங்கள்,content_generation,ta,query_resolution_academic,content_generation,content_generation,content_generation,content_generation,"<think>
+okay, let's see. the user wrote ""வகுப்பு",content_generation
+166,Class 10 physics mein light aur reflection ka lesson banao,content_generation,hinglish,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
+okay, let's see. the user is asking for a lesson on light and reflection for",content_generation
+52,எடுத்துக்காட்டு கிராமத்து மாணவர்களுக்கு பொருந்தவில்லை,feedback,ta,query_resolution_sel,out_of_service,feedback,feedback,feedback,"<think>
+okay, let's see. the user wrote ""எடுத்துக",feedback
+221,औद्योगिक क्रांति के समाज पर क्या प्रभाव पड़े?,query_resolution_academic,hi,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
+okay, let's see. the user is asking about the impact of the industrial revolution on",query_resolution_academic
+146,స్టాక్ మార్కెట్లో ఎలా పెట్టుబడి పెట్టాలి?,out_of_service,te,out_of_service,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
+okay, let's see. the user is asking in telugu: ""స",out_of_service
+107,Exam ke time ek baccha itna anxious ho jaata hai ki sab bhool jaata hai,query_resolution_sel,hinglish,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
+okay, let's see. the teacher's message is about a student who gets so anxious",query_resolution_sel
+297,నీటి సరఫరా సమస్యపై హౌసింగ్ సొసైటీకి ఫిర్యాదు లేఖ కావాలి,out_of_service,te,query_resolution_academic,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
+okay, let's see. the user is asking for a complaint letter to a housing society",out_of_service
+236,వ్యాక్సిన్ మానవ శరీరంలో ఎలా పని చేస్తుంది?,query_resolution_academic,te,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
+okay, let's see. the user is asking in telugu: ""వ్",query_resolution_academic
+42,"बढ़िया जवाब था, बच्चों को बहुत पसंद आया",feedback,hi,feedback,feedback,feedback,feedback,feedback,"<think>
+okay, let's see. the user wrote ""बढ़िया",feedback
+102,"एक होशियार बच्चा अचानक से क्लास में कुछ नहीं बोलता, किसी की बात से hurt हो गया शायद",query_resolution_sel,hi,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
+okay, let's see. the teacher's message is in hindi. they're saying that",query_resolution_sel
+130,12वीं के बाद कौन से best engineering colleges हैं?,out_of_service,hi,out_of_service,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
+okay, let's see. the user is asking about the best engineering colleges after 1",query_resolution_academic
+39,"मुझे यह फॉर्मेट पसंद नहीं है, कुछ और तरीका बताओ",feedback,hi,language_change,feedback,feedback,feedback,feedback,"<think>
+okay, let's see. the user wrote, ""मुझे यह",feedback
+174,வகுப்பு 9 குடிமையியல் அடிப்படை உரிமைகள் பாடம் வேண்டும்,content_generation,ta,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
+okay, let's see. the user wrote ""வகுப்பு",content_generation
+282,"मेरे फोन की screen टूट गई, repair करवाऊँ या नया लूँ?",out_of_service,hi,out_of_service,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
+okay, let's see. the user is asking in hindi: ""mere phone ki",out_of_service
+165,"Soil types ke baare mein Class 7 geography ka content do, properties bhi batao",content_generation,hinglish,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
+okay, let's see. the user is asking for content on soil types for class",content_generation
+173,வகுப்பு 7 வரலாறு முகலாயப் பேரரசு பாடம் சுவாரஸ்யமாக,content_generation,ta,query_resolution_academic,content_generation,content_generation,content_generation,content_generation,"<think>
+okay, let's see. the user wrote ""வகுப்பு",content_generation
+276,My phone screen cracked. Should I repair it or buy a new phone?,out_of_service,en,out_of_service,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
+okay, let's see. the user is asking about whether to repair their cracked phone screen",out_of_service
+169,வகுப்பு 8 உயிரியல் செரிமான மண்டலம் பாடம் தயாரி,content_generation,ta,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
+okay, let's see. the user wrote ""வகுப்பு",content_generation
+1,Generate a lesson on fractions for Class 6,content_generation,en,"**content generation intent**
+
+lesson title: understanding fractions for class 6
+
+**objective:**",content_generation,content_generation,content_generation,content_generation,"<think>
+okay, let's see. the user wants me to classify their message into one of the",content_generation
+125,How can I improve my IELTS speaking score? I am applying abroad.,out_of_service,en,out_of_service,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
+okay, let's see. the user is asking how to improve their ielts speaking",out_of_service
+117,"ఒక విద్యార్థి తప్పు చేసినప్పుడల్లా ఏడుస్తాడు, చాలా సెన్సిటివ్‌గా ఉంటాడు",query_resolution_sel,te,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
+okay, let's see. the teacher's message is in telugu. translating",query_resolution_sel
+128,"शेयर मार्केट में पैसे लगाना चाहता हूँ, कहाँ से शुरू करूँ?",out_of_service,hi,out_of_service,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
+okay, let's see. the user is asking about investing in the stock market and where",out_of_service
+115,"నా తరగతిలో ఒక విద్యార్థి అసలు పాల్గొనడు, ఎప్పుడూ నిశ్శబ్దంగా కూర్చుంటాడు",query_resolution_sel,te,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
+okay, let's see. the user's message is in telugu. translating",query_resolution_sel
+253,Jo baccha pehle topper tha ab fail ho raha hai aur bahut withdrawn ho gaya hai,query_resolution_sel,hinglish,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
+okay, let's see. the teacher's message is in hindi. the translation would be",query_resolution_sel
+112,"இரண்டு மாணவர்கள் தினமும் சண்டை போடுகிறார்கள், வகுப்பு சீர்குலைகிறது",query_resolution_sel,ta,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
+okay, let's see. the teacher's message is in tamil. translating it",query_resolution_sel
+44,"Lesson bahut lamba tha yaar, ek period mein itna nahi ho sakta",feedback,hinglish,query_resolution_academic,feedback,feedback,feedback,feedback,"<think>
+okay, let's see. the teacher's message is in hindi. they said, """,feedback
+269,"ఒక పిల్లవాడు రోజూ పాఠశాలకు ఆకలిగా వస్తున్నాడు, రోజంతా ఏకాగ్రత లేదు",query_resolution_sel,te,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
+okay, let's see. the user's message is in telugu. translating",query_resolution_sel
+225,Indian Constitution ki Preamble kya kehti hai?,query_resolution_academic,hinglish,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
+okay, let's see. the user is asking about the preamble of the indian constitution",query_resolution_academic
+14,"Mujhe Class 8 ke liye photosynthesis ka content chahiye, students ko samajh nahi aata",content_generation,hinglish,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
+okay, let's see. the user is asking for content related to photosynthesis for class",content_generation
+202,"முதல் முறை ShikshaBot பயன்படுத்தினேன், மிகவும் பிடித்தது",feedback,ta,feedback,feedback,feedback,feedback,feedback,"<think>
+okay, let's see. the user wrote in tamil: ""முதல்",feedback
+62,What is the difference between mitosis and meiosis?,query_resolution_academic,en,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
+okay, let's see. the user is asking about the difference between mitosis and me",query_resolution_academic
+32,"The content was too long, I can't cover all of this in one class period",feedback,en,content_generation,feedback,feedback,feedback,feedback,"<think>
+okay, let's see. the user is a teacher using padhai bot. they sent",feedback
+319,தமிழில் பதில் சொல்லுங்கள்,language_change,ta,language_change,language_change,language_change,language_change,language_change,"<think>
+okay, let's see. the user wrote ""தமிழில்",language_change
+80,மைட்டோசிஸ் மற்றும் மியோசிஸ் இடையே என்ன வித்தியாசம்?,query_resolution_academic,ta,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
+okay, let's see. the user is asking in tamil: ""மைட",query_resolution_academic
+273,Help me draft a complaint letter to the housing society about water supply,out_of_service,en,content_generation,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
+okay, let's see. the user is asking for help drafting a complaint letter to the",out_of_service
+293,இந்த வார இறுதியில் குடும்பத்துடன் பார்க்க Netflix-ல் என்ன நல்லது?,out_of_service,ta,out_of_service,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
+okay, let's see. the user is asking in tamil: ""இந",out_of_service
+252,"एक बच्चा बार बार कहता है 'मैं बहुत stupid हूँ', खुद को बेकार समझता है",query_resolution_sel,hi,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
+okay, let's see. the teacher's message is in hindi. the user is describing",query_resolution_sel
+40,उदाहरण हमारे गांव के बच्चों के लिए सही नहीं था,feedback,hi,feedback,feedback,feedback,feedback,feedback,"<think>
+okay, let's see. the user wrote, ""उदाहरण ह",feedback
+120,"నా మంచి విద్యార్థి హఠాత్తుగా తరగతిలో మాట్లాడడు, ఎవరో ఏదో అన్నారేమో",query_resolution_sel,te,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
+okay, let's see. the user wrote in telugu: ""నా",query_resolution_sel
+298,ఈరోజు భారతదేశంలో బంగారం ధర ఎంత?,out_of_service,te,out_of_service,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
+okay, let's see. the user is asking in telugu: ""ఈర",out_of_service
+25,తరగతి 7 కోసం భిన్నాల పాఠం తయారు చేయి,content_generation,te,content_generation,content,content_generation,content_generation,content_generation,"<think>
+okay, let's see. the user wrote ""తరగతి 7",content_generation
+311,Tamil mein baat karo,language_change,hi,language_change,language_change,language_change,language_change,language_change,"<think>
+okay, let's see. the user wrote ""tamil mein baat karo"".",language_change
+103,"Meri class mein ek baccha bilkul participate nahi karta, chup rehta hai hamesha",query_resolution_sel,hinglish,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
+okay, let's see. the teacher is saying that there's a child in their class",query_resolution_sel
+300,"నా ఫోన్ స్క్రీన్ పగిలిపోయింది, రిపేర్ చేయించాలా లేదా కొత్తది కొనాలా?",out_of_service,te,out_of_service,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
+okay, let's see. the user wrote in telugu: ""నా",out_of_service
+175,తరగతి 8 జీవశాస్త్రానికి జీర్ణ వ్యవస్థ పాఠం తయారుచేయి,content_generation,te,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
+okay, let's see. the user wrote ""తరగతి 8",content_generation
+171,வகுப்பு 7 புவியியல் மண் வகைகள் மற்றும் பண்புகள் பாடம்,content_generation,ta,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
+okay, let's see. the user wrote ""வகுப்பு",content_generation
+281,इस weekend family के साथ देखने के लिए कोई Netflix series बताओ,out_of_service,hi,out_of_service,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
+okay, let's see. the user is asking for a netflix series recommendation to watch with",out_of_service
+142,12ம் வகுப்பிற்கு பிறகு இந்தியாவில் சிறந்த பொறியியல் கல்லூரிகள் எவை?,out_of_service,ta,query_resolution_academic,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
+okay, let's see. the user is asking in tamil: ""12ம்",out_of_service
+214,What is a food web and how is it different from a food chain?,query_resolution_academic,en,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
+okay, let's see. the user is asking, ""what is a food web and",query_resolution_academic
+192,Class 6 माँगा था लेकिन content Class 8 level का था,feedback,hi,feedback,feedback,feedback,feedback,feedback,"<think>
+okay, let's see. the user wrote, ""class 6 माँग",feedback
+246,A child keeps saying things like 'I'm too stupid for this' and 'I can never do anything right',query_resolution_sel,en,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
+okay, let's see. the teacher's message is about a child who keeps saying negative",
+280,आज भारत में सोने का भाव क्या है?,out_of_service,hi,out_of_service,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
+okay, let's see. the user is asking, ""आज भार",out_of_service
+27,తరగతి 9 కోసం న్యూటన్ చలన నియమాలపై పాఠం కావాలి,content_generation,te,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
+okay, let's see. the user wrote ""తరగతి 9",
+230,தடுப்பூசி மனித உடலில் எவ்வாறு செயல்படுகிறது?,query_resolution_academic,ta,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
+okay, let's see. the user is asking in tamil: ""தடுப",query_resolution_academic
+210,తరగతి 6 అడిగాను కానీ కంటెంట్ తరగతి 8 స్థాయిలో ఉంది,feedback,te,query_resolution_academic,content_generation,content_generation,feedback,feedback,"<think>
+okay, let's see. the user wrote in telugu: ""తరగత",
+188,"Response उपयोगी है लेकिन emoji हटाओ, professional नहीं लगता",feedback,hi,language_change,feedback,feedback,feedback,feedback,"<think>
+okay, let's see. the user wrote, ""response उपयोग",feedback
+150,Python లో Fibonacci series program రాయండి,out_of_service,te,fibonacci series కోసం ఒక సర,"content 
+
+the intent  intent is based on educational and reason. since it seems the request for a",content_generation,out_of_service,content_generation,"<think>
+okay, let's see. the user wrote ""python లో fibonacci series program",
+284,"Bhai ki shaadi hai agle hafte, wedding speech likh do",out_of_service,hinglish,out_of_service,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
+okay, let's see. the user is asking for a wedding speech for their brother's",out_of_service
+139,வேலை நேர்காணலுக்கு எப்படி தயார் ஆவது?,out_of_service,ta,query_resolution_sel,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
+okay, let's see. the user is asking in tamil: ""வேல",
+181,The hook was great but the example didn't land with my students at all,feedback,en,feedback,feedback,feedback,feedback,feedback,"<think>
+okay, let's see. the teacher is saying that the hook was great but the example",
+185,"The SEL section felt forced and unnatural, it didn't connect to the topic",feedback,en,feedback,feedback,feedback,feedback,feedback,"<think>
+okay, let's see. the user is a teacher using padhai bot, and they",
+41,और छोटा जवाब दे सकते हो? बस मुख्य बातें काफी हैं,feedback,hi,content_generation,मैं समझ गया। मैं अपने उत्तरों को संक्षिप्त रखूंगा और केवल एक शब्द,feedback,feedback,feedback,"<think>
+okay, let's see. the user wrote, ""और छोटा",
+260,"இரண்டு வாரங்கள் இல்லாமல் வந்த மாணவன் மிகவும் சோகமாக வந்தான், யாரிடமும் பேசவில்லை",query_resolution_sel,ta,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
+okay, let's see. the teacher's message is in tamil. translating it",
+109,"என் வகுப்பில் ஒரு மாணவன் எதிலும் பங்கேற்பதில்லை, எப்போதும் அமைதியாக இருக்கிறான்",query_resolution_sel,ta,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
+okay, let's see. the teacher's message is in tamil. translating it",
+268,"ఒక విద్యార్థి గ్రూప్ వర్క్ చేయడానికి ఎప్పుడూ నిరాకరిస్తాడు, ఒంటరిగా చేయాలని ఉంటాడు",query_resolution_sel,te,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
+okay, let's see. the teacher's message is in telugu. translating",
+132,Python में Fibonacci series का code लिखो,out_of_service,hi,content_generation,out_of_service,content_generation,out_of_service,content_generation,"<think>
+okay, let's see. the user is asking for a python code to generate the fibonacci",
+81,நிலநடுக்கம் ஏன் வருகிறது?,query_resolution_academic,ta,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
+okay, let's see. the user asked, ""நிலநட",
+30,తరగతి 9 సామాజిక శాస్త్రానికి ప్రజాస్వామ్యంపై పాఠం తయారుచేయి,content_generation,te,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
+okay, let's see. the user wrote ""తరగతి 9",
+266,"రెండు వారాల తర్వాత వచ్చిన విద్యార్థి చాలా దుఃఖంగా ఉన్నాడు, ఎవరితోనూ మాట్లాడడు",query_resolution_sel,te,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
+okay, let's see. the user's message is in telugu. translating",
+10,कक्षा 9 के लिए भारत का भूगोल पढ़ाने की गतिविधि चाहिए,content_generation,hi,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
+okay, let's see. the user wrote ""कक्षा 9 क",
+325,తెలుగులో సమాధానం చెప్పండి,language_change,te,భాషా మార్పు,language_change,language_change,language_change,language_change,"<think>
+okay, let's see. the user wrote ""తెలుగ",
+267,కొంతమంది విద్యార్థులు గుంపులు చేసుకుని ఒక పిల్లవాడిని అన్ని కార్యకలాపాల నుండి మినహాయిస్తున్నారు,query_resolution_sel,te,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
+okay, let's see. the user's message is in telugu. translating",
+183,Can you generate content suited for a mixed-ability classroom?,feedback,en,content_generation,content_generation,content_generation,content_generation,out_of_service,"<think>
+okay, let's see. the user is asking, ""can you generate content suited for",
+91,A student in my class is completely disengaged — sits quietly and does nothing,query_resolution_sel,en,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
+okay, let's see. the teacher is talking about a student who's disengaged",
+19,வகுப்பு 7 க்கான பின்னங்கள் பாடத்தை உருவாக்கு,content_generation,ta,content_generation,content_generation,content_generation,content_generation,content_generation,"<think>
+okay, let's see. the user wrote ""வகுப்பு",
+74,Mitosis aur meiosis mein kya difference hai?,query_resolution_academic,hinglish,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,query_resolution_academic,"<think>
+okay, let's see. the user is asking ""mitosis aur meiosis mein k",query_resolution_academic
+57,"ఈ ఫార్మాట్ నాకు నచ్చలేదు, మరొక పద్ధతి చెప్పండి",feedback,te,మీరు కావలసి,feedback,feedback,feedback,language_change,"<think>
+okay, let's see. the user wrote in telugu: ""ఈ ఫ",
+306,Please respond in English only,language_change,en,language_change,i'll respond with the intent label in english. what is the teacher's message?,language_change,language_change,language_change,"<think>
+okay, let's see. the user wrote ""please respond in english only."" so i",
+137,IELTS ki preparation ke liye kya karoon? Abroad jaana hai,out_of_service,hinglish,out_of_service,out_of_service,out_of_service,out_of_service,out_of_service,"<think>
+okay, let's see. the user is asking about ielts preparation and wants to",
+307,Hindi mein jawab do,language_change,hi,language_change,language_change,language_change,language_change,language_change,"<think>
+okay, let's see. the user wrote ""hindi mein jawab do"". trans",
+248,दो हफ्ते absent रहने के बाद बच्चा बहुत उदास लौटा है और किसी से बात नहीं करता,query_resolution_sel,hi,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,query_resolution_sel,"<think>
+okay, let's see. the teacher's message is in hindi. the user is saying",
+22,வகுப்பு 6 க்கு நீர் சுழற்சி பாடம் தயாரி,content_generation,ta,content_generation,"<|header_start|>assistant<|header_end|>assistant<|header_end|>
+
+## step 1: understand the context
+the teacher padh",content_generation,content_generation,content_generation,"<think>
+okay, let's see. the user wrote ""வகுப்பு",
+47,"Thoda chhota response do, sirf key points chahiye",feedback,hinglish,content_generation,content_generation,feedback,feedback,language_change,"<think>
+okay, let's see. the user wrote, ""thoda chhota response do",
+308,Kripya Hindi mein baat karein,language_change,hi,content_generation,language_change,language_change,language_change,language_change,"<think>
+okay, let's see. the user wrote ""kripya hindi mein baat",

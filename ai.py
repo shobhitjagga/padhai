@@ -240,7 +240,7 @@ SEL Skill: [skill name]
 
 Activity: [activity name]
 [Group activity: group size 4-5, task description, step-by-step]
-Reflection Questions:
+{group_differentiation}Reflection Questions:
 1. [question]
 2. [question]
 3. [question]
@@ -313,6 +313,34 @@ Return ONLY valid JSON, no other text:
   "sel_has_reflection":    {{"verdict": true, "reason": "one sentence"}},
   "culturally_relevant":   {{"verdict": true, "reason": "one sentence"}}
 }}"""
+
+# ── Differentiated group activities (feature flag) ─────────────────────────────
+# Set to True to ask the model to design three group-type variants in section 3.
+# Currently OFF — the standard single group activity is used.
+DIFFERENTIATED_GROUPS = False
+
+GROUP_DIFFERENTIATION_INSTRUCTIONS = """
+Within the Group Activity section, design THREE parallel variants of the same activity
+so the teacher can assign groups by student profile:
+
+Group A — Shy / Quiet students:
+• Start with individual written reflection before any sharing
+• Pair-share first (not whole group), teacher checks in quietly
+• Written / drawn response accepted as an alternative to speaking aloud
+
+Group B — Struggling / Low-confidence students:
+• Simplified version of the same task with concrete visual or fill-in-the-blank scaffold
+• Assign a supportive peer buddy within the group
+• Focus on one concept instead of all three
+
+Group C — Assertive / High-energy students:
+• Give a leadership role (facilitator, note-taker, presenter) with clear responsibility
+• Add an extension challenge or debate element to the task
+• Include a physical / kinesthetic step (stand up, sort cards, draw on board)
+
+All three groups do the same reflection questions at the end.
+Label each variant clearly: Group A, Group B, Group C.
+"""
 
 LANGUAGE_NAMES = {
     "en": "English",
@@ -392,6 +420,8 @@ def generate_content(subject: str, topic: str, grade: str, sel_dim: str,
     is_hindi9 = grade == "9" and subject.strip().lower() in ["hindi", "हिंदी"]
     chapter_context = "\n" + get_hindi9_context(topic) + "\n" if is_hindi9 else ""
 
+    group_diff = GROUP_DIFFERENTIATION_INSTRUCTIONS if DIFFERENTIATED_GROUPS else ""
+
     prompt = CONTENT_PROMPT.format(
         subject=subject,
         topic=topic or subject,
@@ -403,6 +433,7 @@ def generate_content(subject: str, topic: str, grade: str, sel_dim: str,
         sel_reflection=guidance.get("reflection_hi", ""),
         sel_pedagogy=SEL_PEDAGOGY,
         chapter_context=chapter_context,
+        group_differentiation=group_diff,
     )
     # Primary: OpenAI GPT-4.1 (better NCERT knowledge)
     if _oa_client():

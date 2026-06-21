@@ -10,7 +10,6 @@ Steps:
   6. Print summary table
 
 Run:
-  cd /Users/shobhit/Documents/padhai/shikshabot
   python eval/compare_content_models.py
 """
 import csv, json, os, sys, time
