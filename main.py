@@ -1,9 +1,10 @@
 import asyncio
+import json
 from fastapi import FastAPI, Request, Response
 import httpx
 import config
 import db
-from handlers import handle_message, handle_callback, _feedback_state, _feedback_q, _language_cache
+from handlers import handle_message, handle_callback, _feedback_state, _feedback_q, _language_cache, _lecture_pending
 
 app = FastAPI()
 
@@ -99,10 +100,16 @@ async def _tg_send_text(chat_id: int, text: str):
 
 
 async def _tg_send_buttons(chat_id: int, text: str, buttons: list[dict]):
-    """Send a message with an inline keyboard. Each button: {label, data}."""
-    keyboard = {"inline_keyboard": [[
-        {"text": b["label"], "callback_data": b["data"]} for b in buttons
-    ]]}
+    """Send a message with an inline keyboard.
+    Lecture buttons (lec_ prefix): one per row so long titles aren't truncated.
+    All others: single row.
+    """
+    is_lecture = buttons and buttons[0]["data"].startswith("lec_")
+    if is_lecture:
+        rows = [[{"text": b["label"], "callback_data": b["data"]}] for b in buttons]
+    else:
+        rows = [[{"text": b["label"], "callback_data": b["data"]} for b in buttons]]
+    keyboard = {"inline_keyboard": rows}
     async with httpx.AsyncClient() as c:
         await c.post(
             f"https://api.telegram.org/bot{config.TELEGRAM_TOKEN}/sendMessage",
@@ -183,9 +190,15 @@ async def twilio_whatsapp(request: Request):
 
     number = from_.removeprefix("whatsapp:").removeprefix("+")
 
-    # Button tap from language selection
+    # Button tap
     if button_payload:
-        result = await asyncio.to_thread(handle_callback, number, button_payload, name)
+        cb_data = button_payload
+        # Map "1"/"2"/"3" taps to a lecture callback when selection is pending
+        pending = _lecture_pending.get(number)
+        if button_payload in ("1", "2", "3") and pending:
+            lec_num = int(button_payload)
+            cb_data = f"lec_{pending['grade']}_{pending['s_key']}_{pending['ch_key']}_{lec_num}"
+        result = await asyncio.to_thread(handle_callback, number, cb_data, name)
         await _twilio_wa_send(from_, result)
         return Response(content="<Response/>", media_type="application/xml")
 
@@ -221,22 +234,34 @@ async def _twilio_wa_send(to_wa: str, response: dict):
             "fb_3_":  config.TWILIO_FEEDBACK_Q3_SID,
         }
         template_sid = None
+        content_vars = None  # JSON string for variable-body templates
         if response["type"] == "buttons":
             first_data = response.get("buttons", [{}])[0].get("data", "")
-            for prefix, sid in _BUTTON_TEMPLATE_MAP.items():
-                if first_data.startswith(prefix) and sid:
-                    template_sid = sid
-                    break
+            if first_data.startswith("lec_") and config.TWILIO_LECTURE_SELECT_SID:
+                # Generic 1/2/3 template: body is {{1}} — pass options as the variable
+                template_sid = config.TWILIO_LECTURE_SELECT_SID
+                body_lines = [response["text"], ""]
+                for b in response["buttons"]:
+                    body_lines.append(b["label"])
+                content_vars = json.dumps({"1": "\n".join(body_lines)})
+            else:
+                for prefix, sid in _BUTTON_TEMPLATE_MAP.items():
+                    if first_data.startswith(prefix) and sid:
+                        template_sid = sid
+                        break
 
         if template_sid:
+            send_data = {
+                "From":       f"whatsapp:{config.TWILIO_WA_NUMBER}",
+                "To":         to_wa,
+                "ContentSid": template_sid,
+            }
+            if content_vars:
+                send_data["ContentVariables"] = content_vars
             r = await c.post(
                 url,
                 auth=(config.TWILIO_ACCOUNT_SID, config.TWILIO_AUTH_TOKEN),
-                data={
-                    "From":       f"whatsapp:{config.TWILIO_WA_NUMBER}",
-                    "To":         to_wa,
-                    "ContentSid": template_sid,
-                },
+                data=send_data,
                 timeout=15.0,
             )
             if r.status_code >= 400:

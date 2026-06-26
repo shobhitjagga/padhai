@@ -1,11 +1,13 @@
 import threading
 import ai
 import db
+import ncert_lecture_map
 
 # In-memory fallback caches (reset on restart — good enough for MVP)
 _sel_counters: dict[int, int] = {}
-_language_cache: dict[str, str] = {}   # chat_id → language, mirrors DB within the session
-_feedback_state: dict[str, dict] = {}  # chat_id → {step, topic, q1, q2}
+_language_cache: dict[str, str] = {}    # chat_id → language, mirrors DB within the session
+_feedback_state: dict[str, dict] = {}   # chat_id → {step, topic, q1, q2}
+_lecture_pending: dict[str, dict] = {}  # chat_id → {subject, topic, grade, sel_dim, channel}
 
 # ── Onboarding ─────────────────────────────────────────────────────────────────
 
@@ -147,6 +149,22 @@ LANGUAGE_CHANGED_MSG = {
     "bn": "ঠিক আছে! এখন থেকে আমি বাংলায় উত্তর দেব।",
 }
 
+# ── Lecture selection helpers ───────────────────────────────────────────────────
+
+_LECTURE_SELECT_MSG = {
+    "en": "📚 {name} (Class {grade}) spans {num} lessons.\n\nWhich lecture do you want a plan for?",
+    "hi": "📚 {name} (कक्षा {grade}) में {num} पाठ हैं।\n\nकिस पाठ की योजना चाहिए?",
+}
+
+def _build_lecture_buttons(grade: str, subject_key: str, chapter_key: str, chapter: dict) -> list[dict]:
+    return [
+        {
+            "label": f"{lec['num']}. {lec['title']}",
+            "data": f"lec_{grade}_{subject_key}_{chapter_key}_{lec['num']}",
+        }
+        for lec in chapter["breakdown"]
+    ]
+
 # ── Response helpers ────────────────────────────────────────────────────────────
 
 def _text(msg: str) -> dict:
@@ -184,14 +202,27 @@ def handle_message(chat_id: int, text: str, user_name: str, channel: str = "tele
         _sel_counters[chat_id] = count + 1
         sel_dim = ai.SEL_DIMENSIONS[count % len(ai.SEL_DIMENSIONS)]
 
-        response = ai.generate_content(subject, topic, grade, sel_dim, language, chat_id=uid)
+        # Check if this is a full-chapter request — ask teacher to pick a lecture
+        ch_key, s_key, chapter, lecture = ai.detect_lecture_scope(subject, topic, grade)
+        if chapter is not None and lecture is None:
+            _lecture_pending[uid] = {
+                "subject": subject, "topic": topic, "grade": grade,
+                "sel_dim": sel_dim, "channel": channel,
+                "s_key": s_key, "ch_key": ch_key,
+            }
+            buttons = _build_lecture_buttons(grade, s_key, ch_key, chapter)
+            tmpl = _LECTURE_SELECT_MSG.get(language, _LECTURE_SELECT_MSG["en"])
+            msg = tmpl.format(name=chapter["display_name"], grade=grade, num=chapter["num_lectures"])
+            return _buttons(msg, buttons)
+
+        response = ai.generate_content(subject, topic, grade, sel_dim, language, chat_id=uid, lecture=lecture)
 
         # Run eval in background — never block the teacher's response
         def _eval_bg(r=response, s=subject, t=topic, g=grade, sd=sel_dim, l=language, c=uid):
             scores = ai.evaluate_content(s, t, g, sd, l, r, chat_id=c)
             if scores:
                 db.log_content_eval(c, s, t, g, sd, scores)
-                failed = [m for v_map in [scores] for m, v in v_map.items() if not v.get("verdict", True)]
+                failed = [m for m, v in scores.items() if not v.get("verdict", True)]
                 if failed:
                     print(f"[content_eval] FLAGGED chat={c} topic={t!r} failed={failed}")
         threading.Thread(target=_eval_bg, daemon=True).start()
@@ -232,8 +263,9 @@ def handle_message(chat_id: int, text: str, user_name: str, channel: str = "tele
     else:  # query_resolution_academic
         response = ai.resolve_query(text, grade, language, chat_id=uid)
 
-    # If a new content request arrives while feedback is pending, clear stale state
+    # Clear any stale pending states when a new message arrives
     _feedback_state.pop(uid, None)
+    _lecture_pending.pop(uid, None)
 
     db.log_message(uid, text, intent, response)
     return _text(response)
@@ -253,6 +285,10 @@ def handle_callback(chat_id: int, data: str, user_name: str) -> dict:
     # Feedback buttons
     if data.startswith("fb_"):
         return _handle_feedback_callback(uid, data)
+
+    # Lecture selection
+    if data.startswith("lec_"):
+        return _handle_lecture_callback(uid, data)
 
     return _text("")
 
@@ -281,3 +317,48 @@ def _handle_feedback_callback(uid: str, data: str) -> dict:
         return _text(_FEEDBACK_THANKS.get(language, _FEEDBACK_THANKS["en"]))
 
     return _text("")
+
+
+def _handle_lecture_callback(uid: str, data: str) -> dict:
+    # data format: lec_<grade>_<subject_key>_<chapter_key>_<num>
+    parts = data.split("_")
+    if len(parts) < 5:
+        return _text("")
+
+    grade, subject_key, chapter_key, lec_num_str = parts[1], parts[2], parts[3], parts[4]
+    try:
+        lec_num = int(lec_num_str)
+    except ValueError:
+        return _text("")
+
+    pending = _lecture_pending.pop(uid, None)
+    language = _language_cache.get(uid, "en")
+
+    chapter = ncert_lecture_map.LECTURE_MAP.get(grade, {}).get(subject_key, {}).get(chapter_key)
+    if not chapter:
+        return _text("Sorry, I couldn't find that chapter. Please try again.")
+
+    lecture = next((l for l in chapter["breakdown"] if l["num"] == lec_num), None)
+    if not lecture:
+        return _text("")
+
+    subject = pending["subject"] if pending else subject_key.title()
+    topic   = pending["topic"]   if pending else chapter["display_name"]
+    sel_dim = pending["sel_dim"] if pending else ai.SEL_DIMENSIONS[0]
+    channel = pending.get("channel", "telegram") if pending else "telegram"
+
+    response = ai.generate_content(subject, topic, grade, sel_dim, language, chat_id=uid, lecture=lecture)
+
+    def _eval_bg(r=response, s=subject, t=topic, g=grade, sd=sel_dim, l=language, c=uid):
+        scores = ai.evaluate_content(s, t, g, sd, l, r, chat_id=c)
+        if scores:
+            db.log_content_eval(c, s, t, g, sd, scores)
+            failed = [m for m, v in scores.items() if not v.get("verdict", True)]
+            if failed:
+                print(f"[content_eval] FLAGGED chat={c} topic={t!r} failed={failed}")
+    threading.Thread(target=_eval_bg, daemon=True).start()
+
+    topic_label = f"{subject} — {lecture['title']}"
+    db.schedule_feedback_q1(uid, language, topic_label, channel)
+    db.log_message(uid, f"[lecture:{lec_num}] {data}", "content_generation", response)
+    return _text(response)

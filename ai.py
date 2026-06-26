@@ -3,6 +3,7 @@ from groq import Groq
 from openai import OpenAI
 import config
 import db
+import ncert_lecture_map
 from ncert_data import get_hindi9_context
 
 _groq_client = None
@@ -408,17 +409,43 @@ def classify_intent(text: str, chat_id: str = "") -> dict:
         return {"intent": "query_resolution_academic", "subject": "General", "topic": "", "grade": "", "language": "en"}
 
 
+def detect_lecture_scope(subject: str, topic: str, grade: str) -> tuple:
+    """Returns (chapter_key, subject_key, chapter_dict, lecture_dict).
+    chapter_dict is None if topic doesn't match any known chapter.
+    lecture_dict is None if topic is a whole chapter → teacher must pick a lecture.
+    """
+    s_key, ch_key, chapter = ncert_lecture_map.get_chapter(grade, subject, topic)
+    if chapter is None:
+        return None, None, None, None
+    lecture = ncert_lecture_map.match_lecture(chapter, topic)
+    return ch_key, s_key, chapter, lecture
+
+
 GROQ_CONTENT_MODELS = [
     "llama-3.3-70b-versatile",
     "meta-llama/llama-4-scout-17b-16e-instruct",
 ]
 
 def generate_content(subject: str, topic: str, grade: str, sel_dim: str,
-                     language: str = "en", chat_id: str = "") -> str:
+                     language: str = "en", chat_id: str = "",
+                     lecture: dict | None = None) -> str:
     guidance = SEL_GUIDANCE.get(sel_dim, {})
 
     is_hindi9 = grade == "9" and subject.strip().lower() in ["hindi", "हिंदी"]
     chapter_context = "\n" + get_hindi9_context(topic) + "\n" if is_hindi9 else ""
+
+    if lecture:
+        topics_str = "\n".join(f"• {t}" for t in lecture["topics"])
+        chapter_context += (
+            f"\n--- LECTURE SCOPE (MANDATORY) ---\n"
+            f"This plan covers ONLY Lecture {lecture['num']} of this chapter: \"{lecture['title']}\"\n"
+            f"Topics to teach:\n{topics_str}\n"
+            f"NCERT sections: {lecture.get('ncert_sections', '')}\n"
+            f"Do NOT include topics from other lectures of the same chapter.\n"
+            f"--- END LECTURE SCOPE ---\n"
+        )
+        if " — " not in topic:
+            topic = f"{topic} — {lecture['title']}"
 
     group_diff = GROUP_DIFFERENTIATION_INSTRUCTIONS if DIFFERENTIATED_GROUPS else ""
 
