@@ -187,7 +187,7 @@ Use these reflection questions (adapt to fit the lesson topic):
 
 {sel_pedagogy}
 --- END SEL GROUNDING ---
-{chapter_context}
+{class_context}{chapter_context}
 CRITICAL: Write the ENTIRE lesson plan in {language}. Every word — section headers, time labels, activity descriptions, questions, and the exit ticket — must be in {language}. Do not use any other language.
 
 Structure the lesson plan EXACTLY as follows:
@@ -315,6 +315,65 @@ Return ONLY valid JSON, no other text:
   "culturally_relevant":   {{"verdict": true, "reason": "one sentence"}}
 }}"""
 
+# ── Class profile → prompt guidance mappings ──────────────────────────────────
+
+_VERBAL_GUIDANCE = {
+    "high":   "Students participate verbally — use open discussions and pair-share freely.",
+    "medium": "Mix verbal and written activities — start with pair-share before whole-class.",
+    "low":    "Most students are quiet — prefer written/think-pair-share, avoid cold-calling, provide sentence starters for every response.",
+}
+_ENERGY_GUIDANCE = {
+    "focused": "Class is calm and focused — standard pacing works, mindfulness can be unhurried.",
+    "high":    "Class is energetic/restless — use short activity bursts, add physical elements (stand up, sort cards), keep transitions snappy.",
+    "low":     "Class is often tired or distracted — open with an energising check-in, keep activities shorter, avoid long monologue stretches.",
+}
+_PERSONA_GUIDANCE = {
+    "shy":       "Most students are shy and rarely raise hands — never cold-call, use anonymous written inputs and sentence starters for every response, pair-share before any whole-class sharing.",
+    "mixed":     "Mix of shy and assertive students — pair shy students with supportive peers, assign structured roles in group work so quieter students have a defined contribution.",
+    "assertive": "Students are eager to participate — leverage this with leadership roles and challenge tasks, but actively create space so a few voices don't dominate.",
+}
+_HOME_GUIDANCE = {
+    "difficult": "Many students come from daily-wage households or have parents often absent — keep homework minimal and fully self-sufficient (no parental help needed), keep emotional check-ins low-pressure and avoid topics that highlight family differences.",
+    "mixed":     "Mixed home situations — all homework must be doable without parental help.",
+    "stable":    "Most students have stable home support — can include family-discussion or observation homework.",
+}
+_GENDER_GUIDANCE = {
+    "yes":     "Girls are usually quieter than boys — actively create space: try girls-first sharing, same-gender pairs for initial reflection, and structured turn-taking to prevent boys from dominating.",
+    "partial": "Some gender gap in participation — use structured turn-taking and thoughtfully mixed pairs.",
+    "no":      "Both genders participate roughly equally — no gender-specific adaptation needed.",
+}
+_GROUP_GUIDANCE = {
+    "high":  "This class loves group work — use collaborative activities freely, assign clear roles (facilitator, note-taker, presenter).",
+    "mixed": "Mixed preference for group work — offer individual reflection time before group sharing.",
+    "low":   "Students prefer individual work — keep groups small (2–3 max), always give individual reflection time before any group activity.",
+}
+
+def _build_class_context(profile: dict) -> str:
+    """Convert a class_profiles row into a prompt injection block."""
+    if not profile or not profile.get("session_count"):
+        return ""
+    lines = [
+        f"\n--- CLASS PROFILE ({profile['session_count']} sessions of teacher feedback"
+        " — adapt SEL activities to fit this specific class) ---"
+    ]
+    for val, guide in [
+        (profile.get("verbal_tendency", ""), _VERBAL_GUIDANCE),
+        (profile.get("energy_tendency", ""), _ENERGY_GUIDANCE),
+        (profile.get("persona", ""),         _PERSONA_GUIDANCE),
+        (profile.get("home_context", ""),    _HOME_GUIDANCE),
+        (profile.get("gender_gap", ""),      _GENDER_GUIDANCE),
+        (profile.get("group_pref", ""),      _GROUP_GUIDANCE),
+    ]:
+        if val and val in guide:
+            lines.append(f"• {guide[val]}")
+    lines.append(
+        "Apply ALL of the above adaptations throughout the lesson — "
+        "especially in SEL activities, pair-share design, and the group activity section."
+    )
+    lines.append("--- END CLASS PROFILE ---\n")
+    return "\n".join(lines)
+
+
 # ── Differentiated group activities (feature flag) ─────────────────────────────
 # Set to True to ask the model to design three group-type variants in section 3.
 # Currently OFF — the standard single group activity is used.
@@ -431,6 +490,10 @@ def generate_content(subject: str, topic: str, grade: str, sel_dim: str,
                      lecture: dict | None = None) -> str:
     guidance = SEL_GUIDANCE.get(sel_dim, {})
 
+    # Personalise based on accumulated class profile
+    profile = db.get_class_profile(chat_id, grade, subject) if chat_id else {}
+    class_context = _build_class_context(profile)
+
     is_hindi9 = grade == "9" and subject.strip().lower() in ["hindi", "हिंदी"]
     chapter_context = "\n" + get_hindi9_context(topic) + "\n" if is_hindi9 else ""
 
@@ -459,6 +522,7 @@ def generate_content(subject: str, topic: str, grade: str, sel_dim: str,
         sel_activities=guidance.get("activities", ""),
         sel_reflection=guidance.get("reflection_hi", ""),
         sel_pedagogy=SEL_PEDAGOGY,
+        class_context=class_context,
         chapter_context=chapter_context,
         group_differentiation=group_diff,
     )
