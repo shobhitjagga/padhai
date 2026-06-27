@@ -161,7 +161,6 @@ def update_class_profile(chat_id: str, grade: str, subject: str, signals: dict):
 
         verbal  = signals.get("verbal", "")   # verbal | mixed | quiet
         energy  = signals.get("energy", "")   # focused | high | low
-        q4_data = signals.get("q4", "")
 
         vh = 1 if verbal == "verbal"  else 0
         vm = 1 if verbal == "mixed"   else 0
@@ -170,23 +169,26 @@ def update_class_profile(chat_id: str, grade: str, subject: str, signals: dict):
         eh = 1 if energy == "high"    else 0
         el = 1 if energy == "low"     else 0
 
-        # Parse Q4 stable descriptor
+        # Parse stable descriptors from all Q4 answers (q4, q4a–q4d)
         stable: dict = {}
-        if q4_data:
-            if "_persona_" in q4_data:
+        for key in ("q4", "q4a", "q4b", "q4c", "q4d"):
+            val = signals.get(key, "")
+            if not val:
+                continue
+            if "_persona_" in val:
                 for v in ("shy", "mixed", "assertive"):
-                    if v in q4_data: stable["persona"] = v
-            elif "_home_" in q4_data:
+                    if v in val: stable["persona"] = v
+            elif "_home_" in val:
                 for v in ("difficult", "mixed", "stable"):
-                    if v in q4_data: stable["home_context"] = v
-            elif "_gender_" in q4_data:
+                    if v in val: stable["home_context"] = v
+            elif "_gender_" in val:
                 stable["gender_gap"] = (
-                    "yes"     if "gap"     in q4_data else
-                    "partial" if "partial" in q4_data else "no"
+                    "yes"     if "gap"     in val else
+                    "partial" if "partial" in val else "no"
                 )
-            elif "_group_" in q4_data:
+            elif "_group_" in val:
                 for v in ("high", "mixed", "low"):
-                    if v in q4_data: stable["group_pref"] = v
+                    if v in val: stable["group_pref"] = v
 
         existing = (
             c.table("class_profiles")

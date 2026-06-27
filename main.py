@@ -233,18 +233,14 @@ async def twilio_whatsapp(request: Request):
 def _map_numbered_feedback(num: int, state: dict) -> str:
     """Map a tapped '1'/'2'/'3' button to the right fb_* callback data string."""
     _step_maps = {
-        2: {1: "fb_2_verbal",  2: "fb_2_mixed",   3: "fb_2_quiet"},
-        3: {1: "fb_3_focused", 2: "fb_3_high",    3: "fb_3_low"},
+        2: {1: "fb_2_verbal",         2: "fb_2_mixed",          3: "fb_2_quiet"},
+        3: {1: "fb_3_focused",        2: "fb_3_high",           3: "fb_3_low"},
+        4: {1: "fb_4_persona_shy",    2: "fb_4_persona_mixed",  3: "fb_4_persona_assertive"},
+        5: {1: "fb_4_home_difficult", 2: "fb_4_home_mixed",     3: "fb_4_home_stable"},
+        6: {1: "fb_4_gender_gap",     2: "fb_4_gender_partial", 3: "fb_4_gender_equal"},
+        7: {1: "fb_4_group_high",     2: "fb_4_group_mixed",    3: "fb_4_group_low"},
     }
-    step = state.get("step", 0)
-    if step in _step_maps:
-        return _step_maps[step].get(num, "")
-    if step == 4:
-        q4_index = state.get("q4_index", 0)
-        buttons  = _Q4_QUESTIONS[q4_index % len(_Q4_QUESTIONS)]["buttons"]
-        if 1 <= num <= len(buttons):
-            return buttons[num - 1]["data"]
-    return ""
+    return _step_maps.get(state.get("step", 0), {}).get(num, "")
 
 
 def _twilio_buttons_text(response: dict) -> str:

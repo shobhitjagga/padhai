@@ -227,18 +227,23 @@ def _post_content_feedback(uid: str, response: str, subject: str, topic_label: s
 
 def _save_feedback(uid: str, state: dict):
     """Persist Q2/Q3/Q4 signals to class_profiles and log the full response."""
+    import json
     grade   = state.get("grade", "")
     subject = state.get("subject", "")
-    verbal  = state.get("q2", "")     # verbal | mixed | quiet
-    energy  = state.get("q3", "")     # focused | high | low
-    q4_data = state.get("q4_data", "")
+    verbal  = state.get("q2", "")
+    energy  = state.get("q3", "")
 
-    signals: dict = {"verbal": verbal, "energy": energy}
-    if q4_data:
-        signals["q4"] = q4_data
+    signals = {
+        "verbal": verbal, "energy": energy,
+        "q4a": state.get("q4a", ""),
+        "q4b": state.get("q4b", ""),
+        "q4c": state.get("q4c", ""),
+        "q4d": state.get("q4d", ""),
+    }
     db.update_class_profile(uid, grade, subject, signals)
+    q4_summary = json.dumps({k: state.get(k, "") for k in ("q4a", "q4b", "q4c", "q4d")})
     db.log_usage_feedback(uid, state.get("topic", ""), grade, subject,
-                          state.get("q1", ""), verbal, energy, q4_data)
+                          state.get("q1", ""), verbal, energy, q4_summary)
 
 
 OUT_OF_SERVICE_MSG = {
@@ -399,26 +404,37 @@ def _handle_feedback_callback(uid: str, data: str) -> dict:
     step = state["step"]
 
     if step == 1 and data.startswith("fb_1_"):
-        state["q1"] = data[5:]          # full | partial | no
+        state["q1"] = data[5:]
         state["step"] = 2
         return _feedback_q(2, language)
 
     if step == 2 and data.startswith("fb_2_"):
-        state["q2"] = data[5:]          # verbal | mixed | quiet
+        state["q2"] = data[5:]
         state["step"] = 3
         return _feedback_q(3, language)
 
     if step == 3 and data.startswith("fb_3_"):
-        state["q3"] = data[5:]          # focused | high | low
-        if state.get("q4_due"):
-            state["step"] = 4
-            return _q4_question(state["q4_index"], language)
-        _save_feedback(uid, state)
-        del _feedback_state[uid]
-        return _text(_FEEDBACK_THANKS.get(language, _FEEDBACK_THANKS["en"]))
+        state["q3"] = data[5:]
+        state["step"] = 4
+        return _q4_question(0, language)  # persona
 
     if step == 4 and data.startswith("fb_4_"):
-        state["q4_data"] = data         # e.g. "fb_4_persona_shy"
+        state["q4a"] = data
+        state["step"] = 5
+        return _q4_question(1, language)  # home_context
+
+    if step == 5 and data.startswith("fb_4_"):
+        state["q4b"] = data
+        state["step"] = 6
+        return _q4_question(2, language)  # gender_gap
+
+    if step == 6 and data.startswith("fb_4_"):
+        state["q4c"] = data
+        state["step"] = 7
+        return _q4_question(3, language)  # group_pref
+
+    if step == 7 and data.startswith("fb_4_"):
+        state["q4d"] = data
         _save_feedback(uid, state)
         del _feedback_state[uid]
         return _text(_FEEDBACK_THANKS.get(language, _FEEDBACK_THANKS["en"]))
