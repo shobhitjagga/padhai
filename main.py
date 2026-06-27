@@ -4,7 +4,9 @@ from fastapi import FastAPI, Request, Response
 import httpx
 import config
 import db
-from handlers import handle_message, handle_callback, _feedback_state, _feedback_q, _language_cache, _lecture_pending
+from handlers import (handle_message, handle_callback,
+                       _feedback_state, _feedback_q, _language_cache,
+                       _lecture_pending, _Q4_QUESTIONS)
 
 app = FastAPI()
 
@@ -32,7 +34,15 @@ async def _dispatch_feedback_q1(job: dict):
     topic    = job.get("topic", "")
     channel  = job.get("channel", "telegram")
 
-    _feedback_state[uid] = {"step": 1, "topic": topic, "q1": None, "q2": None}
+    grade    = job.get("grade", "")
+    subject  = job.get("subject", "")
+    q4_due   = job.get("q4_due", False)
+    q4_index = job.get("q4_index", 0)
+    _feedback_state[uid] = {
+        "step": 1, "topic": topic, "grade": grade, "subject": subject,
+        "sel_dim": "", "q1": None, "q2": None, "q3": None,
+        "q4_due": q4_due, "q4_index": q4_index,
+    }
     _language_cache[uid] = language
 
     q1 = _feedback_q(1, language)
@@ -61,7 +71,8 @@ async def telegram_webhook(request: Request):
         username = callback.get("from", {}).get("first_name", "Teacher")
         await _tg_answer_callback(callback["id"])
         result = await asyncio.to_thread(handle_callback, chat_id, cb_data, username)
-        await _tg_send(chat_id, result)
+        for r in (result if isinstance(result, list) else [result]):
+            await _tg_send(chat_id, r)
         return {"ok": True}
 
     # Regular message
@@ -193,13 +204,17 @@ async def twilio_whatsapp(request: Request):
     # Button tap
     if button_payload:
         cb_data = button_payload
-        # Map "1"/"2"/"3" taps to a lecture callback when selection is pending
-        pending = _lecture_pending.get(number)
-        if button_payload in ("1", "2", "3") and pending:
-            lec_num = int(button_payload)
-            cb_data = f"lec_{pending['grade']}_{pending['s_key']}_{pending['ch_key']}_{lec_num}"
+        if button_payload in ("1", "2", "3"):
+            num = int(button_payload)
+            lec_pending      = _lecture_pending.get(number)
+            feedback_pending = _feedback_state.get(number)
+            if lec_pending:
+                cb_data = f"lec_{lec_pending['grade']}_{lec_pending['s_key']}_{lec_pending['ch_key']}_{num}"
+            elif feedback_pending:
+                cb_data = _map_numbered_feedback(num, feedback_pending)
         result = await asyncio.to_thread(handle_callback, number, cb_data, name)
-        await _twilio_wa_send(from_, result)
+        for r in (result if isinstance(result, list) else [result]):
+            await _twilio_wa_send(from_, r)
         return Response(content="<Response/>", media_type="application/xml")
 
     # Voice note — transcribe and treat as text
@@ -215,6 +230,23 @@ async def twilio_whatsapp(request: Request):
     return Response(content="<Response/>", media_type="application/xml")
 
 
+def _map_numbered_feedback(num: int, state: dict) -> str:
+    """Map a tapped '1'/'2'/'3' button to the right fb_* callback data string."""
+    _step_maps = {
+        2: {1: "fb_2_verbal",  2: "fb_2_mixed",   3: "fb_2_quiet"},
+        3: {1: "fb_3_focused", 2: "fb_3_high",    3: "fb_3_low"},
+    }
+    step = state.get("step", 0)
+    if step in _step_maps:
+        return _step_maps[step].get(num, "")
+    if step == 4:
+        q4_index = state.get("q4_index", 0)
+        buttons  = _Q4_QUESTIONS[q4_index % len(_Q4_QUESTIONS)]["buttons"]
+        if 1 <= num <= len(buttons):
+            return buttons[num - 1]["data"]
+    return ""
+
+
 def _twilio_buttons_text(response: dict) -> str:
     lines = [response["text"], ""]
     for i, b in enumerate(response["buttons"]):
@@ -227,28 +259,23 @@ async def _twilio_wa_send(to_wa: str, response: dict):
     """Send response via Twilio REST API — uses Content Template for language buttons."""
     url = f"https://api.twilio.com/2010-04-01/Accounts/{config.TWILIO_ACCOUNT_SID}/Messages.json"
     async with httpx.AsyncClient() as c:
-        _BUTTON_TEMPLATE_MAP = {
-            "lang_":  config.TWILIO_LANG_TEMPLATE_SID,
-            "fb_1_":  config.TWILIO_FEEDBACK_Q1_SID,
-            "fb_2_":  config.TWILIO_FEEDBACK_Q2_SID,
-            "fb_3_":  config.TWILIO_FEEDBACK_Q3_SID,
-        }
         template_sid = None
         content_vars = None  # JSON string for variable-body templates
         if response["type"] == "buttons":
             first_data = response.get("buttons", [{}])[0].get("data", "")
-            if first_data.startswith("lec_") and config.TWILIO_LECTURE_SELECT_SID:
-                # Generic 1/2/3 template: body is {{1}} — pass options as the variable
+            if first_data.startswith("lang_") and config.TWILIO_LANG_TEMPLATE_SID:
+                template_sid = config.TWILIO_LANG_TEMPLATE_SID
+            elif first_data.startswith("fb_1_") and config.TWILIO_FEEDBACK_Q1_SID:
+                template_sid = config.TWILIO_FEEDBACK_Q1_SID
+            elif (first_data.startswith(("lec_", "fb_2_", "fb_3_", "fb_4_"))
+                  and config.TWILIO_LECTURE_SELECT_SID):
+                # Generic 1/2/3 template with variable body — reused for
+                # lecture selection, Q2 (SEL engagement), Q3 (energy), Q4 (class profile)
                 template_sid = config.TWILIO_LECTURE_SELECT_SID
                 body_lines = [response["text"], ""]
-                for b in response["buttons"]:
-                    body_lines.append(b["label"])
+                for i, b in enumerate(response["buttons"], 1):
+                    body_lines.append(f"{i}. {b['label']}")
                 content_vars = json.dumps({"1": "\n".join(body_lines)})
-            else:
-                for prefix, sid in _BUTTON_TEMPLATE_MAP.items():
-                    if first_data.startswith(prefix) and sid:
-                        template_sid = sid
-                        break
 
         if template_sid:
             send_data = {

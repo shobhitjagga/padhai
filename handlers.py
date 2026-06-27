@@ -3,6 +3,10 @@ import ai
 import db
 import ncert_lecture_map
 
+# ── Feature flags ───────────────────────────────────────────────────────────────
+IMMEDIATE_FEEDBACK = True   # send Q1 right after content (testing); False = 2 PM IST scheduler
+Q4_INTERVAL        = 4      # show Q4 every N sessions, starting from session 0 (first ever)
+
 # In-memory fallback caches (reset on restart — good enough for MVP)
 _sel_counters: dict[int, int] = {}
 _language_cache: dict[str, str] = {}    # chat_id → language, mirrors DB within the session
@@ -79,6 +83,7 @@ FEATURE_INTRO = {
 
 _FEEDBACK_QUESTIONS = {
     1: {
+        # Quality signal — was the lesson factually right?
         "text": {
             "en": "📊 Quick feedback on today's lesson:\n\nWas the content aligned with NCERT?",
             "hi": "📊 आज के पाठ पर त्वरित प्रतिक्रिया:\n\nक्या सामग्री NCERT के अनुरूप थी?",
@@ -92,44 +97,148 @@ _FEEDBACK_QUESTIONS = {
         ],
     },
     2: {
+        # Class dynamics — how did students engage with SEL?
         "text": {
-            "en": "Was the SEL integration helpful for teaching?",
-            "hi": "क्या SEL एकीकरण पढ़ाने में सहायक था?",
-            "ta": "SEL ஒருங்கிணைப்பு கற்பிக்க உதவியதா?",
-            "te": "SEL ఇంటిగ్రేషన్ బోధనలో సహాయపడిందా?",
+            "en": "How did students respond to today's SEL reflection?",
+            "hi": "छात्रों ने आज की SEL गतिविधि पर कैसी प्रतिक्रिया दी?",
+            "ta": "மாணவர்கள் SEL செயல்பாட்டில் எவ்வாறு பதிலளித்தனர்?",
+            "te": "విద్యార్థులు SEL రిఫ్లెక్షన్‌కు ఎలా స్పందించారు?",
         },
         "buttons": [
-            {"label": "✅ Yes",       "data": "fb_2_yes"},
-            {"label": "🟡 Somewhat", "data": "fb_2_partial"},
-            {"label": "❌ No",        "data": "fb_2_no"},
+            {"label": "🗣️ Many shared openly",        "data": "fb_2_verbal"},
+            {"label": "✍️ Some verbal, some written",  "data": "fb_2_mixed"},
+            {"label": "🤫 Mostly quiet",               "data": "fb_2_quiet"},
         ],
     },
     3: {
+        # Class dynamics — energy level
         "text": {
-            "en": "Did students participate in the group activity?",
-            "hi": "क्या छात्रों ने समूह गतिविधि में भाग लिया?",
-            "ta": "மாணவர்கள் குழு செயல்பாட்டில் பங்கேற்றனரா?",
-            "te": "విద్యార్థులు గ్రూప్ యాక్టివిటీలో పాల్గొన్నారా?",
+            "en": "What was the class energy like today?",
+            "hi": "आज कक्षा का माहौल कैसा था?",
+            "ta": "இன்று வகுப்பின் ஆற்றல் எப்படி இருந்தது?",
+            "te": "నేడు తరగతి శక్తి స్థాయి ఎలా ఉంది?",
         },
         "buttons": [
-            {"label": "✅ Yes, actively", "data": "fb_3_yes"},
-            {"label": "🟡 Some students", "data": "fb_3_partial"},
-            {"label": "❌ Not much",       "data": "fb_3_no"},
+            {"label": "🎯 Focused and calm",    "data": "fb_3_focused"},
+            {"label": "⚡ Energetic / restless", "data": "fb_3_high"},
+            {"label": "😴 Tired or distracted",  "data": "fb_3_low"},
         ],
     },
 }
 
+# Rotating Q4 — shown every Q4_INTERVAL sessions, cycles through all 4 questions.
+# Grounded in PARAKH survey findings on government school classroom dynamics.
+_Q4_QUESTIONS = [
+    {
+        "key": "persona",
+        "text": {
+            "en": "One more question about your class 🙏\n\nWhat best describes most of your students?",
+            "hi": "आपकी कक्षा के बारे में एक और सवाल 🙏\n\nअधिकांश छात्र कैसे हैं?",
+        },
+        "buttons": [
+            {"label": "🙈 Shy — rarely raise hands",      "data": "fb_4_persona_shy"},
+            {"label": "⚖️ Mixed — some active, some quiet", "data": "fb_4_persona_mixed"},
+            {"label": "🙋 Most want to participate",       "data": "fb_4_persona_assertive"},
+        ],
+    },
+    {
+        "key": "home_context",
+        "text": {
+            "en": "One more question 🙏\n\nHow many students have parents who are daily wage workers or often away from home?",
+            "hi": "एक और सवाल 🙏\n\nकितने छात्रों के माता-पिता दिहाड़ी मज़दूर हैं या अक्सर घर से बाहर रहते हैं?",
+        },
+        "buttons": [
+            {"label": "👥 Most of them",  "data": "fb_4_home_difficult"},
+            {"label": "⚖️ About half",    "data": "fb_4_home_mixed"},
+            {"label": "🏡 Very few",       "data": "fb_4_home_stable"},
+        ],
+    },
+    {
+        "key": "gender_gap",
+        "text": {
+            "en": "One more question 🙏\n\nDo girls and boys participate equally in discussions?",
+            "hi": "एक और सवाल 🙏\n\nक्या लड़कियाँ और लड़के चर्चाओं में बराबर भाग लेते हैं?",
+        },
+        "buttons": [
+            {"label": "🙍 Girls are usually quieter",      "data": "fb_4_gender_gap"},
+            {"label": "⚖️ Both, but differently",          "data": "fb_4_gender_partial"},
+            {"label": "✅ Roughly equal",                   "data": "fb_4_gender_equal"},
+        ],
+    },
+    {
+        "key": "group_pref",
+        "text": {
+            "en": "One more question 🙏\n\nHow comfortable is this class with group work?",
+            "hi": "एक और सवाल 🙏\n\nक्या यह कक्षा समूह कार्य में सहज है?",
+        },
+        "buttons": [
+            {"label": "🤝 Love it — energized by groups",  "data": "fb_4_group_high"},
+            {"label": "⚖️ Mixed — some like it, some not", "data": "fb_4_group_mixed"},
+            {"label": "👤 Prefer individual work",          "data": "fb_4_group_low"},
+        ],
+    },
+]
+
 _FEEDBACK_THANKS = {
-    "en": "Thank you! Your feedback helps us improve Padhai Bot. 🙏",
-    "hi": "धन्यवाद! आपकी प्रतिक्रिया से हम बेहतर होते हैं। 🙏",
-    "ta": "நன்றி! உங்கள் கருத்து மேம்படுத்த உதவுகிறது. 🙏",
-    "te": "ధన్యవాదాలు! మీ అభిప్రాయం మెరుగుపరచడంలో సహాయపడుతుంది. 🙏",
+    "en": "Thank you! Your feedback helps personalise future lessons. 🙏",
+    "hi": "धन्यवाद! आपकी प्रतिक्रिया से अगले पाठ बेहतर बनेंगे। 🙏",
+    "ta": "நன்றி! உங்கள் கருத்து எதிர்கால பாடங்களை மேம்படுத்துகிறது. 🙏",
+    "te": "ధన్యవాదాలు! మీ అభిప్రాయం భవిష్యత్తు పాఠాలను మెరుగుపరచడంలో సహాయపడుతుంది. 🙏",
 }
 
 def _feedback_q(step: int, language: str) -> dict:
     q = _FEEDBACK_QUESTIONS[step]
     text = q["text"].get(language, q["text"]["en"])
     return _buttons(text, q["buttons"])
+
+def _q4_question(index: int, language: str) -> dict:
+    q = _Q4_QUESTIONS[index % len(_Q4_QUESTIONS)]
+    text = q["text"].get(language, q["text"]["en"])
+    return _buttons(text, q["buttons"])
+
+def _post_content_feedback(uid: str, response: str, subject: str, topic_label: str,
+                            grade: str, language: str, channel: str,
+                            sel_dim: str, count: int) -> "dict | list":
+    """Start background eval and return either [plan, Q1] (immediate) or just the plan (scheduled)."""
+    def _eval_bg(r=response, s=subject, t=topic_label, g=grade, sd=sel_dim, l=language, c=uid):
+        scores = ai.evaluate_content(s, t, g, sd, l, r, chat_id=c)
+        if scores:
+            db.log_content_eval(c, s, t, g, sd, scores)
+            failed = [m for m, v in scores.items() if not v.get("verdict", True)]
+            if failed:
+                print(f"[content_eval] FLAGGED chat={c} topic={t!r} failed={failed}")
+    threading.Thread(target=_eval_bg, daemon=True).start()
+
+    q4_due   = (count % Q4_INTERVAL == 0)
+    q4_index = (count // Q4_INTERVAL) % len(_Q4_QUESTIONS)
+
+    if IMMEDIATE_FEEDBACK:
+        _feedback_state[uid] = {
+            "step": 1, "topic": topic_label, "grade": grade, "subject": subject,
+            "sel_dim": sel_dim, "q1": None, "q2": None, "q3": None,
+            "q4_due": q4_due, "q4_index": q4_index,
+        }
+        return [_text(response), _feedback_q(1, language)]
+
+    db.schedule_feedback_q1(uid, language, topic_label, channel,
+                            grade, subject, q4_due, q4_index)
+    return _text(response)
+
+
+def _save_feedback(uid: str, state: dict):
+    """Persist Q2/Q3/Q4 signals to class_profiles and log the full response."""
+    grade   = state.get("grade", "")
+    subject = state.get("subject", "")
+    verbal  = state.get("q2", "")     # verbal | mixed | quiet
+    energy  = state.get("q3", "")     # focused | high | low
+    q4_data = state.get("q4_data", "")
+
+    signals: dict = {"verbal": verbal, "energy": energy}
+    if q4_data:
+        signals["q4"] = q4_data
+    db.update_class_profile(uid, grade, subject, signals)
+    db.log_usage_feedback(uid, state.get("topic", ""), grade, subject,
+                          state.get("q1", ""), verbal, energy, q4_data)
 
 
 OUT_OF_SERVICE_MSG = {
@@ -209,6 +318,7 @@ def handle_message(chat_id: int, text: str, user_name: str, channel: str = "tele
                 "subject": subject, "topic": topic, "grade": grade,
                 "sel_dim": sel_dim, "channel": channel,
                 "s_key": s_key, "ch_key": ch_key,
+                "count": count,
             }
             buttons = _build_lecture_buttons(grade, s_key, ch_key, chapter)
             tmpl = _LECTURE_SELECT_MSG.get(language, _LECTURE_SELECT_MSG["en"])
@@ -216,22 +326,9 @@ def handle_message(chat_id: int, text: str, user_name: str, channel: str = "tele
             return _buttons(msg, buttons)
 
         response = ai.generate_content(subject, topic, grade, sel_dim, language, chat_id=uid, lecture=lecture)
-
-        # Run eval in background — never block the teacher's response
-        def _eval_bg(r=response, s=subject, t=topic, g=grade, sd=sel_dim, l=language, c=uid):
-            scores = ai.evaluate_content(s, t, g, sd, l, r, chat_id=c)
-            if scores:
-                db.log_content_eval(c, s, t, g, sd, scores)
-                failed = [m for m, v in scores.items() if not v.get("verdict", True)]
-                if failed:
-                    print(f"[content_eval] FLAGGED chat={c} topic={t!r} failed={failed}")
-        threading.Thread(target=_eval_bg, daemon=True).start()
-
-        # Schedule feedback Q1 for next 2 PM IST — do not send immediately
         topic_label = f"{subject} — {topic}".strip(" —")
-        db.schedule_feedback_q1(uid, language, topic_label, channel)
         db.log_message(uid, text, intent, response)
-        return _text(response)
+        return _post_content_feedback(uid, response, subject, topic_label, grade, language, channel, sel_dim, count)
 
     elif intent == "feedback":
         db.log_message(uid, text, intent, "")
@@ -296,30 +393,40 @@ def handle_callback(chat_id: int, data: str, user_name: str) -> dict:
 def _handle_feedback_callback(uid: str, data: str) -> dict:
     state = _feedback_state.get(uid)
     language = _language_cache.get(uid, "en")
-
     if not state:
         return _text("")
 
-    if state["step"] == 1 and data.startswith("fb_1_"):
-        state["q1"] = data[5:]   # "full" | "partial" | "no"
+    step = state["step"]
+
+    if step == 1 and data.startswith("fb_1_"):
+        state["q1"] = data[5:]          # full | partial | no
         state["step"] = 2
         return _feedback_q(2, language)
 
-    if state["step"] == 2 and data.startswith("fb_2_"):
-        state["q2"] = data[5:]   # "yes" | "partial" | "no"
+    if step == 2 and data.startswith("fb_2_"):
+        state["q2"] = data[5:]          # verbal | mixed | quiet
         state["step"] = 3
         return _feedback_q(3, language)
 
-    if state["step"] == 3 and data.startswith("fb_3_"):
-        q3 = data[5:]            # "yes" | "partial" | "no"
-        db.log_usage_feedback(uid, state["topic"], state["q1"], state["q2"], q3)
+    if step == 3 and data.startswith("fb_3_"):
+        state["q3"] = data[5:]          # focused | high | low
+        if state.get("q4_due"):
+            state["step"] = 4
+            return _q4_question(state["q4_index"], language)
+        _save_feedback(uid, state)
+        del _feedback_state[uid]
+        return _text(_FEEDBACK_THANKS.get(language, _FEEDBACK_THANKS["en"]))
+
+    if step == 4 and data.startswith("fb_4_"):
+        state["q4_data"] = data         # e.g. "fb_4_persona_shy"
+        _save_feedback(uid, state)
         del _feedback_state[uid]
         return _text(_FEEDBACK_THANKS.get(language, _FEEDBACK_THANKS["en"]))
 
     return _text("")
 
 
-def _handle_lecture_callback(uid: str, data: str) -> dict:
+def _handle_lecture_callback(uid: str, data: str) -> "dict | list":
     # data format: lec_<grade>_<subject_key>_<chapter_key>_<num>
     parts = data.split("_")
     if len(parts) < 5:
@@ -331,7 +438,7 @@ def _handle_lecture_callback(uid: str, data: str) -> dict:
     except ValueError:
         return _text("")
 
-    pending = _lecture_pending.pop(uid, None)
+    pending  = _lecture_pending.pop(uid, None)
     language = _language_cache.get(uid, "en")
 
     chapter = ncert_lecture_map.LECTURE_MAP.get(grade, {}).get(subject_key, {}).get(chapter_key)
@@ -342,23 +449,13 @@ def _handle_lecture_callback(uid: str, data: str) -> dict:
     if not lecture:
         return _text("")
 
-    subject = pending["subject"] if pending else subject_key.title()
-    topic   = pending["topic"]   if pending else chapter["display_name"]
-    sel_dim = pending["sel_dim"] if pending else ai.SEL_DIMENSIONS[0]
+    subject = pending["subject"]            if pending else subject_key.title()
+    topic   = pending["topic"]              if pending else chapter["display_name"]
+    sel_dim = pending["sel_dim"]            if pending else ai.SEL_DIMENSIONS[0]
     channel = pending.get("channel", "telegram") if pending else "telegram"
+    count   = pending.get("count", 0)      if pending else 0
 
-    response = ai.generate_content(subject, topic, grade, sel_dim, language, chat_id=uid, lecture=lecture)
-
-    def _eval_bg(r=response, s=subject, t=topic, g=grade, sd=sel_dim, l=language, c=uid):
-        scores = ai.evaluate_content(s, t, g, sd, l, r, chat_id=c)
-        if scores:
-            db.log_content_eval(c, s, t, g, sd, scores)
-            failed = [m for m, v in scores.items() if not v.get("verdict", True)]
-            if failed:
-                print(f"[content_eval] FLAGGED chat={c} topic={t!r} failed={failed}")
-    threading.Thread(target=_eval_bg, daemon=True).start()
-
+    response    = ai.generate_content(subject, topic, grade, sel_dim, language, chat_id=uid, lecture=lecture)
     topic_label = f"{subject} — {lecture['title']}"
-    db.schedule_feedback_q1(uid, language, topic_label, channel)
     db.log_message(uid, f"[lecture:{lec_num}] {data}", "content_generation", response)
-    return _text(response)
+    return _post_content_feedback(uid, response, subject, topic_label, grade, language, channel, sel_dim, count)

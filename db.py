@@ -120,8 +120,9 @@ def log_content_eval(chat_id: str, subject: str, topic: str, grade: str,
         pass
 
 
-def log_usage_feedback(chat_id: str, topic: str, ncert_aligned: str,
-                       sel_helpful: str, students_participated: str):
+def log_usage_feedback(chat_id: str, topic: str, grade: str, subject: str,
+                       ncert_aligned: str, sel_engagement: str,
+                       class_energy: str, q4_data: str = ""):
     try:
         c = client()
         if c:
@@ -131,14 +132,127 @@ def log_usage_feedback(chat_id: str, topic: str, ncert_aligned: str,
                 "text":    f"[feedback] {topic}",
                 "intent":  "usage_feedback",
                 "response": json.dumps({
-                    "topic":                 topic,
-                    "ncert_aligned":         ncert_aligned,
-                    "sel_helpful":           sel_helpful,
-                    "students_participated": students_participated,
+                    "topic":          topic,
+                    "grade":          grade,
+                    "subject":        subject,
+                    "ncert_aligned":  ncert_aligned,   # full | partial | no
+                    "sel_engagement": sel_engagement,  # verbal | mixed | quiet
+                    "class_energy":   class_energy,    # focused | high | low
+                    "q4_data":        q4_data,
                 }),
             }).execute()
     except Exception:
         pass
+
+
+def _majority(a: int, b: int, c: int, labels: list[str]) -> str:
+    return labels[[a, b, c].index(max(a, b, c))]
+
+
+def update_class_profile(chat_id: str, grade: str, subject: str, signals: dict):
+    """Upsert incremental session signals into class_profiles."""
+    try:
+        c = client()
+        if not c:
+            return
+        uid = str(chat_id)
+        g   = grade.strip()
+        s   = subject.strip().lower()
+
+        verbal  = signals.get("verbal", "")   # verbal | mixed | quiet
+        energy  = signals.get("energy", "")   # focused | high | low
+        q4_data = signals.get("q4", "")
+
+        vh = 1 if verbal == "verbal"  else 0
+        vm = 1 if verbal == "mixed"   else 0
+        vl = 1 if verbal == "quiet"   else 0
+        ef = 1 if energy == "focused" else 0
+        eh = 1 if energy == "high"    else 0
+        el = 1 if energy == "low"     else 0
+
+        # Parse Q4 stable descriptor
+        stable: dict = {}
+        if q4_data:
+            if "_persona_" in q4_data:
+                for v in ("shy", "mixed", "assertive"):
+                    if v in q4_data: stable["persona"] = v
+            elif "_home_" in q4_data:
+                for v in ("difficult", "mixed", "stable"):
+                    if v in q4_data: stable["home_context"] = v
+            elif "_gender_" in q4_data:
+                stable["gender_gap"] = (
+                    "yes"     if "gap"     in q4_data else
+                    "partial" if "partial" in q4_data else "no"
+                )
+            elif "_group_" in q4_data:
+                for v in ("high", "mixed", "low"):
+                    if v in q4_data: stable["group_pref"] = v
+
+        existing = (
+            c.table("class_profiles")
+            .select("*")
+            .eq("chat_id", uid).eq("grade", g).eq("subject", s)
+            .execute()
+        )
+
+        if existing.data:
+            row = existing.data[0]
+            nvh = row["verbal_high_count"]  + vh
+            nvm = row["verbal_mid_count"]   + vm
+            nvl = row["verbal_low_count"]   + vl
+            nef = row["energy_focused_count"] + ef
+            neh = row["energy_high_count"]  + eh
+            nel = row["energy_low_count"]   + el
+            update = {
+                "session_count":        row["session_count"] + 1,
+                "verbal_high_count":    nvh,
+                "verbal_mid_count":     nvm,
+                "verbal_low_count":     nvl,
+                "energy_focused_count": nef,
+                "energy_high_count":    neh,
+                "energy_low_count":     nel,
+                "verbal_tendency":      _majority(nvh, nvm, nvl, ["high", "medium", "low"]),
+                "energy_tendency":      _majority(nef, neh, nel, ["focused", "high", "low"]),
+                "updated_at": datetime.now(timezone.utc).isoformat(),
+                **stable,
+            }
+            (c.table("class_profiles")
+             .update(update)
+             .eq("chat_id", uid).eq("grade", g).eq("subject", s)
+             .execute())
+        else:
+            insert = {
+                "chat_id": uid, "grade": g, "subject": s,
+                "session_count": 1,
+                "verbal_high_count": vh, "verbal_mid_count": vm, "verbal_low_count": vl,
+                "energy_focused_count": ef, "energy_high_count": eh, "energy_low_count": el,
+                "verbal_tendency": _majority(vh, vm, vl, ["high", "medium", "low"]),
+                "energy_tendency": _majority(ef, eh, el, ["focused", "high", "low"]),
+                **stable,
+            }
+            c.table("class_profiles").insert(insert).execute()
+    except Exception as e:
+        print(f"[update_class_profile] {e}", flush=True)
+
+
+def get_class_profile(chat_id: str, grade: str, subject: str) -> dict:
+    """Return the class profile dict, or {} if not yet built."""
+    try:
+        c = client()
+        if c:
+            result = (
+                c.table("class_profiles")
+                .select("*")
+                .eq("chat_id", str(chat_id))
+                .eq("grade", grade.strip())
+                .eq("subject", subject.strip().lower())
+                .execute()
+            )
+            if result.data:
+                return result.data[0]
+    except Exception as e:
+        print(f"[get_class_profile] {e}", flush=True)
+    return {}
 
 
 def get_content_count(chat_id: str) -> int:
@@ -158,7 +272,9 @@ def get_content_count(chat_id: str) -> int:
     return 0
 
 
-def schedule_feedback_q1(chat_id: str, language: str, topic: str, channel: str):
+def schedule_feedback_q1(chat_id: str, language: str, topic: str, channel: str,
+                         grade: str = "", subject: str = "",
+                         q4_due: bool = False, q4_index: int = 0):
     """Insert a feedback job scheduled for the next 2 PM IST."""
     try:
         c = client()
@@ -168,6 +284,10 @@ def schedule_feedback_q1(chat_id: str, language: str, topic: str, channel: str):
                 "language":     language,
                 "topic":        topic,
                 "channel":      channel,
+                "grade":        grade,
+                "subject":      subject,
+                "q4_due":       q4_due,
+                "q4_index":     q4_index,
                 "scheduled_at": _next_2pm_utc(),
             }).execute()
     except Exception as e:
