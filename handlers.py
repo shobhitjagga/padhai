@@ -209,8 +209,8 @@ def _post_content_feedback(uid: str, response: str, subject: str, topic_label: s
                 print(f"[content_eval] FLAGGED chat={c} topic={t!r} failed={failed}")
     threading.Thread(target=_eval_bg, daemon=True).start()
 
-    q4_due   = (count % Q4_INTERVAL == 0)
-    q4_index = (count // Q4_INTERVAL) % len(_Q4_QUESTIONS)
+    q4_due   = True
+    q4_index = count % len(_Q4_QUESTIONS)
 
     if IMMEDIATE_FEEDBACK:
         _feedback_state[uid] = {
