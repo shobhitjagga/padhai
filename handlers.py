@@ -268,7 +268,7 @@ _LECTURE_SELECT_MSG = {
 def _build_lecture_buttons(grade: str, subject_key: str, chapter_key: str, chapter: dict) -> list[dict]:
     return [
         {
-            "label": f"{lec['num']}. {lec['title']}",
+            "label": lec["title"],
             "data": f"lec_{grade}_{subject_key}_{chapter_key}_{lec['num']}",
         }
         for lec in chapter["breakdown"]
