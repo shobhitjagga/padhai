@@ -70,7 +70,13 @@ async def telegram_webhook(request: Request):
         cb_data  = callback.get("data", "")
         username = callback.get("from", {}).get("first_name", "Teacher")
         await _tg_answer_callback(callback["id"])
-        result = await asyncio.to_thread(handle_callback, chat_id, cb_data, username)
+        stop = asyncio.Event()
+        typing_task = asyncio.create_task(_tg_typing_loop(chat_id, stop))
+        try:
+            result = await asyncio.to_thread(handle_callback, chat_id, cb_data, username)
+        finally:
+            stop.set()
+            typing_task.cancel()
         for r in (result if isinstance(result, list) else [result]):
             await _tg_send(chat_id, r)
         return {"ok": True}
@@ -87,7 +93,13 @@ async def telegram_webhook(request: Request):
     if not text:
         return {"ok": True}
 
-    result = await asyncio.to_thread(handle_message, chat_id, text, username, channel="telegram")
+    stop = asyncio.Event()
+    typing_task = asyncio.create_task(_tg_typing_loop(chat_id, stop))
+    try:
+        result = await asyncio.to_thread(handle_message, chat_id, text, username, channel="telegram")
+    finally:
+        stop.set()
+        typing_task.cancel()
     for r in (result if isinstance(result, list) else [result]):
         await _tg_send(chat_id, r)
     return {"ok": True}
@@ -137,6 +149,25 @@ async def _tg_answer_callback(callback_query_id: str):
             json={"callback_query_id": callback_query_id},
             timeout=5.0,
         )
+
+
+async def _tg_send_action(chat_id: int):
+    async with httpx.AsyncClient() as c:
+        await c.post(
+            f"https://api.telegram.org/bot{config.TELEGRAM_TOKEN}/sendChatAction",
+            json={"chat_id": chat_id, "action": "typing"},
+            timeout=5.0,
+        )
+
+
+async def _tg_typing_loop(chat_id: int, stop: asyncio.Event):
+    """Repeat typing action every 4 s (it expires after 5 s) until stop is set."""
+    while not stop.is_set():
+        await _tg_send_action(chat_id)
+        try:
+            await asyncio.wait_for(asyncio.shield(stop.wait()), timeout=4.0)
+        except asyncio.TimeoutError:
+            pass
 
 
 def _wa_split(text: str, limit: int = 1500) -> list[str]:
@@ -212,6 +243,10 @@ async def twilio_whatsapp(request: Request):
                 cb_data = f"lec_{lec_pending['grade']}_{lec_pending['s_key']}_{lec_pending['ch_key']}_{num}"
             elif feedback_pending:
                 cb_data = _map_numbered_feedback(num, feedback_pending)
+            else:
+                await _twilio_wa_send(from_, {"type": "text",
+                    "text": "This selection has already been used. Please send a new message to generate a different lecture."})
+                return Response(content="<Response/>", media_type="application/xml")
         result = await asyncio.to_thread(handle_callback, number, cb_data, name)
         for r in (result if isinstance(result, list) else [result]):
             await _twilio_wa_send(from_, r)
