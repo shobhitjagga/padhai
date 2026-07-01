@@ -5,6 +5,7 @@ import config
 import db
 import ncert_lecture_map
 from ncert_data import get_hindi9_context
+from ncert_data_class9 import get_class9_context
 
 _groq_client = None
 _openai_client = None
@@ -522,8 +523,15 @@ def generate_content(subject: str, topic: str, grade: str, sel_dim: str,
     profile = db.get_class_profile(chat_id, grade, subject) if chat_id else {}
     class_context = _build_class_context(profile)
 
-    is_hindi9 = grade == "9" and subject.strip().lower() in ["hindi", "हिंदी"]
-    chapter_context = "\n" + get_hindi9_context(topic) + "\n" if is_hindi9 else ""
+    # NCERT chapter-level grounding for Class 9 (all subjects)
+    if grade == "9":
+        if subject.strip().lower() in ["hindi", "हिंदी"]:
+            chapter_context = "\n" + get_hindi9_context(topic) + "\n"
+        else:
+            ctx = get_class9_context(subject, topic)
+            chapter_context = "\n" + ctx + "\n" if ctx else ""
+    else:
+        chapter_context = ""
 
     if lecture:
         topics_str = "\n".join(f"• {t}" for t in lecture["topics"])
