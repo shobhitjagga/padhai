@@ -274,6 +274,8 @@ def _map_numbered_feedback(num: int, state: dict) -> str:
         5: {1: "fb_4_home_difficult", 2: "fb_4_home_mixed",     3: "fb_4_home_stable"},
         6: {1: "fb_4_gender_gap",     2: "fb_4_gender_partial", 3: "fb_4_gender_equal"},
         7: {1: "fb_4_group_high",     2: "fb_4_group_mixed",    3: "fb_4_group_low"},
+        8: {1: "fb_5_sel_yes",        2: "fb_5_sel_partial",    3: "fb_5_sel_no"},
+        9: {1: "fb_6_quiet_yes",      2: "fb_6_quiet_no",       3: "fb_6_quiet_unsure"},
     }
     return _step_maps.get(state.get("step", 0), {}).get(num, "")
 

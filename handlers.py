@@ -124,6 +124,34 @@ _FEEDBACK_QUESTIONS = {
             {"label": "😴 Tired or distracted",  "data": "fb_3_low"},
         ],
     },
+    5: {
+        # Outcome — was the SEL activity actually run?
+        "text": {
+            "en": "Did the SEL activity actually happen in class today?",
+            "hi": "क्या आज SEL गतिविधि कक्षा में हुई?",
+            "ta": "இன்று SEL செயல்பாடு வகுப்பில் நடந்ததா?",
+            "te": "నేడు SEL కార్యకలాపం తరగతిలో జరిగిందా?",
+        },
+        "buttons": [
+            {"label": "✅ Yes, fully ran it",  "data": "fb_5_sel_yes"},
+            {"label": "🟡 Partially",           "data": "fb_5_sel_partial"},
+            {"label": "❌ No, had to skip it",  "data": "fb_5_sel_no"},
+        ],
+    },
+    6: {
+        # Outcome — did a quiet student participate?
+        "text": {
+            "en": "Did any quiet or shy student speak up during the activity?",
+            "hi": "क्या किसी शांत या शर्मीले छात्र ने गतिविधि में भाग लिया?",
+            "ta": "ஏதாவது அமைதியான மாணவர் செயல்பாட்டில் பேசினாரா?",
+            "te": "ఏదైనా మౌనంగా ఉండే విద్యార్థి కార్యకలాపంలో పాల్గొన్నారా?",
+        },
+        "buttons": [
+            {"label": "✅ Yes",      "data": "fb_6_quiet_yes"},
+            {"label": "❌ No",       "data": "fb_6_quiet_no"},
+            {"label": "🤷 Not sure", "data": "fb_6_quiet_unsure"},
+        ],
+    },
 }
 
 # Rotating Q4 — shown every Q4_INTERVAL sessions, cycles through all 4 questions.
@@ -239,9 +267,11 @@ def _save_feedback(uid: str, state: dict):
         "q4b": state.get("q4b", ""),
         "q4c": state.get("q4c", ""),
         "q4d": state.get("q4d", ""),
+        "q5":  state.get("q5", ""),
+        "q6":  state.get("q6", ""),
     }
     db.update_class_profile(uid, grade, subject, signals)
-    q4_summary = json.dumps({k: state.get(k, "") for k in ("q4a", "q4b", "q4c", "q4d")})
+    q4_summary = json.dumps({k: state.get(k, "") for k in ("q4a", "q4b", "q4c", "q4d", "q5", "q6")})
     db.log_usage_feedback(uid, state.get("topic", ""), grade, subject,
                           state.get("q1", ""), verbal, energy, q4_summary)
 
@@ -435,6 +465,16 @@ def _handle_feedback_callback(uid: str, data: str) -> dict:
 
     if step == 7 and data.startswith("fb_4_"):
         state["q4d"] = data
+        state["step"] = 8
+        return _feedback_q(5, language)  # Was SEL activity run?
+
+    if step == 8 and data.startswith("fb_5_"):
+        state["q5"] = data
+        state["step"] = 9
+        return _feedback_q(6, language)  # Did quiet student participate?
+
+    if step == 9 and data.startswith("fb_6_"):
+        state["q6"] = data
         _save_feedback(uid, state)
         del _feedback_state[uid]
         return _text(_FEEDBACK_THANKS.get(language, _FEEDBACK_THANKS["en"]))

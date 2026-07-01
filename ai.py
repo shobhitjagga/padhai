@@ -205,12 +205,14 @@ SEL Skills: [list the SEL skills to be developed]
 Activity: [activity name]
 Discussion Question: [1 question for the check-in]
 SEL Skill: [skill name]
+Facilitation note: [Exact phrase to open — e.g. "Close your eyes and think about…". If no one responds: wait 8 seconds silently, then model a response yourself — "For me it was…". Watch for: at least 2–3 students sharing before moving on.]
 
 ---
 
 (Next 5 minutes) Mindfulness: [title linked to lesson theme]
 [Brief guided imagination/mindfulness activity with 2-3 guiding questions connected to the topic. No physical props needed — imagination only.]
 SEL Skill: [skill name]
+Facilitation note: [Use a slow, paused voice. If students giggle or fidget: say "That's okay — just try for a moment" and continue. To close: ask one student to share one image that came to mind, then link it to today's lesson topic.]
 
 ---
 
@@ -241,6 +243,7 @@ SEL Skill: [skill name]
 
 Activity: [activity name]
 [Group activity: group size 4-5, task description, step-by-step]
+Facilitation note: [Give the task in one sentence before releasing groups. If a group finishes early: ask them to add one more idea. During sharing: invite quiet students with a low-stakes opener — "What did your group decide?" — not "What do you think?"]
 {group_differentiation}Reflection Questions:
 1. [question]
 2. [question]

@@ -86,5 +86,23 @@ create table if not exists class_profiles (
     verbal_tendency  text,   -- high | medium | low
     energy_tendency  text,   -- focused | high | low
 
+    -- Q5: Was the SEL activity actually run in class?
+    sel_run_yes_count      int not null default 0,
+    sel_run_partial_count  int not null default 0,
+    sel_run_no_count       int not null default 0,
+
+    -- Q6: Did a quiet student participate?
+    quiet_yes_count        int not null default 0,
+    quiet_no_count         int not null default 0,
+    quiet_unsure_count     int not null default 0,
+
     updated_at   timestamptz default now()
 );
+
+-- Run these if the table already exists (safe to re-run — ADD COLUMN IF NOT EXISTS)
+alter table class_profiles add column if not exists sel_run_yes_count     int not null default 0;
+alter table class_profiles add column if not exists sel_run_partial_count int not null default 0;
+alter table class_profiles add column if not exists sel_run_no_count      int not null default 0;
+alter table class_profiles add column if not exists quiet_yes_count       int not null default 0;
+alter table class_profiles add column if not exists quiet_no_count        int not null default 0;
+alter table class_profiles add column if not exists quiet_unsure_count    int not null default 0;

@@ -161,6 +161,8 @@ def update_class_profile(chat_id: str, grade: str, subject: str, signals: dict):
 
         verbal  = signals.get("verbal", "")   # verbal | mixed | quiet
         energy  = signals.get("energy", "")   # focused | high | low
+        sel_run = signals.get("q5", "")       # fb_5_sel_yes | fb_5_sel_partial | fb_5_sel_no
+        quiet   = signals.get("q6", "")       # fb_6_quiet_yes | fb_6_quiet_no | fb_6_quiet_unsure
 
         vh = 1 if verbal == "verbal"  else 0
         vm = 1 if verbal == "mixed"   else 0
@@ -168,6 +170,12 @@ def update_class_profile(chat_id: str, grade: str, subject: str, signals: dict):
         ef = 1 if energy == "focused" else 0
         eh = 1 if energy == "high"    else 0
         el = 1 if energy == "low"     else 0
+        sry = 1 if "sel_yes"     in sel_run else 0
+        srp = 1 if "sel_partial" in sel_run else 0
+        srn = 1 if "sel_no"      in sel_run else 0
+        qy  = 1 if "quiet_yes"   in quiet   else 0
+        qn  = 1 if "quiet_no"    in quiet   else 0
+        qu  = 1 if "quiet_unsure"in quiet   else 0
 
         # Parse stable descriptors from all Q4 answers (q4, q4a–q4d)
         stable: dict = {}
@@ -215,6 +223,12 @@ def update_class_profile(chat_id: str, grade: str, subject: str, signals: dict):
                 "energy_low_count":     nel,
                 "verbal_tendency":      _majority(nvh, nvm, nvl, ["high", "medium", "low"]),
                 "energy_tendency":      _majority(nef, neh, nel, ["focused", "high", "low"]),
+                "sel_run_yes_count":     row["sel_run_yes_count"]     + sry,
+                "sel_run_partial_count": row["sel_run_partial_count"] + srp,
+                "sel_run_no_count":      row["sel_run_no_count"]      + srn,
+                "quiet_yes_count":       row["quiet_yes_count"]       + qy,
+                "quiet_no_count":        row["quiet_no_count"]        + qn,
+                "quiet_unsure_count":    row["quiet_unsure_count"]    + qu,
                 "updated_at": datetime.now(timezone.utc).isoformat(),
                 **stable,
             }
@@ -230,6 +244,8 @@ def update_class_profile(chat_id: str, grade: str, subject: str, signals: dict):
                 "energy_focused_count": ef, "energy_high_count": eh, "energy_low_count": el,
                 "verbal_tendency": _majority(vh, vm, vl, ["high", "medium", "low"]),
                 "energy_tendency": _majority(ef, eh, el, ["focused", "high", "low"]),
+                "sel_run_yes_count": sry, "sel_run_partial_count": srp, "sel_run_no_count": srn,
+                "quiet_yes_count": qy, "quiet_no_count": qn, "quiet_unsure_count": qu,
                 **stable,
             }
             c.table("class_profiles").insert(insert).execute()
