@@ -300,7 +300,7 @@ async def _twilio_wa_send(to_wa: str, response: dict):
                 template_sid = config.TWILIO_LANG_TEMPLATE_SID
             elif first_data.startswith("fb_1_") and config.TWILIO_FEEDBACK_Q1_SID:
                 template_sid = config.TWILIO_FEEDBACK_Q1_SID
-            elif (first_data.startswith(("lec_", "fb_2_", "fb_3_", "fb_4_"))
+            elif (first_data.startswith(("lec_", "fb_2_", "fb_3_", "fb_4_", "fb_5_", "fb_6_"))
                   and config.TWILIO_LECTURE_SELECT_SID):
                 # Generic 1/2/3 template with variable body — reused for
                 # lecture selection, Q2 (SEL engagement), Q3 (energy), Q4 (class profile)
