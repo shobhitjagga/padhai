@@ -214,6 +214,106 @@ _FEEDBACK_THANKS = {
     "te": "ధన్యవాదాలు! మీ అభిప్రాయం భవిష్యత్తు పాఠాలను మెరుగుపరచడంలో సహాయపడుతుంది. 🙏",
 }
 
+_DATA_NOTICE = {
+    "en": (
+        "📋 One quick note:\n\n"
+        "I remember your class profile (student engagement patterns and context) to personalise "
+        "future lessons. This is stored at class level — not linked to any individual student.\n\n"
+        "Type 'show my profile' to see what's stored, or 'reset my profile' to clear it anytime."
+    ),
+    "hi": (
+        "📋 एक ज़रूरी जानकारी:\n\n"
+        "मैं आपकी कक्षा का प्रोफ़ाइल (छात्रों की भागीदारी और संदर्भ) याद रखता हूँ "
+        "ताकि अगले पाठ बेहतर हों। यह डेटा कक्षा स्तर पर है — किसी व्यक्तिगत छात्र से नहीं जुड़ा।\n\n"
+        "'show my profile' टाइप करें — देखने के लिए।\n"
+        "'reset my profile' — डेटा हटाने के लिए।"
+    ),
+    "ta": (
+        "📋 ஒரு முக்கியமான குறிப்பு:\n\n"
+        "எதிர்கால பாடங்களை தனிப்பயனாக்க உங்கள் வகுப்பு சுயவிவரத்தை நினைவில் வைக்கிறேன். "
+        "இது வகுப்பு அளவில் மட்டுமே சேமிக்கப்படுகிறது — எந்த மாணவரோடும் இணைக்கப்படவில்லை.\n\n"
+        "'show my profile' — காண்பதற்கு. 'reset my profile' — நீக்குவதற்கு."
+    ),
+    "te": (
+        "📋 ఒక ముఖ్యమైన గమనిక:\n\n"
+        "భవిష్యత్తు పాఠాలను వ్యక్తిగతీకరించడానికి మీ తరగతి ప్రొఫైల్ గుర్తుంచుకుంటాను. "
+        "ఇది తరగతి స్థాయిలో మాత్రమే నిల్వ చేయబడుతుంది — వ్యక్తిగత విద్యార్థికి కాదు.\n\n"
+        "'show my profile' — చూడడానికి. 'reset my profile' — తొలగించడానికి."
+    ),
+}
+
+_LESSON_DISCLAIMER = {
+    "en": "\n\n---\n⚠️ AI-generated — review before teaching. Not an official NCERT publication.",
+    "hi": "\n\n---\n⚠️ AI-निर्मित — पढ़ाने से पहले जाँचें। यह NCERT का आधिकारिक प्रकाशन नहीं है।",
+    "ta": "\n\n---\n⚠️ AI-உருவாக்கம் — கற்பிக்கும் முன் சரிபார்க்கவும். NCERT அதிகாரப்பூர்வ வெளியீடு அல்ல.",
+    "te": "\n\n---\n⚠️ AI-రూపొందించిన — బోధించే ముందు సమీక్షించండి. NCERT అధికారిక ప్రచురణ కాదు.",
+}
+
+_RESET_CONFIRM = {
+    "en": "✅ Your class profile has been cleared. It will rebuild automatically from your next feedback session.",
+    "hi": "✅ आपका क्लास प्रोफ़ाइल हटा दिया गया है। अगले फ़ीडबैक से यह फिर बनेगा।",
+    "ta": "✅ உங்கள் வகுப்பு சுயவிவரம் அழிக்கப்பட்டது. அடுத்த கருத்தில் இருந்து மீண்டும் உருவாகும்.",
+    "te": "✅ మీ తరగతి ప్రొఫైల్ తొలగించబడింది. తదుపరి అభిప్రాయం నుండి మళ్ళీ నిర్మించబడుతుంది.",
+}
+
+def _format_class_profile(profiles: list, language: str) -> str:
+    if not profiles:
+        return {
+            "en": "No class profile stored yet. It builds automatically after you submit feedback.",
+            "hi": "अभी कोई क्लास प्रोफ़ाइल नहीं है। फ़ीडबैक देने के बाद यह खुद बनेगा।",
+            "ta": "இன்னும் வகுப்பு சுயவிவரம் இல்லை. கருத்து சமர்ப்பித்த பிறகு தானாக உருவாகும்.",
+            "te": "ఇంకా తరగతి ప్రొఫైల్ లేదు. అభిప్రాయం సమర్పించిన తర్వాత స్వయంచాలకంగా నిర్మించబడుతుంది.",
+        }.get(language, "No class profile stored yet.")
+
+    lines = ["📊 *Your Class Profile*\n"]
+    for p in profiles:
+        grade   = p.get("grade", "?")
+        subject = p.get("subject", "?")
+        sessions = p.get("session_count", 0)
+        lines.append(f"── Class {grade} · {subject} ({sessions} sessions) ──")
+
+        vh = p.get("verbal_high_count", 0)
+        vm = p.get("verbal_mid_count", 0)
+        vl = p.get("verbal_low_count", 0)
+        vt = vh + vm + vl
+        if vt:
+            lines.append(f"  Verbal:  high {vh}, mixed {vm}, quiet {vl}")
+
+        ef = p.get("energy_focused_count", 0)
+        eh = p.get("energy_high_count", 0)
+        el = p.get("energy_low_count", 0)
+        et = ef + eh + el
+        if et:
+            lines.append(f"  Energy:  focused {ef}, high {eh}, low {el}")
+
+        for label, key in [("Persona", "persona"), ("Home context", "home_context"),
+                           ("Gender gap", "gender_gap"), ("Group pref", "group_pref")]:
+            val = p.get(key)
+            if val:
+                lines.append(f"  {label}: {val}")
+
+        sry = p.get("sel_run_yes_count", 0)
+        srp = p.get("sel_run_partial_count", 0)
+        srn = p.get("sel_run_no_count", 0)
+        sr_total = sry + srp + srn
+        if sr_total:
+            pct = round(100 * sry / sr_total)
+            lines.append(f"  SEL run rate: {pct}% fully ({sr_total} sessions tracked)")
+
+        qy = p.get("quiet_yes_count", 0)
+        qn = p.get("quiet_no_count", 0)
+        qu = p.get("quiet_unsure_count", 0)
+        q_total = qy + qn + qu
+        if q_total:
+            pct = round(100 * qy / q_total)
+            lines.append(f"  Quiet student participation: {pct}% ({q_total} sessions tracked)")
+
+        lines.append("")
+
+    lines.append("Type 'reset my profile' to clear all stored data.")
+    return "\n".join(lines)
+
+
 def _feedback_q(step: int, language: str) -> dict:
     q = _FEEDBACK_QUESTIONS[step]
     text = q["text"].get(language, q["text"]["en"])
@@ -237,6 +337,9 @@ def _post_content_feedback(uid: str, response: str, subject: str, topic_label: s
                 print(f"[content_eval] FLAGGED chat={c} topic={t!r} failed={failed}")
     threading.Thread(target=_eval_bg, daemon=True).start()
 
+    # Append disclaimer after eval thread starts so eval sees raw content
+    response_with_disclaimer = response + _LESSON_DISCLAIMER.get(language, _LESSON_DISCLAIMER["en"])
+
     q4_due   = True
     q4_index = count % len(_Q4_QUESTIONS)
 
@@ -246,11 +349,11 @@ def _post_content_feedback(uid: str, response: str, subject: str, topic_label: s
             "sel_dim": sel_dim, "q1": None, "q2": None, "q3": None,
             "q4_due": q4_due, "q4_index": q4_index,
         }
-        return [_text(response), _feedback_q(1, language)]
+        return [_text(response_with_disclaimer), _feedback_q(1, language)]
 
     db.schedule_feedback_q1(uid, language, topic_label, channel,
                             grade, subject, q4_due, q4_index)
-    return _text(response)
+    return _text(response_with_disclaimer)
 
 
 def _save_feedback(uid: str, state: dict):
@@ -334,6 +437,15 @@ def handle_message(chat_id: int, text: str, user_name: str, channel: str = "tele
     if text.lower() in ["/start", "hi", "hello", "hey"]:
         return _text(FEATURE_INTRO.get(language, FEATURE_INTRO["en"]))
 
+    text_lower = text.lower().strip()
+    if any(kw in text_lower for kw in ("show my profile", "my profile", "show profile")):
+        profiles = db.get_all_class_profiles(uid)
+        return _text(_format_class_profile(profiles, language))
+    if any(kw in text_lower for kw in ("reset my profile", "delete my profile",
+                                        "clear my profile", "reset profile")):
+        db.delete_all_class_profiles(uid)
+        return _text(_RESET_CONFIRM.get(language, _RESET_CONFIRM["en"]))
+
     classification = ai.classify_intent(text, chat_id=uid)
     intent = classification.get("intent", "query_resolution_academic")
     grade  = classification.get("grade", "")
@@ -412,7 +524,7 @@ def handle_callback(chat_id: int, data: str, user_name: str) -> dict:
     if lang:
         _language_cache[uid] = lang
         db.complete_onboarding(uid, user_name, lang)
-        return _text(FEATURE_INTRO[lang])
+        return [_text(FEATURE_INTRO[lang]), _text(_DATA_NOTICE[lang])]
 
     # Feedback buttons
     if data.startswith("fb_"):

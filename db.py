@@ -339,3 +339,29 @@ def mark_feedback_job_sent(job_id: int):
             c.table("feedback_jobs").update({"sent_at": now}).eq("id", job_id).execute()
     except Exception as e:
         print(f"[mark_feedback_job_sent] {e}", flush=True)
+
+
+def get_all_class_profiles(chat_id: str) -> list:
+    try:
+        c = client()
+        if c:
+            result = (
+                c.table("class_profiles")
+                .select("*")
+                .eq("chat_id", str(chat_id))
+                .order("updated_at", desc=True)
+                .execute()
+            )
+            return result.data or []
+    except Exception as e:
+        print(f"[get_all_class_profiles] {e}", flush=True)
+    return []
+
+
+def delete_all_class_profiles(chat_id: str):
+    try:
+        c = client()
+        if c:
+            c.table("class_profiles").delete().eq("chat_id", str(chat_id)).execute()
+    except Exception as e:
+        print(f"[delete_all_class_profiles] {e}", flush=True)
