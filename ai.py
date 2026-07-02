@@ -549,11 +549,12 @@ def generate_content(subject: str, topic: str, grade: str, sel_dim: str,
 
     group_diff = GROUP_DIFFERENTIATION_INSTRUCTIONS if DIFFERENTIATED_GROUPS else ""
 
-    # Cache key — includes lecture scope and class profile so personalised responses
-    # are cached separately from generic ones
-    lecture_key = lecture["title"] if lecture else ""
+    # Use lecture title as canonical topic when available — the teacher's typed
+    # message varies ("sound chapter", "class 9 sound", etc.) but the lecture
+    # title is always the same for the same content.
+    cache_topic = lecture["title"] if lecture else topic
     cache_key = hashlib.sha256(
-        f"{subject}|{topic}|{grade}|{language}|{lecture_key}|{class_context}".encode()
+        f"{subject}|{cache_topic}|{grade}|{language}|{class_context}".encode()
     ).hexdigest()
 
     cached = db.get_cached_content(cache_key)
