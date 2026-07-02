@@ -341,6 +341,37 @@ def mark_feedback_job_sent(job_id: int):
         print(f"[mark_feedback_job_sent] {e}", flush=True)
 
 
+_CACHE_TTL_DAYS = 7
+
+def get_cached_content(cache_key: str) -> str | None:
+    try:
+        c = client()
+        if c:
+            cutoff = (datetime.now(timezone.utc) - timedelta(days=_CACHE_TTL_DAYS)).isoformat()
+            result = (
+                c.table("content_cache")
+                .select("response")
+                .eq("cache_key", cache_key)
+                .gt("created_at", cutoff)
+                .limit(1)
+                .execute()
+            )
+            if result.data:
+                return result.data[0]["response"]
+    except Exception as e:
+        print(f"[get_cached_content] {e}", flush=True)
+    return None
+
+
+def store_cached_content(cache_key: str, response: str):
+    try:
+        c = client()
+        if c:
+            c.table("content_cache").upsert({"cache_key": cache_key, "response": response}).execute()
+    except Exception as e:
+        print(f"[store_cached_content] {e}", flush=True)
+
+
 def get_all_class_profiles(chat_id: str) -> list:
     try:
         c = client()

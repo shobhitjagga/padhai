@@ -106,3 +106,10 @@ alter table class_profiles add column if not exists sel_run_no_count      int no
 alter table class_profiles add column if not exists quiet_yes_count       int not null default 0;
 alter table class_profiles add column if not exists quiet_no_count        int not null default 0;
 alter table class_profiles add column if not exists quiet_unsure_count    int not null default 0;
+
+-- Content cache: avoid regenerating identical lesson plans
+create table if not exists content_cache (
+    cache_key  text primary key,          -- sha256 of (subject+topic+grade+sel_dim+language+class_context)
+    response   text not null,
+    created_at timestamptz default now()
+);

@@ -517,6 +517,7 @@ GROQ_CONTENT_MODELS = [
 def generate_content(subject: str, topic: str, grade: str, sel_dim: str,
                      language: str = "en", chat_id: str = "",
                      lecture: dict | None = None) -> str:
+    import hashlib
     guidance = SEL_GUIDANCE.get(sel_dim, {})
 
     # Personalise based on accumulated class profile
@@ -548,6 +549,18 @@ def generate_content(subject: str, topic: str, grade: str, sel_dim: str,
 
     group_diff = GROUP_DIFFERENTIATION_INSTRUCTIONS if DIFFERENTIATED_GROUPS else ""
 
+    # Cache key — includes lecture scope and class profile so personalised responses
+    # are cached separately from generic ones
+    lecture_key = lecture["title"] if lecture else ""
+    cache_key = hashlib.sha256(
+        f"{subject}|{topic}|{grade}|{sel_dim}|{language}|{lecture_key}|{class_context}".encode()
+    ).hexdigest()
+
+    cached = db.get_cached_content(cache_key)
+    if cached:
+        print(f"[generate_content] cache hit  key={cache_key[:12]}", flush=True)
+        return cached
+
     prompt = CONTENT_PROMPT.format(
         subject=subject,
         topic=topic or subject,
@@ -565,7 +578,7 @@ def generate_content(subject: str, topic: str, grade: str, sel_dim: str,
     # Primary: OpenAI GPT-4.1 (better NCERT knowledge)
     if _oa_client():
         try:
-            return _openai_call(
+            result = _openai_call(
                 chat_id=chat_id,
                 function="generate_content",
                 model="gpt-4.1",
@@ -573,13 +586,15 @@ def generate_content(subject: str, topic: str, grade: str, sel_dim: str,
                 temperature=0.7,
                 max_tokens=2000,
             )
+            db.store_cached_content(cache_key, result)
+            return result
         except Exception as e:
             print(f"[generate_content] OpenAI failed ({e}), falling back to Groq")
     # Fallback: Groq
     last_err = None
     for model in GROQ_CONTENT_MODELS:
         try:
-            return _groq_call(
+            result = _groq_call(
                 chat_id=chat_id,
                 function="generate_content",
                 model=model,
@@ -587,6 +602,8 @@ def generate_content(subject: str, topic: str, grade: str, sel_dim: str,
                 temperature=0.7,
                 max_tokens=1800,
             )
+            db.store_cached_content(cache_key, result)
+            return result
         except Exception as e:
             if "rate_limit" in str(e).lower() or "429" in str(e):
                 print(f"[generate_content] {model} rate-limited, trying next model")
