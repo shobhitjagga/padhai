@@ -553,7 +553,7 @@ def generate_content(subject: str, topic: str, grade: str, sel_dim: str,
     # are cached separately from generic ones
     lecture_key = lecture["title"] if lecture else ""
     cache_key = hashlib.sha256(
-        f"{subject}|{topic}|{grade}|{sel_dim}|{language}|{lecture_key}|{class_context}".encode()
+        f"{subject}|{topic}|{grade}|{language}|{lecture_key}|{class_context}".encode()
     ).hexdigest()
 
     cached = db.get_cached_content(cache_key)
